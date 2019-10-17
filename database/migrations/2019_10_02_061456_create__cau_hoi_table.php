@@ -16,7 +16,7 @@ class CreateCauHoiTable extends Migration
         Schema::create('cau_hoi', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('noi_dung');
-            $table->integer('linh_vuc_id');
+            $table->integer('linh_vuc_id')->unsigned();
             $table->string('phuong_an_a');
             $table->string('phuong_an_b');
             $table->string('phuong_an_c');
@@ -25,7 +25,7 @@ class CreateCauHoiTable extends Migration
             $table->boolean('xoa')->default(false);
             $table->timestamps();
         
-            $table->foreign('linh_vuc_id')->references('id')->on('cau_hoi');
+            $table->foreign('linh_vuc_id')->references('id')->on('linh_vuc');
         });
 
     }

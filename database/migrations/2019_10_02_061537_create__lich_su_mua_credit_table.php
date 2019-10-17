@@ -15,8 +15,8 @@ class CreateLichSuMuaCreditTable extends Migration
     {
         Schema::create('lich_su_mua_credit', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('nguoi_choi_id');
-            $table->integer('goi_credit_id');
+            $table->integer('nguoi_choi_id')->unsigned();
+            $table->integer('goi_credit_id')->unsigned();
             $table->integer('credit');
             $table->integer('so_tien');
             $table->timestamps();

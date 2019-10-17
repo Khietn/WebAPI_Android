@@ -23,8 +23,6 @@ class CreateNguoiChoiTable extends Migration
             $table->integer('credit');
             $table->boolean('xoa')->default(false);
             $table->timestamps();
-             Schema::enableForeignKeyConstraints();
-         
         });
     }
 

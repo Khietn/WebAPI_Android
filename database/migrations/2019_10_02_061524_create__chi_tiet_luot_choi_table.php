@@ -15,8 +15,8 @@ class CreateChiTietLuotChoiTable extends Migration
     {
         Schema::create('chi_tiet_luot_choi', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('luot_choi_id');
-            $table->integer('cau_hoi_id');
+            $table->integer('luot_choi_id')->unsigned();
+            $table->integer('cau_hoi_id')->unsigned();
             $table->string('phuong_an',5);
             $table->integer('diem');
             $table->timestamps();
