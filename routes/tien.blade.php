@@ -1,0 +1,1 @@
+tiền không là tất cả
