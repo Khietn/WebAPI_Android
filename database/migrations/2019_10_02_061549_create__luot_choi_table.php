@@ -24,7 +24,7 @@ class CreateLuotChoiTable extends Migration
             
             
         });
-        Schema::enableForeignKeyConstraints();
+    
     }
 
     /**

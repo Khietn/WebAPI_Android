@@ -27,7 +27,7 @@ class CreateCauHoiTable extends Migration
         
             $table->foreign('linh_vuc_id')->references('id')->on('linh_vuc');
         });
-        Schema::enableForeignKeyConstraints();
+        
     }
 
     /**
