@@ -15,14 +15,15 @@ class CreateLichSuMuaCreditTable extends Migration
     {
         Schema::create('lich_su_mua_credit', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('nguoi_choi_id')->unsigned();
-            $table->integer('goi_credit_id')->unsigned();
+            $table->unsignedInteger('nguoi_choi_id');
+            $table->unsignedInteger('goi_credit_id');
             $table->integer('credit');
             $table->integer('so_tien');
             $table->timestamps();
             $table->foreign('goi_credit_id')->references('id')->on('goi_credit');
             $table->foreign('nguoi_choi_id')->references('id')->on('nguoi_choi');
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

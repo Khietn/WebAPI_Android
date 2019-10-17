@@ -15,7 +15,7 @@ class CreateLuotChoiTable extends Migration
     {
         Schema::create('luot_choi', function (Blueprint $table) {
             $table->Increments('id');
-            $table->Integer('nguoi_choi_id');
+            $table->unsignedInteger('nguoi_choi_id');
             $table->integer('so_cau');
             $table->integer('diem');
             $table->date('ngay_gio');
@@ -24,6 +24,7 @@ class CreateLuotChoiTable extends Migration
             
             
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -16,7 +16,7 @@ class CreateCauHoiTable extends Migration
         Schema::create('cau_hoi', function (Blueprint $table) {
             $table->Increments('id');
             $table->string('noi_dung');
-            $table->integer('linh_vuc_id')->unsigned();
+            $table->unsignedInteger('linh_vuc_id');
             $table->string('phuong_an_a');
             $table->string('phuong_an_b');
             $table->string('phuong_an_c');
@@ -27,7 +27,7 @@ class CreateCauHoiTable extends Migration
         
             $table->foreign('linh_vuc_id')->references('id')->on('linh_vuc');
         });
-
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
