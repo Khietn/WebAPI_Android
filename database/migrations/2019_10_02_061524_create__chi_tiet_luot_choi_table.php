@@ -20,10 +20,9 @@ class CreateChiTietLuotChoiTable extends Migration
             $table->string('phuong_an',5);
             $table->integer('diem');
             $table->timestamps();
-            $table->foreign('luot_choi_id')->references('id')->on('luot_choi');
-            $table->foreign('cau_hoi_id')->references('id')->on('cau_hoi');
+          
         });
-        Schema::enableForeignKeyConstraints();
+
     }
 
     /**

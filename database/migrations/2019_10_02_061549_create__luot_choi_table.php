@@ -19,10 +19,7 @@ class CreateLuotChoiTable extends Migration
             $table->integer('so_cau');
             $table->integer('diem');
             $table->date('ngay_gio');
-            $table->timestamps();
-            $table->foreign('nguoi_choi_id')->references('id')->on('nguoi_choi');
-            
-            
+            $table->timestamps(); 
         });
     
     }

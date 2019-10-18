@@ -24,8 +24,6 @@ class CreateCauHoiTable extends Migration
             $table->string('dap_an',5);
             $table->boolean('xoa')->default(false);
             $table->timestamps();
-        
-            $table->foreign('linh_vuc_id')->references('id')->on('linh_vuc');
         });
         
     }

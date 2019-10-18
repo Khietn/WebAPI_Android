@@ -20,8 +20,7 @@ class CreateLichSuMuaCreditTable extends Migration
             $table->integer('credit');
             $table->integer('so_tien');
             $table->timestamps();
-            $table->foreign('goi_credit_id')->references('id')->on('goi_credit');
-            $table->foreign('nguoi_choi_id')->references('id')->on('nguoi_choi');
+         
         });
   
     }
