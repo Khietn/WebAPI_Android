@@ -24,7 +24,7 @@ class ForeignKey extends Migration
             $table->foreign('luot_choi_id')->references('id')->on('luot_choi');
             $table->foreign('cau_hoi_id')->references('id')->on('cau_hoi');
         });
-        Schema::table('linh_vuc',function(Blueprint $table){
+        Schema::table('cau_hoi',function(Blueprint $table){
             $table->foreign('linh_vuc_id')->references('id')->on('linh_vuc');
         });
     }
