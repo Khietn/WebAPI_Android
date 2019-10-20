@@ -42,7 +42,9 @@ Route::prefix('linh-vuc')->group(function(){
 
 
 
-
+Route::get('xinchao',function(){
+	return view('xinchao2');
+});
 
 
 Route::get('master',function(){
