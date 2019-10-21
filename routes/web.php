@@ -35,14 +35,11 @@ Route::get('/index/Register', function () {
 Route::get('/index/login', function(){
 	return view('Login');
 });
-Route::get('/index/Database',function(){
-	return view('Database');
-});
-Route::get('/index/Database','LinhVucController@data');
+Route::get('Database','LinhVucController@data');
 Route::prefix('linh-vuc')->group(function(){
-	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
-	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
-});
+ 	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
+ 	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
+ });
 
 
 
