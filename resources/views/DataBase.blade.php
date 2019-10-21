@@ -754,10 +754,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>     
-            <?php foreach ($linhVuc as $key => $value): ?>
+            <?php foreach ($linhVuc as $value): ?>
                     <tr>
                     <td>{{$value['id']}}</td>
-                    <td>{{$value['ten_linh_vuc']}}</td>
+                    <td>{{$value['ten']}}</td>
                     <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a></button></td>
                     <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Xóa</a></button></td>                                                       
                    </tr>                                     

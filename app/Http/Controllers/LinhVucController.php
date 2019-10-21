@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\LinhVuc;
+use App\LinhVucModel;
 class LinhVucController extends Controller
 {
     public function data()
     {
-        $linhVuc=model_LinhVuc::all()->toArray();
-        return view ('Database')->with('linhVuc',$linhVuc);
+        $linhVuc=LinhVucModel::all();
+        return view ('Database',compact('linhVuc'));
     }
     public function UpdateStatus($id,Request $request){
         if($request->txtXoa == 0){
-            $linhVuc = LinhVuc::where('id',$id)->update(['xoa'=>1]);
+            $linhVuc = LinhVucModel::where('id',$id)->update(['xoa'=>1]);
         }
         else{
-            $linhVuc = LinhVuc::where('id',$id)->update(['xoa'=>0]);
+            $linhVuc = LinhVucModel::where('id',$id)->update(['xoa'=>0]);
         }
         return redirect('linh-vuc/danh-sach')->with('success',"Success");
     }
@@ -28,7 +28,7 @@ class LinhVucController extends Controller
     public function index()
     {
         //
-        $dsLinhVuc = LinhVuc::paginate(10);
+        $dsLinhVuc = LinhVucModel::paginate(10);
         return view('Master-page/aaa',compact('dsLinhVuc'));
     }
 
@@ -52,7 +52,7 @@ class LinhVucController extends Controller
     public function store(Request $request)
     {
         //
-        $linhVuc = new LinhVuc;
+        $linhVuc = new LinhVucModel;
         $linhVuc->ten = $request->txtTen;
         $linhVuc->save();
         // return redirect('linh-vuc/danh-sach');
@@ -80,7 +80,7 @@ class LinhVucController extends Controller
     public function edit($id)
     {
         //
-        $linhVuc = LinhVuc::findOrFail($id);
+        $linhVuc = LinhVucModel::findOrFail($id);
         return view('Master-page.edit', compact('linhVuc'));
     }
 
@@ -94,7 +94,7 @@ class LinhVucController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $linhVuc = LinhVuc::findOrFail($id);
+        $linhVuc = LinhVucModel::findOrFail($id);
         $linhVuc->ten = $request->txtTenEdit;
         $linhVuc->save();
         return redirect('linh-vuc/danh-sach')->with('success',"Success");

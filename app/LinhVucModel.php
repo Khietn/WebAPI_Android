@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class model_LinhVuc extends Model
+class LinhVucModel extends Model
 {
-    //
+    
     protected $table ='linh_vuc'; 
     public $timestams=false;
 
