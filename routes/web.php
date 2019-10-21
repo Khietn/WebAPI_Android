@@ -41,7 +41,10 @@ Route::prefix('linh-vuc')->group(function(){
  	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
  });
 
+//sau
+Route::get('Nguoi-Choi','NguoiChoiController@index');
 
+Route::get('')
 
 
 
