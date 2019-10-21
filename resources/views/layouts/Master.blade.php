@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,7 +23,7 @@
     </head>
 
     <body>
-
+    @section('head')
         <!-- Navigation Bar-->
         <header id="topnav">
 
@@ -730,6 +732,8 @@
             </div> <!-- end container -->
             
         </div>
+
+@show
         <!-- end wrapper -->
 
         <!-- ============================================================== -->

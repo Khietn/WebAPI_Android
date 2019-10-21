@@ -40,6 +40,7 @@ class LinhVucController extends Controller
     public function create()
     {
         //
+        return View('form-linh-vuc');
 
     }
 
@@ -53,7 +54,7 @@ class LinhVucController extends Controller
     {
         //
         $linhVuc = new LinhVucModel;
-        $linhVuc->ten = $request->txtTen;
+        $linhVuc->ten= $request->ten_linh_vuc;
         $linhVuc->save();
         // return redirect('linh-vuc/danh-sach');
         return redirect('/index/Database')->with('success','Thêm mới thành công');

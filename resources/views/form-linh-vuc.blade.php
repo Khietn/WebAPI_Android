@@ -1,4 +1,13 @@
-@extends('ViewLinhVuc')
+
+
+@extends('layouts.Master')
+
+@section('head')
+    @parent
+
+    <p>This is appended to the master sidebar.</p>
+@endsection
+
 @section('main-content')
 <div class="row" >
    <div class="col-lg-6">
