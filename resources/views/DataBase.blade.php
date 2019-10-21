@@ -747,7 +747,7 @@
                                 <table id="tech-companies-1" class="table table-striped" border="2">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th data-priority="1">ID</th>
                                         <th data-priority="1">Tên Lĩnh Vực</th>
                                         <th data-priority="1">Sửa</th>
                                         <th data-priority="3">Xóa</th>
