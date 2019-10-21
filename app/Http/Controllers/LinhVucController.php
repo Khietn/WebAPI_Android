@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\LinhVuc;
 class LinhVucController extends Controller
 {
+    public function data()
+    {
+        $linhVuc=model_LinhVuc::all()->toArray();
+        return view ('Database')->with('linhVuc',$linhVuc);
+    }
     public function UpdateStatus($id,Request $request){
         if($request->txtXoa == 0){
             $linhVuc = LinhVuc::where('id',$id)->update(['xoa'=>1]);
@@ -50,7 +55,8 @@ class LinhVucController extends Controller
         $linhVuc = new LinhVuc;
         $linhVuc->ten = $request->txtTen;
         $linhVuc->save();
-        return redirect('linh-vuc/danh-sach');
+        // return redirect('linh-vuc/danh-sach');
+        return redirect('/index/Database')->with('success','Thêm mới thành công');
     }
 
     /**
