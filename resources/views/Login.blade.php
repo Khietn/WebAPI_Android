@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Upvex - Responsive Admin Dashboard Template</title>
+        <title>Game -Login DataBase Game</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -31,37 +31,37 @@
                                     <a href="index.html">
                                         <span><img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="26"></span>
                                     </a>
-                                    <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
+                                    <p class="text-muted mb-4 mt-3">Nhập tài khoản và mật khẩu của bạn để vào trang quản trị.</p>
                                 </div>
 
-                                <h5 class="auth-title">Sign In</h5>
+                                <h5 class="auth-title">Đăng Nhập</h5>
 
                                 <form action="#">
 
                                     <div class="form-group mb-3">
-                                        <label for="emailaddress">Email address</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
+                                        <label for="emailaddress">Tài Khoản</label>
+                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Nhập tên tài khoản">
                                     </div>
 
                                     <div class="form-group mb-3">
-                                        <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                        <label for="password">Mật Khẩu</label>
+                                        <input class="form-control" type="password" required="" id="password" placeholder="Nhập mật khẩu">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox checkbox-info">
                                             <input type="checkbox" class="custom-control-input" id="checkbox-signin">
-                                            <label class="custom-control-label" for="checkbox-signin">Remember me</label>
+                                            <label class="custom-control-label" for="checkbox-signin">Ghi Nhớ</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-danger btn-block" type="submit"> Log In </button>
+                                        <button class="btn btn-danger btn-block" type="submit"> Đăng Nhập </button>
                                     </div>
 
                                 </form>
 
-                                <div class="text-center">
+                                <!-- <div class="text-center">
                                     <h5 class="mt-3 text-muted">Sign in with</h5>
                                     <ul class="social-list list-inline mt-3 mb-0">
                                         <li class="list-inline-item">
@@ -77,18 +77,18 @@
                                             <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github-circle"></i></a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
 
                             </div> <!-- end card-body -->
                         </div>
                         <!-- end card -->
 
-                        <div class="row mt-3">
+                        <!-- <div class="row mt-3">
                             <div class="col-12 text-center">
                                 <p> <a href="pages-recoverpw.html" class="text-muted ml-1">Forgot your password?</a></p>
                                 <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-muted ml-1"><b class="font-weight-semibold">Sign Up</b></a></p>
-                            </div> <!-- end col -->
-                        </div>
+                            </div>  end col -->
+                        </div> 
                         <!-- end row -->
 
                     </div> <!-- end col -->
