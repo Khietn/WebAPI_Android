@@ -44,7 +44,7 @@ Route::prefix('linh-vuc')->group(function(){
 //sau
 Route::get('Nguoi-Choi','NguoiChoiController@index');
 
-Route::get('')
+
 
 
 
