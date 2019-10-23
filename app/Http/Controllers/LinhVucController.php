@@ -11,6 +11,7 @@ class LinhVucController extends Controller
         $linhVuc=LinhVucModel::all();
         return view ('Database',compact('linhVuc'));
     }
+    
     public function UpdateStatus($id,Request $request){
         if($request->txtXoa == 0){
             $linhVuc = LinhVucModel::where('id',$id)->update(['xoa'=>1]);

@@ -1,7 +1,8 @@
 
-
+@section('header')
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8" />
         <title>@yield('title')</title>
@@ -23,7 +24,6 @@
     </head>
 
     <body>
-    @section('head')
         <!-- Navigation Bar-->
         <header id="topnav">
 
@@ -869,5 +869,6 @@
         <script src="{{asset('assets/js/app.min.js')}}"></script>
      
     </body>
-    @show
+ 
 </html>
+@show
