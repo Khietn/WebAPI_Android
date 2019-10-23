@@ -19,6 +19,7 @@ Route::get('abc',function(){
 	}
 
 });
+//khiet
 Route::prefix('linh-vuc')->group(function(){
 	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
 	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
@@ -27,6 +28,12 @@ Route::prefix('linh-vuc')->group(function(){
 	Route::get('danh-sach/{id}/edit', 'LinhVucController@edit')->name('linh-vuc.danh-sach.chinh-sua');
 	Route::get('danh-sach/{id}/d','LinhVucController@UpdateStatus')->name('linh-vuc.danh-sach.xoa');
 });
+
+Route::prefix('cau-hoi')->group(function(){
+	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
+});
+
+
 // code khiem
 
 Route::get('/index/Register', function () {
@@ -43,66 +50,3 @@ Route::prefix('linh-vuc')->group(function(){
 
 //sau
 Route::get('Nguoi-Choi','NguoiChoiController@index');
-
-Route::get('')
-
-
-
-
-
-
-
-
-
-
-
-
-
-Route::get('xinchao',function(){
-	return view('xinchao2');
-});
-
-
-Route::get('master',function(){
-	return view('Master-page/master');
-});
-
-Route::get('/', function () {
-	return view('welcome');
-});
-Route::get('foo', function () {
-	return 'Hello World';
-});
-Route::get('/user', 'UserController@index');
-Route::get('ho-ten/{ten}/{maso?}',function($ten,$maso=""){
-	return "Hello " . $ten ." - ". $maso;
-})->where(["ten"=>"[a-zA-Z]+","maso"=>"[0-9]{10}"]); //{1,10)}
-
-Route::get('view',function(){
-	$hoten="Trung Khiet";
-	$bietdanh= "Myth";
-	return view('xinchao',compact('hoten','bietdanh'));
-});
-
-//Controller
-Route::get('a','MyController@ShowMyInfo');
-//Define controller - Chuyen huong den trang khac
-Route::get('my-phone',['as'=>'phone',function(){
-	return "0934965324";
-}]);
-//Group
-Route::group(['prefix'=>'my-info'],function(){
-	Route::get('name',function(){
-		return view('xinchao');
-	});
-	Route::get('phone',function(){
-		echo "My phone:0934965324";
-	});
-	Route::get('address',function(){
-		echo "My address: Dong Nai City";
-	});
-});
-
-//View
-View::share('title','My info');
-
