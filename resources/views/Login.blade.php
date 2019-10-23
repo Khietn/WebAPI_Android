@@ -35,17 +35,17 @@
                                 </div>
 
                                 <h5 class="auth-title">Đăng Nhập</h5>
+                                <!-- xử lí đăng nhập -->
 
-                                <form action="#">
-
+                                <form action="Login.blade.php" method="post">
                                     <div class="form-group mb-3">
-                                        <label for="emailaddress">Tài Khoản</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Nhập tên tài khoản">
+                                        <label for="username">Tài Khoản</label>
+                                        <input class="form-control" type="email" name="txtuser" id="username" required="" placeholder="Nhập tên tài khoản">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <label for="password">Mật Khẩu</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Nhập mật khẩu">
+                                        <input class="form-control" type="password" name="txtpassword" required="" id="password" placeholder="Nhập mật khẩu">
                                     </div>
 
                                     <div class="form-group mb-3">
@@ -57,9 +57,11 @@
 
                                     <div class="form-group mb-0 text-center">
                                         <button class="btn btn-danger btn-block" type="submit"> Đăng Nhập </button>
+    
                                     </div>
 
                                 </form>
+                                <!-- kết thúc xử lí đăng nhập -->
 
                                 <!-- <div class="text-center">
                                     <h5 class="mt-3 text-muted">Sign in with</h5>
