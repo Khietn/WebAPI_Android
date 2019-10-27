@@ -43,6 +43,9 @@ Route::prefix('linh-vuc')->group(function(){
 
 //sau
 Route::get('Nguoi-Choi','NguoiChoiController@index');
+Route::get('nguoi-choi/linh-vuc',function(){
+	return view('form-nguoi-choi-them-moi');
+});
 
 
 
