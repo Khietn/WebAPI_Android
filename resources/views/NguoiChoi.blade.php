@@ -3,7 +3,7 @@
 @section('head')
 @parent
 
-    <p>AAA kimochi</p
+    
 @endsection
     <body>
 
