@@ -42,9 +42,15 @@ Route::prefix('linh-vuc')->group(function(){
  });
 
 //sau
-Route::get('Nguoi-Choi','NguoiChoiController@index');
-Route::get('nguoi-choi/linh-vuc',function(){
+
+Route::get('nguoi-choi/them-moi/',function(){
 	return view('form-nguoi-choi-them-moi');
+});
+Route::prefix('nguoi-choi')->group(function(){
+	Route::get('','NguoiChoiController@data')->name('nguoi-choi.table');
+	Route::get('/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
+	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
+	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
 });
 
 

@@ -745,7 +745,9 @@
                                     </thead>
                                     <tbody>     
             <?php foreach ($NguoiChoi as $value): ?>
-                    <tr>
+               <?php if($value->xoa==0)
+               { ?>
+                   <tr>
                     <td>{{$value->id}}</td>
                     <td>{{$value->ten_dang_nhap}}</td>
                     <td>{{$value->mat_khau}}</td>
@@ -753,15 +755,23 @@
                     <td>{{$value->hinh_dai_dien}}</td>
                     <td>{{$value->diem_cao_nhat}}</td>
                     <td>{{$value->credit}}</td>
-                    <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a></button>
-                    <button class="btn btn-dark waves-effect waves-light"><a href="#">Xóa</a></button></td>                                                       
-                   </tr>                                     
+                    <td>
+                    <button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a>
+                     </button> 
+                     
+                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route("nguoi-choi.xoa",['id'=>$value->id])}}">Xóa</a></button>
+					               
+                     </form>
+                    </td>                                                       
+                   </tr> 
+
+             <?php } ?>                            
             <?php endforeach ?>                                   
                                            
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
-                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button>
+                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
                                         </table>
                                     </div> <!-- end .table-responsive -->
 

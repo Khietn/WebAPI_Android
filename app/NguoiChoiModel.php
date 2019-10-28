@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class NguoiChoiModel extends Model
 {
     //
-    protected $table ='linh_vuc'; 
+    protected $table ='nguoi_choi'; 
     public $timestams=false;
 }
