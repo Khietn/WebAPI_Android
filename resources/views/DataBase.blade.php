@@ -767,7 +767,7 @@
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
-                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button>
+                                   
                                         </table>
                                         
                                     </div> <!-- end .table-responsive -->
