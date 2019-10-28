@@ -768,8 +768,26 @@
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
                                     <button class="btn btn-dark waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button>
-                                        </table>
-                                        
+                                    <!-- btn tim kiem -->
+                                     <ul class="list-unstyled topnav-menu float-right mb-0">
+                                    <li class="d-none d-sm-block">
+                                     <form class="app-search">
+                                    <div class="app-search-box">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search..." style="margin-left:5px">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-dark" type="submit" style="margin-left:5px">
+                                                <i class="fe-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </form>
+                                  </li>
+                                  </ul>
+                                  <!-- ket thuc tim kiem -->
+                                                           
+                                    </table>                                       
                                     </div> <!-- end .table-responsive -->
 
                                 </div> <!-- end .table-rep-plugin-->
