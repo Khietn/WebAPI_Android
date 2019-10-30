@@ -1,7 +1,6 @@
 @extends('layouts.Master')
 @section('head')
 @parent
-
     <p>dak</p
 @endsection
 @section('main-content')
