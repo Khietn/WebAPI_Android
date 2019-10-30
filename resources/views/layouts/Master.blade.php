@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Upvex - Responsive Admin Dashboard Template</title>
+        <title>@yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -703,36 +703,19 @@
 
         </header>
         <!-- End Navigation Bar-->
-
+        @show
         <!-- ============================================================== -->
         <!-- Start Page Content here -->
         <!-- ============================================================== -->
 
-        <div class="wrapper">
-            <div class="container-fluid">
-
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Upvex</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                                    <li class="breadcrumb-item active">Starter</li>
-                                </ol>
-                            </div>
-                            <h4 class="page-title">Starter</h4>
-                        </div>
-                    </div>
-                </div>     
+     
                 <!-- end page title --> 
                 @yield('main-content')
             </div> <!-- end container -->
-            
+           
         </div>
 
-@show
+
         <!-- end wrapper -->
 
         <!-- ============================================================== -->
@@ -741,7 +724,7 @@
         <!-- table start -->
 
         <!-- end table -->
-
+        @section('footer')
         <!-- Footer Start -->
         <footer class="footer">
             <div class="container-fluid">
@@ -760,7 +743,7 @@
             </div>
         </footer>
         <!-- end Footer -->
-    @section('footer')
+   
         <!-- Right Sidebar -->
         <div class="right-bar">
             <div class="rightbar-title">
