@@ -432,7 +432,7 @@
                                     <li>
                                         <ul>
                                             <li>
-                                                <a href="ui-buttons.html">Chi Tiết Lượt Chơi</a>
+                                                <a href="ui-buttons.html"><i class="fe-heart mr-1"></i>Chi Tiết Lượt Chơi</a>
                                             </li>
                                             
                                         </ul>
@@ -446,7 +446,7 @@
                                     <i class="la la-diamond"></i>Gói Credit<div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li class="has-submenu">
-                                        <a href="#"><i class="fe-bookmark mr-1"></i> Lịch Sử Mua Credit <div class="arrow-down"></div></a>
+                                        <a href="#"><i class="fe-book mr-1"></i> Lịch Sử Mua Credit <div class="arrow-down"></div></a>
                                         <ul class="submenu">
                                             <li>
                                                 <a href="forms-elements.html">General Elements</a>
@@ -485,13 +485,13 @@
                                 <a href="#"> <i class="la la-cog"></i>Cấu Hình<div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="admin-widgets.html">Cấu Hình App</a>
+                                        <a href="admin-widgets.html"><i class="fa fa-cog mr-1"></i>Cấu Hình App</a>
                                     </li>
                                     <li>
-                                        <a href="admin-sweet-alert.html">Cấu Hình Điểm Câu Hỏi</a>
+                                        <a href="admin-sweet-alert.html"><i class="fa fa-cog mr-1"></i>Cấu Hình Điểm Câu Hỏi</a>
                                     </li>
                                     <li>
-                                        <a href="admin-nestable.html">Cấu Hình Trợ Giúp</a>
+                                        <a href="admin-nestable.html"><i class="fa fa-cog mr-1"></i>Cấu Hình Trợ Giúp</a>
                                     </li>                             
                                 </ul>
                             </li>
