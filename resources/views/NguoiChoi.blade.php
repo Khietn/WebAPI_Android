@@ -2,8 +2,6 @@
 @extends('layouts.Master')
 @section('head')
 @parent
-
-    
 @endsection
     <body>
 
@@ -908,4 +906,6 @@
         <script src="{{asset('assets/js/app.min.js')}}"></script>
         
     </body>
-</html>
+@section('footer')
+@parent
+@endsection
