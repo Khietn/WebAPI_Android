@@ -49,8 +49,7 @@ Route::get('nguoi-choi/them-moi/',function(){
 	return view('form-nguoi-choi-them-moi');
 });
 Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
-Route::prefix('nguoi-choi')->group(function(){
-	
+Route::prefix('nguoi-choi')->group(function(){	
 	Route::get('/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
 	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
 	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
