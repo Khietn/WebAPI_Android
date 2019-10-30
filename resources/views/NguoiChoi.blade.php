@@ -1,25 +1,10 @@
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Upvex - Responsive Admin Dashboard Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
-        <!-- Responsive Table css -->
-        <link href="{{asset('assets/libs/rwd-table/rwd-table.min.css')}}" rel="stylesheet" type="text/css" />
+@extends('layouts.Master')
+@section('head')
+@parent
 
-        <!-- App css -->
-        <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-        <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
-
-    </head>
-
+    
+@endsection
     <body>
 
         <!-- Navigation Bar-->
@@ -760,7 +745,9 @@
                                     </thead>
                                     <tbody>     
             <?php foreach ($NguoiChoi as $value): ?>
-                    <tr>
+               <?php if($value->xoa==0)
+               { ?>
+                   <tr>
                     <td>{{$value->id}}</td>
                     <td>{{$value->ten_dang_nhap}}</td>
                     <td>{{$value->mat_khau}}</td>
@@ -768,15 +755,23 @@
                     <td>{{$value->hinh_dai_dien}}</td>
                     <td>{{$value->diem_cao_nhat}}</td>
                     <td>{{$value->credit}}</td>
-                    <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a></button>
-                    <button class="btn btn-dark waves-effect waves-light"><a href="#">Xóa</a></button></td>                                                       
-                   </tr>                                     
+                    <td>
+                    <button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a>
+                     </button> 
+                     
+                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route("nguoi-choi.xoa",['id'=>$value->id])}}">Xóa</a></button>
+					               
+                     </form>
+                    </td>                                                       
+                   </tr> 
+
+             <?php } ?>                            
             <?php endforeach ?>                                   
                                            
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
-                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button>
+                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
                                         </table>
                                     </div> <!-- end .table-responsive -->
 

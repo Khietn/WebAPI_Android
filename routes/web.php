@@ -50,3 +50,77 @@ Route::prefix('linh-vuc')->group(function(){
 
 //sau
 Route::get('Nguoi-Choi','NguoiChoiController@index');
+
+Route::get('nguoi-choi/them-moi/',function(){
+	return view('form-nguoi-choi-them-moi');
+});
+Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
+Route::prefix('nguoi-choi')->group(function(){
+	
+	Route::get('/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
+	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
+	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('xinchao',function(){
+	return view('xinchao2');
+});
+
+
+Route::get('master',function(){
+	return view('Master-page/master');
+});
+
+Route::get('/', function () {
+	return view('welcome');
+});
+Route::get('foo', function () {
+	return 'Hello World';
+});
+Route::get('/user', 'UserController@index');
+Route::get('ho-ten/{ten}/{maso?}',function($ten,$maso=""){
+	return "Hello " . $ten ." - ". $maso;
+})->where(["ten"=>"[a-zA-Z]+","maso"=>"[0-9]{10}"]); //{1,10)}
+
+Route::get('view',function(){
+	$hoten="Trung Khiet";
+	$bietdanh= "Myth";
+	return view('xinchao',compact('hoten','bietdanh'));
+});
+
+//Controller
+Route::get('a','MyController@ShowMyInfo');
+//Define controller - Chuyen huong den trang khac
+Route::get('my-phone',['as'=>'phone',function(){
+	return "0934965324";
+}]);
+//Group
+Route::group(['prefix'=>'my-info'],function(){
+	Route::get('name',function(){
+		return view('xinchao');
+	});
+	Route::get('phone',function(){
+		echo "My phone:0934965324";
+	});
+	Route::get('address',function(){
+		echo "My address: Dong Nai City";
+	});
+});
+
+//View
+View::share('title','My info');
+

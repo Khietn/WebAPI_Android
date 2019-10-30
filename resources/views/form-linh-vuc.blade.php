@@ -18,7 +18,7 @@
           <label for="ten_linh_vuc">Tên Lĩnh Vực</label>
           <input type="text" id="ten_linh_vuc" name="ten_linh_vuc"class="form-control" placeholder="Tên Lĩnh Vực">          
            </div>
-            <button type="submit" class="btn btn-primary waves-effect waves-light">Lưu</button>
+            <button type="submit" class="btn btn-primary waves-effect waves-light" style="margin-bottom:20px">Lưu</button>
                </form>
       </div>
 </div>
