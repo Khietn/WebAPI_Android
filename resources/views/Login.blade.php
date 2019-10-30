@@ -37,10 +37,11 @@
                                 <h5 class="auth-title">Đăng Nhập</h5>
                                 <!-- xử lí đăng nhập -->
 
-                                <form action="Login.blade.php" method="post">
+                                <form action="{{route('xu-ly-dang-nhap')}}" method="POST">
+                                @csrf   
                                     <div class="form-group mb-3">
                                         <label for="username">Tài Khoản</label>
-                                        <input class="form-control" type="email" name="txtuser" id="username" required="" placeholder="Nhập tên tài khoản">
+                                        <input class="form-control" type="" name="txtuser" id="username" required="" placeholder="Nhập tên tài khoản">
                                     </div>
 
                                     <div class="form-group mb-3">

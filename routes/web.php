@@ -39,7 +39,9 @@ Route::get('/index/Database','LinhVucController@data');
 Route::prefix('linh-vuc')->group(function(){
  	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
  	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
- });
+ }); 
+ Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
+ Route::post('dang-nhap','QuanTriVienController@xulydangNhap')->name('xu-ly-dang-nhap');
 
 //sau
 
