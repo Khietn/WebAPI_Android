@@ -56,6 +56,11 @@ Route::prefix('nguoi-choi')->group(function(){
 });
 
 
+Route::get('goicredit',function(){
+	return view('GoiCredit');
+});
+
+
 
 
 
