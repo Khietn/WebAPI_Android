@@ -28,20 +28,38 @@ Route::prefix('linh-vuc')->group(function(){
 	Route::get('danh-sach/{id}/d','LinhVucController@UpdateStatus')->name('linh-vuc.danh-sach.xoa');
 });
 // code khiem
-
+Route::get('khiem', function () {
+    return view('layouts/Master');
+});
 Route::get('/index/Register', function () {
     return view('Register');
 });
 Route::get('/index/login', function(){
 	return view('Login');
 });
-Route::get('/index/Database','LinhVucController@data');
+Route::middleware('auth')->group(function(){
+	Route::get('trangchu', function () {
+		return view('layouts/Master');
+	})->name('trang-chu');
+	Route::get('/index/Database','LinhVucController@data');
 Route::prefix('linh-vuc')->group(function(){
+	Route::get('/index/Database','LinhVucController@data')->name('danhsach');
  	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
  	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
  }); 
+
+});
+// Route::get('/index/Database','LinhVucController@data');
+// Route::prefix('linh-vuc')->group(function(){
+// 	Route::get('/index/Database','LinhVucController@data')->name('danhsach');
+//  	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
+//  	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
+//  }); 
+ //dang nhap
+ Route::get('laythongtin','QuanTriVienController@layThongTin');
  Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
- Route::post('dang-nhap','QuanTriVienController@xulydangNhap')->name('xu-ly-dang-nhap');
+ Route::post('dang-nhap','QuanTriVienController@xuLyDangNhap')->name('xu-ly-dang-nhap');
+ Route::get('dang-xuat','QuanTriVienController@dangXuat')->name('dang-xuat');
 
 //sau
 

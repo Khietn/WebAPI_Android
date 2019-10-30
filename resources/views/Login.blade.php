@@ -41,12 +41,12 @@
                                 @csrf   
                                     <div class="form-group mb-3">
                                         <label for="username">Tài Khoản</label>
-                                        <input class="form-control" type="" name="txtuser" id="username" required="" placeholder="Nhập tên tài khoản">
+                                        <input class="form-control" type="" name="ten_dang_nhap" id="username" required="" placeholder="Nhập tên tài khoản">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <label for="password">Mật Khẩu</label>
-                                        <input class="form-control" type="password" name="txtpassword" required="" id="password" placeholder="Nhập mật khẩu">
+                                        <input class="form-control" type="password" name="mat_khau" required="" id="password" placeholder="Nhập mật khẩu">
                                     </div>
 
                                     <div class="form-group mb-3">
