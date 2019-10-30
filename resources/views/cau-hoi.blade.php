@@ -71,14 +71,76 @@
                 </div>
                 <!-- end row -->
 
-                
+                <!-- form -->
+                <div class="row">
+                    <div class="col-md-12">
+                    <div class="col-md-7">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <h4 class="mb-3 header-title">Horizontal form</h4>
+
+                                <form class="form-horizontal">
+                                    <div class="form-group row mb-3">
+                                        <label for="inputEmail3" class="col-3 col-form-label">Nội dung</label>
+                                        <div class="col-9">
+                                                <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                            </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label for="inputPassword3" class="col-3 col-form-label">Lĩnh vực</label>
+                                        <div class="col-9">
+                                                <select class="form-control" id="example-select">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label for="inputPassword5" class="col-3 col-form-label">Đáp án</label>
+                                        <div class="col-9">
+                                        <select class="form-control" id="example-select">
+                                                    <option>A</option>
+                                                    <option>B</option>
+                                                    <option>C</option>
+                                                    <option></option>
+                                                    <option>5</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3 justify-content-end">
+                                        <div class="col-9">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="checkmeout">
+                                                <label class="custom-control-label" for="checkmeout">Check me out !</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0 justify-content-end row">
+                                        <div class="col-9">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">Sign in</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>  <!-- end card-body -->
+                        </div>  <!-- end card -->
+                    </div>  <!-- end col -->
+
+                </div>
+                    </div>
+                </div>
+                <!-- end form -->
             </div> <!-- end container -->
         </div>
         <!-- end wrapper -->
-
+<script>
+$()
+</script>
 @endsection
-
-
 @section('footer')
     @parent
 @endsection

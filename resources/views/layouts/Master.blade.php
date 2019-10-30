@@ -864,6 +864,9 @@
 
         <!-- Init js -->
         <script src="{{asset('assets/js/pages/responsive-table.init.js')}}"></script>
+        
+        <!-- Jquery -->
+        <script src="{{asset('assets/js/jquery.js')}}"></script>
 
         <!-- App js-->
         <script src="{{asset('assets/js/app.min.js')}}"></script>
