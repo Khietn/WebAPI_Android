@@ -19,7 +19,7 @@ class LinhVucController extends Controller
         else{
             $linhVuc = LinhVucModel::where('id',$id)->update(['xoa'=>0]);
         }
-        return redirect('linh-vuc/danh-sach')->with('success',"Success");
+        return redirect('/index/Database')->with('success',"Xóa Lĩnh Vực Thành Công!");
     }
     /*
      * Display a listing of the resource.

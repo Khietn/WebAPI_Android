@@ -28,12 +28,15 @@ Quản Lý Lĩnh Vực
                                     </thead>
                                     <tbody>     
             <?php foreach ($linhVuc as $value): ?>
+            <?php if($value->xoa==0){?>
                     <tr>
                     <td>{{$value['id']}}</td>
                     <td>{{$value['ten']}}</td>
                     <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a></button></td>
-                    <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Xóa</a></button></td>                                                       
-                   </tr>                                     
+                    <td><button class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
+                   </tr>    
+            <?php }?>
+
             <?php endforeach ?>                                   
                                            
                             

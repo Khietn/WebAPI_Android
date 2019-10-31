@@ -51,11 +51,13 @@ Route::middleware('auth')->group(function(){
 	Route::get('/index/Database','LinhVucController@data');
 Route::prefix('linh-vuc')->group(function(){
 	Route::get('/index/Database','LinhVucController@data')->name('danhsach');
+	Route::get('{id}','LinhVucController@UpdateStatus')->name('linh-vuc.xoa');
  	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
  	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
  }); 
  Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
-Route::prefix('nguoi-choi')->group(function(){	
+Route::prefix('nguoi-choi')->group(function(){
+	Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');	
 	Route::get('/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
 	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
 	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
@@ -80,16 +82,18 @@ Route::get('Nguoi-Choi','NguoiChoiController@index');
 Route::get('nguoi-choi/them-moi/',function(){
 	return view('form-nguoi-choi-them-moi');
 });
-
-
-
-
+Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
+Route::prefix('nguoi-choi')->group(function(){	
+	Route::get('/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
+	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
+	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
+});
 Route::get('goicredit',function(){
 	return view('GoiCredit');
 });
 
 Route::prefix('goi-credit')->group(function(){
-	Route::get('{/id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
+	Route::get('{id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
 	Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
 	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
 	
