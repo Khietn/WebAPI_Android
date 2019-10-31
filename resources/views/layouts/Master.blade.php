@@ -358,74 +358,16 @@
                         <ul class="navigation-menu">
 
                             <li class="has-submenu">
-                                <a href="{{route('danhsach')}}">
-                                    <i class="la la-cubes"></i>Lĩnh Vực <div class="arrow-down"></div></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="index.html">Dashboard 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="dashboard-2.html">Dashboard 2</a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('danhsach')}}"><i class="la la-cubes"></i>Lĩnh Vực</a>
                             </li>
                             <li class="has-submenu">
                                 <a href="#">
-                                    <i class="la la-question"></i>Câu Hỏi <div class="arrow-down"></div></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="apps-calendar.html">Calendar</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-contacts.html">Contacts</a>
-                                    </li>
-                                    <li>
-                                        <a href="apps-tickets.html">Tickets</a>
-                                    </li>
-                                    <li class="has-submenu">
-                                        <a href="#">Email <div class="arrow-down"></div></a>
-                                        <ul class="submenu">
-                                            <li>
-                                                <a href="email-inbox.html">Inbox</a>
-                                            </li>
-                                            <li>
-                                                <a href="email-read.html">Read Email</a>
-                                            </li>
-                                            <li>
-                                                <a href="email-compose.html">Compose Email</a>
-                                            </li>
-                                            <li>
-                                                <a href="email-templates.html">Email Templates</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                    <i class="la la-question"></i>Câu Hỏi</a>                               
                             </li>
 
                             <li class="has-submenu">
-                                <a href="{{route('nguoi-choi.table')}}"> <i class="la la-user"></i>Người Chơi<div class="arrow-down"></div></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="layouts-topbar-dark.html">Topbar Dark</a>
-                                    </li>
-                                    <li>
-                                        <a href="layouts-menubar-light.html">Menubar Light</a>
-                                    </li>
-                                    <li>
-                                        <a href="layouts-center-menu.html">Center Menu</a>
-                                    </li>
-                                    <li>
-                                        <a href="layouts-preloader.html">Preloader</a>
-                                    </li>
-                                    <li>
-                                        <a href="layouts-normal-header.html">Unsticky Header</a>
-                                    </li>
-                                    <li>
-                                        <a href="layouts-boxed.html">Boxed</a>
-                                    </li>
-                                </ul>
+                                <a href="{{route('nguoi-choi.table')}}"> <i class="la la-user"></i>Người Chơi</a>                                                              
                             </li>
-
                             <li class="has-submenu">
                                 <a href="#"> <i class="la la-heart"></i>Lượt Chơi<div class="arrow-down"></div></a>
                                 <ul class="submenu megamenu">
@@ -433,11 +375,9 @@
                                         <ul>
                                             <li>
                                                 <a href="ui-buttons.html"><i class="fe-heart mr-1"></i>Chi Tiết Lượt Chơi</a>
-                                            </li>
-                                            
+                                            </li>                                            
                                         </ul>
-                                    </li>
-                                  
+                                    </li>                                 
                                 </ul>
                             </li>
 
@@ -446,36 +386,7 @@
                                     <i class="la la-diamond"></i>Gói Credit<div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li class="has-submenu">
-                                        <a href="#"><i class="fe-book mr-1"></i> Lịch Sử Mua Credit <div class="arrow-down"></div></a>
-                                        <ul class="submenu">
-                                            <li>
-                                                <a href="forms-elements.html">General Elements</a>
-                                            </li>
-                                            <li>
-                                                <a href="forms-advanced.html">Advanced</a>
-                                            </li>
-                                            <li>
-                                                <a href="forms-validation.html">Validation</a>
-                                            </li>
-                                            <li>
-                                                <a href="forms-pickers.html">Pickers</a>
-                                            </li>
-                                            <li>
-                                                <a href="forms-wizard.html">Wizard</a>
-                                            </li>
-                                            <li>
-                                                <a href="forms-masks.html">Masks</a>
-                                            </li>
-                                            <li>
-                                                <a href="forms-summernote.html">Summernote</a>
-                                            </li>
-                                            <li>
-                                                <a href="forms-quilljs.html">Quilljs Editor</a>
-                                            </li>
-                                            <li>
-                                                <a href="forms-file-uploads.html">File Uploads</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#"><i class="fe-book mr-1"></i> Lịch Sử Mua Credit</a>                                       
                                     </li>
                           
                                 </ul>
@@ -495,11 +406,8 @@
                                     </li>                             
                                 </ul>
                             </li>
-
                             <li class="has-submenu">
-                                <a href="#"> <i class="la la-user-secret"></i>Quản Trị Viên<div class="arrow-down"></div></a>
-                                <ul class="submenu megamenu">                                   
-                                        </ul>
+                                <a href="#"> <i class="la la-user-secret"></i>Quản Trị Viên</a>                                
                                     </li>
                                 </ul>
                             </li>
