@@ -1,22 +1,10 @@
-
-@extends('layouts.Master')
-@section('head')
-@parent
+@extends('Layouts.Master')
+@section('title')
+Quản Lý Gói Credit
 @endsection
-<<<<<<< HEAD
 @section('main-content')
-       
-=======
+      
 
-
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-@section('main-content')
-        
-        <!-- end wrapper -->
-
->>>>>>> 44f9e738b9c2d970d9fc35d1926d20e7781f877c
         <!-- ============================================================== -->
         <!-- End Page content -->
         <!-- ============================================================== -->
@@ -34,44 +22,38 @@
                                     <thead>
                                     <tr>
                                         <th data-priority="1">ID</th>
-                                        <th data-priority="1">Tên Đăng nhập</th>
-                                        <th data-priority="1">Mật Khẩu</th>
-                                        <th data-priority="1">Email</th>
-                                        <th data-priority="1">Hình Đại Diện</th>
-                                        <th data-priority="1">Điểm Cao Nhất</th>
-                                        <th data-priority="1"> Credit</th>
+                                        <th data-priority="1">Tên Gói</th>
+                                        <th data-priority="1">Credit</th>
+                                        <th data-priority="1">Số Tiền</th>
                                         <th data-priority="3"></th>
                                     </tr>
                                     </thead>
+                                    <tbody>                                      
                                     <tbody>     
-            <?php foreach ($NguoiChoi as $value): ?>
+            <?php foreach ($GoiCredit as $value): ?>
                <?php if($value->xoa==0)
                { ?>
                    <tr>
                     <td>{{$value->id}}</td>
-                    <td>{{$value->ten_dang_nhap}}</td>
-                    <td>{{$value->mat_khau}}</td>
-                    <td>{{$value->email}}</td>
-                    <td>{{$value->hinh_dai_dien}}</td>
-                    <td>{{$value->diem_cao_nhat}}</td>
+                    <td>{{$value->ten_goi}}</td>
                     <td>{{$value->credit}}</td>
-                    <td>
+                    <td>{{$value->so_tien}}</td>
+                   <td>
                     <button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a>
                      </button> 
                      
-                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route("nguoi-choi.xoa",['id'=>$value->id])}}">Xóa</a></button>
+                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route("goi-credit.xoa",['id'=>$value->id])}}">Xóa</a></button>
 					               
                      </form>
                     </td>                                                       
                    </tr> 
 
              <?php } ?>                            
-            <?php endforeach ?>                                   
-                                           
+            <?php endforeach ?>                       
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
-                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
+                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('goi-credit.them-moi')}}">Thêm</a></button>
                                         </table>
                                     </div> <!-- end .table-responsive -->
 
@@ -82,6 +64,4 @@
                 </div>
         <!-- end table -->
 @endsection
-@section('footer')
-@parent
-@endsection
+
