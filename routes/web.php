@@ -70,6 +70,9 @@ Route::prefix('goi-credit')->group(function(){
 	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
 	
 });
+Route::prefix('luot-choi')->group(function(){
+	Route::get('ds/luotchoi','LuotChoiController@data')->name('danhsach-luotchoi');
+});
 
 });
  //dang nhap
@@ -77,6 +80,7 @@ Route::prefix('goi-credit')->group(function(){
  Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
  Route::post('dang-nhap','QuanTriVienController@xuLyDangNhap')->name('xu-ly-dang-nhap');
  Route::get('dang-xuat','QuanTriVienController@dangXuat')->name('dang-xuat');
+
 // Route::get('/index/Database','LinhVucController@data');
 // Route::prefix('linh-vuc')->group(function(){
 // 	Route::get('/index/Database','LinhVucController@data')->name('danhsach');

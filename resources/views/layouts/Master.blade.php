@@ -233,7 +233,7 @@
                                 <a href="{{route('nguoi-choi.table')}}"> <i class="la la-user"></i>Người Chơi</a>                                                              
                             </li>
                             <li class="has-submenu">
-                                <a href="#"> <i class="la la-heart"></i>Lượt Chơi<div class="arrow-down"></div></a>
+                                <a href="{{route('danhsach-luotchoi')}}"> <i class="la la-heart"></i>Lượt Chơi<div class="arrow-down"></div></a>
                                 <ul class="submenu megamenu">
                                     <li>
                                         <ul>
