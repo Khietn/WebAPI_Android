@@ -1,5 +1,7 @@
 @extends('layouts/master')
-
+@section('title')
+Quản Lý Lĩnh Vực
+@endsection
 @section('head')
 @parent
 @endsection
