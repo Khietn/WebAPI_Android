@@ -44,6 +44,7 @@ Route::get('/index/Register', function () {
 Route::get('/index/login', function(){
 	return view('Login');
 });
+//Chứng thực
 Route::middleware('auth')->group(function(){
 	Route::get('trangchu', function () {
 		return view('layouts/Master');
@@ -58,49 +59,54 @@ Route::prefix('linh-vuc')->group(function(){
  Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
 Route::prefix('nguoi-choi')->group(function(){
 	Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');	
-	Route::get('/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
+	Route::get('{/id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
 	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
 	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
 });
-
+Route::prefix('goi-credit')->group(function(){
+	Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
+	Route::get('{/id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
+	Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
+	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
+	
 });
 
-
+});
+ //dang nhap
+ Route::get('laythongtin','QuanTriVienController@layThongTin');
+ Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
+ Route::post('dang-nhap','QuanTriVienController@xuLyDangNhap')->name('xu-ly-dang-nhap');
+ Route::get('dang-xuat','QuanTriVienController@dangXuat')->name('dang-xuat');
 // Route::get('/index/Database','LinhVucController@data');
 // Route::prefix('linh-vuc')->group(function(){
 // 	Route::get('/index/Database','LinhVucController@data')->name('danhsach');
 //  	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
 //  	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
 //  }); 
- //dang nhap
- Route::get('laythongtin','QuanTriVienController@layThongTin');
- Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
- Route::post('dang-nhap','QuanTriVienController@xuLyDangNhap')->name('xu-ly-dang-nhap');
- Route::get('dang-xuat','QuanTriVienController@dangXuat')->name('dang-xuat');
-
 //sau
-Route::get('Nguoi-Choi','NguoiChoiController@index');
+// Route::get('Nguoi-Choi','NguoiChoiController@index');
 
-Route::get('nguoi-choi/them-moi/',function(){
-	return view('form-nguoi-choi-them-moi');
-});
-Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
-Route::prefix('nguoi-choi')->group(function(){	
-	Route::get('/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
-	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
-	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
-});
-Route::get('goicredit',function(){
-	return view('GoiCredit');
-});
+// Route::get('test',function(){
+// 	return view('form-nguoi-choi-them-moi');
+// });
+// Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
+// Route::prefix('nguoi-choi')->group(function(){	
+// 	Route::get('{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
+// 	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
+// 	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
+// });
+// Route::get('goicredit',function(){
+// 	return view('GoiCredit');
+// });
 
-Route::prefix('goi-credit')->group(function(){
-	Route::get('{id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
-	Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
-	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
+// Route::prefix('goi-credit')->group(function(){
+// 	Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
+// 	Route::get('{/id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
+// 	Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
+// 	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
 	
-});
-Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
+// });
+// Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
 
 
 
