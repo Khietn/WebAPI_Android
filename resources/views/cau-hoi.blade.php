@@ -6,34 +6,20 @@
     @parent
 @endsection
 
-@section('main-content')
+@section('title-content','Câu hỏi')
 
-        <div class="wrapper">
+
+@section('main-content')
             <div class="container-fluid">
 
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Upvex</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                    <li class="breadcrumb-item active">Responsive Table</li>
-                                </ol>
-                            </div>
-                            <h4 class="page-title">Responsive Table</h4>
-                        </div>
-                    </div>
-                </div>     
-                <!-- end page title --> 
 
                 <div class="row">
                     <div class="col-12">
-                        <div class="card-box">
+                        <div class="card-box">  
                             <div class="responsive-table-plugin">
                                 <div class="table-rep-plugin">
                                     <div class="table-responsive" data-pattern="priority-columns">
+                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem">Thêm</button>                  
                                         <table id="tech-companies-1" class="table table-striped">
                                             <thead>
                                             <tr class="col-md-12">
@@ -63,7 +49,6 @@
                                             </tbody>
                                         </table>
                                     </div> <!-- end .table-responsive -->
-
                                 </div> <!-- end .table-rep-plugin-->
                             </div> <!-- end .responsive-table-plugin-->
                         </div> <!-- end card-box -->
@@ -72,73 +57,105 @@
                 <!-- end row -->
 
                 <!-- form -->
-                <div class="row">
+                <div class="row" id="form-them-cau-hoi">
                     <div class="col-md-12">
-                    <div class="col-md-7">
-                        <div class="card">
-                            <div class="card-body">
+                        <form class="form-horizontal"> <!-- Form start2-->
+                            <div class="col-md-7 float-left">
+                                <div class="card">
+                                    <div class="card-body">
 
-                                <h4 class="mb-3 header-title">Horizontal form</h4>
+                                        <h4 class="mb-3 header-title">Thêm mới câu hỏi</h4>
 
-                                <form class="form-horizontal">
-                                    <div class="form-group row mb-3">
-                                        <label for="inputEmail3" class="col-3 col-form-label">Nội dung</label>
-                                        <div class="col-9">
-                                                <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                        
+                                            <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Nội dung</label>
+                                                <div class="col-9">
+                                                        <textarea class="form-control" id="example-textarea" rows="4"></textarea>
+                                                    </div>
                                             </div>
-                                    </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="inputPassword3" class="col-3 col-form-label">Lĩnh vực</label>
-                                        <div class="col-9">
+                                            <div class="form-group row mb-3">
+                                                <label for="inputPassword3" class="col-3 col-form-label">Lĩnh vực</label>
+                                                <div class="col-9">
+                                                        <select class="form-control" id="example-select">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group row mb-3">
+                                                <label for="inputPassword5" class="col-3 col-form-label">Đáp án</label>
+                                                <div class="col-9">
                                                 <select class="form-control" id="example-select">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
-                                                </select>
+                                                            <option>A</option>
+                                                            <option>B</option>
+                                                            <option>C</option>
+                                                            <option>D</option>
+                                                        </select>
+                                                </div>
                                             </div>
-                                    </div>
-                                    <div class="form-group row mb-3">
-                                        <label for="inputPassword5" class="col-3 col-form-label">Đáp án</label>
-                                        <div class="col-9">
-                                        <select class="form-control" id="example-select">
-                                                    <option>A</option>
-                                                    <option>B</option>
-                                                    <option>C</option>
-                                                    <option></option>
-                                                    <option>5</option>
-                                                </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row mb-3 justify-content-end">
-                                        <div class="col-9">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="checkmeout">
-                                                <label class="custom-control-label" for="checkmeout">Check me out !</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-0 justify-content-end row">
-                                        <div class="col-9">
-                                            <button type="submit" class="btn btn-info waves-effect waves-light">Sign in</button>
-                                        </div>
-                                    </div>
-                                </form>
+                                    </div>  <!-- end card-body -->
+                                </div>  <!-- end card -->
+                            </div>  <!-- end col -->
+                    
+                            <div class="col-md-5 float-right">
+                                <div class="card">
+                                    <div class="card-body">
+                                    <h4 class="mb-3 header-title">Đáp án</h4>
 
-                            </div>  <!-- end card-body -->
-                        </div>  <!-- end card -->
-                    </div>  <!-- end col -->
-
-                </div>
+                                        <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Phương án A</label>
+                                                <div class="col-9">
+                                                    <input class="form-control" id="example-textarea" name="phuong_an_a">
+                                                </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Phương án B</label>
+                                                <div class="col-9">
+                                                    <input class="form-control" id="example-textarea" name="phuong_an_a">
+                                                </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Phương án C</label>
+                                                <div class="col-9">
+                                                    <input class="form-control" id="example-textarea" name="phuong_an_a">
+                                                </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                                <label for="inputEmail3" class="col-3 col-form-label">Phương án D</label>
+                                                <div class="col-9">
+                                                    <input class="form-control" id="example-textarea" name="phuong_an_a">
+                                                </div>
+                                        </div>
+                                        <div class="form-group mb-0 float-right">
+                                             
+                                             <button type="submit" class="btn btn-info waves-effect waves-light">Thêm</button>
+                                             <button type="button" class="btn btn-danger waves-effect waves-light">Hủy</button>
+                      
+                                     </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </form>    
+                    </div>
                     </div>
                 </div>
                 <!-- end form -->
             </div> <!-- end container -->
-        </div>
         <!-- end wrapper -->
 <script>
-$()
+$(document).ready(function(){
+    $('#btnThem').click(function(){
+        $('#form-them-cau-hoi').show();
+    });
+    $('#btnThem').click(function(){
+        $('#form-them-cau-hoi').hide();
+    })
+});
 </script>
 @endsection
 @section('footer')

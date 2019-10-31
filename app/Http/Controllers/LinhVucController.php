@@ -9,7 +9,7 @@ class LinhVucController extends Controller
     public function data()
     {
         $linhVuc=LinhVucModel::all();
-        return view ('Database',compact('linhVuc'));
+        return view ('linh-vuc',compact('linhVuc'));
     }
     
     public function UpdateStatus($id,Request $request){

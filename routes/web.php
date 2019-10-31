@@ -74,8 +74,6 @@ Route::prefix('nguoi-choi')->group(function(){
 
 
 
-
-
 Route::get('xinchao',function(){
 	return view('xinchao2');
 });
