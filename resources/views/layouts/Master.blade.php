@@ -1,9 +1,14 @@
 
+<<<<<<< HEAD
+@section('header')
+=======
+>>>>>>> 44f9e738b9c2d970d9fc35d1926d20e7781f877c
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8" />
-        <title>Upvex - Responsive Admin Dashboard Template</title>
+        <title>@yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -22,7 +27,6 @@
     </head>
 
     <body>
-    @section('head')
         <!-- Navigation Bar-->
         <header id="topnav">
 
@@ -441,10 +445,10 @@
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Upvex</a></li>
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                                    <li class="breadcrumb-item active">Starter</li>
+                                    <li class="breadcrumb-item active">@yield('title-content')</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Starter</h4>
+                            <h4 class="page-title">@yield('title-content')</h4>
                         </div>
                     </div>
                 </div>     
@@ -463,7 +467,7 @@
         <!-- table start -->
 
         <!-- end table -->
-
+@section('footer')
         <!-- Footer Start -->
         <footer class="footer">
             <div class="container-fluid">
@@ -585,9 +589,14 @@
 
         <!-- Init js -->
         <script src="{{asset('assets/js/pages/responsive-table.init.js')}}"></script>
+        
+        <!-- Jquery -->
+        <script src="{{asset('assets/js/jquery.js')}}"></script>
 
         <!-- App js-->
         <script src="{{asset('assets/js/app.min.js')}}"></script>
-        
+     
     </body>
+ 
 </html>
+@show

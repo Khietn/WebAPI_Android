@@ -19,6 +19,7 @@ Route::get('abc',function(){
 	}
 
 });
+//khiet
 Route::prefix('linh-vuc')->group(function(){
 	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
 	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
@@ -27,6 +28,12 @@ Route::prefix('linh-vuc')->group(function(){
 	Route::get('danh-sach/{id}/edit', 'LinhVucController@edit')->name('linh-vuc.danh-sach.chinh-sua');
 	Route::get('danh-sach/{id}/d','LinhVucController@UpdateStatus')->name('linh-vuc.danh-sach.xoa');
 });
+
+Route::prefix('cau-hoi')->group(function(){
+	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
+});
+
+
 // code khiem
 Route::get('khiem', function () {
     return view('layouts/Master');
@@ -62,6 +69,7 @@ Route::prefix('linh-vuc')->group(function(){
  Route::get('dang-xuat','QuanTriVienController@dangXuat')->name('dang-xuat');
 
 //sau
+Route::get('Nguoi-Choi','NguoiChoiController@index');
 
 Route::get('nguoi-choi/them-moi/',function(){
 	return view('form-nguoi-choi-them-moi');
@@ -86,8 +94,6 @@ Route::prefix('goi-credit')->group(function(){
 	
 });
 Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
-
-
 
 
 
