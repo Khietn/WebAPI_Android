@@ -62,6 +62,8 @@ Route::prefix('nguoi-choi')->group(function(){
 });
 
 });
+
+
 // Route::get('/index/Database','LinhVucController@data');
 // Route::prefix('linh-vuc')->group(function(){
 // 	Route::get('/index/Database','LinhVucController@data')->name('danhsach');

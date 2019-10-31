@@ -55,10 +55,10 @@
                                            
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
-                                    </tbody>
-                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
-                                        </table>
-                                    </div> <!-- end .table-responsive -->
+                            </tbody>
+                             <button class="btn btn-dark waves-effect waves-light"><a href="#">Thêm</a></button>
+                                  </table>
+                           </div> <!-- end .table-responsive -->
 
                                 </div> <!-- end .table-rep-plugin-->
                             </div> <!-- end .responsive-table-plugin-->
