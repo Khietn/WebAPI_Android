@@ -1,0 +1,115 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\GoiCreditModel;
+class GoiCreditController extends Controller
+{
+   public function data()
+   {
+    $GoiCredit= GoiCreditModel::all();
+    return view('GoiCredit',compact('GoiCredit'));
+   }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+        $GoiCredit=DB::table('goi_credit')->get();
+        return view('GoiCredit',compact('GoiCredit'));
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        return view('form-goi-credit-them-moi');
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        $GoiCredit=new GoiCreditModel();
+        $GoiCredit->ten_goi=$request->ten_goi;
+        $GoiCredit->credit=$request->credit;
+        $GoiCredit->so_tien=$request->so_tien;
+        $GoiCredit->save();
+
+        return redirect('goi-credit')->with('success','thêm mới thành công');
+    }
+    public function updatestatus(Request $request,$id)
+    {
+        if($request->xoa==0)
+        {
+            $GoiCredit=GoiCreditModel::where('id',$id)->update(['xoa'=>1]);
+        }
+        else
+        {
+            $GoiCredit=GoiCreditModel::where('id',$id)->update(['xoa'=>0]);
+        }
+        return redirect('goi-credit')->with('success','xóa thành công');
+
+    }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+}

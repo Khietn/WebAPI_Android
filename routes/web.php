@@ -74,9 +74,19 @@ Route::prefix('nguoi-choi')->group(function(){
 });
 
 
+
 Route::get('goicredit',function(){
 	return view('GoiCredit');
 });
+
+Route::prefix('goi-credit')->group(function(){
+	Route::get('{id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
+	Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
+	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
+	
+});
+Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
+
 
 
 
@@ -140,3 +150,7 @@ Route::group(['prefix'=>'my-info'],function(){
 //View
 View::share('title','My info');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

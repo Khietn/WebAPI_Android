@@ -403,7 +403,7 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a href="#"> <i class="la la-user"></i>Người Chơi<div class="arrow-down"></div></a>
+                                <a href="{{route('nguoi-choi.table')}}"> <i class="la la-user"></i>Người Chơi<div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li>
                                         <a href="layouts-topbar-dark.html">Topbar Dark</a>
@@ -442,7 +442,7 @@
                             </li>
 
                             <li class="has-submenu">
-                                <a href="#">
+                                <a href="{{route('goi-credit.table')}}">
                                     <i class="la la-diamond"></i>Gói Credit<div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li class="has-submenu">
