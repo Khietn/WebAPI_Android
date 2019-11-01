@@ -10,15 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('abc',function(){
-	$admin=DB::table('_quan_tri_vien')->select('ten_dang_nhap')->get();
-	return $admin;
-	foreach($admin as $value){
-		echo $value->ten_dang_nhap;
-	}
-
-});
 //khiet
 Route::prefix('linh-vuc')->group(function(){
 	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
@@ -31,6 +22,7 @@ Route::prefix('linh-vuc')->group(function(){
 
 Route::prefix('cau-hoi')->group(function(){
 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
+	Route::post('them-moi','CauHoiController@store')->name('cau-hoi.them');
 });
 
 

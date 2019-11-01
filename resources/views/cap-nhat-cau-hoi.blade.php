@@ -1,83 +1,11 @@
-@extends('layouts.Master')
+@extends(layouts.Master)
 
-@section('title','Cau hoi')
-
-@section('head')
-    @parent
-@endsection
-
-@section('title-content','Câu hỏi')
-
-
-@if (session('success'))
-    <script>alert('{{session('success')}}')</script>
-@endif
-
-
-@section('main-content')
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card-box">  
-                            <div class="responsive-table-plugin">
-                                <div class="table-rep-plugin">
-                                    <div class="table-responsive" data-pattern="priority-columns">
-                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem">Thêm</button>                  
-                                        <table id="tech-companies-1" class="table table-striped">
-                                            <thead>
-                                            <tr class="col-md-12">
-                                                <th>ID</th>
-                                                <th data-priority="6">Nội dung</th>
-                                                <th data-priority="3">Lĩnh vực</th>
-                                                <th data-priority="1">Phương án A</th>
-                                                <th data-priority="3">Phương án B</th>
-                                                <th data-priority="3">Phương án C</th>
-                                                <th data-priority="6">Phương án D</th>
-                                                <th data-priority="6">Đáp án</th>
-                                                <th></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <th>1 <span class="co-name"></span></th>
-                                                <td><textarea cols="40" colums='4' readonly>1 con chim + 4 con chim + 8 con chim bị bắt thì con mấy con chim trên cành cây? Biết tổng số con chim trên cành cây bằng 15</textarea></td>
-                                                <td>Đố vui</td>
-                                                <td>15</td>
-                                                <td>1</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>B</td>
-                                                <td><button>a</button><button>b</button></td>
-                                            </tr>
-                                            @foreach($dsCauHoi as $ds)
-                                            <tr>
-                                                <th>{{$ds->id}} <span class="co-name"></span></th>
-                                                <td><textarea cols="40" colums='4' readonly>{{$ds->noi_dung}} </textarea></td>
-                                                <td>{{$ds->linh_vuc_id}}</td>
-                                                <td>{{$ds->phuong_an_a}}</td>
-                                                <td>{{$ds->phuong_an_b}}</td>
-                                                <td>{{$ds->phuong_an_c}}</td>
-                                                <td>{{$ds->phuong_an_d}}</td>
-                                                <td>{{$ds->dap_an}}</td>
-                                                <td><button class="btn btn-outline-secondary waves-effect waves-light">Cập nhật</button><button class="btn btn-outline-danger waves-effect waves-light">Xóa</button></td>
-                                            </tr>
-                                            @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div> <!-- end .table-responsive -->
-                                </div> <!-- end .table-rep-plugin-->
-                            </div> <!-- end .responsive-table-plugin-->
-                        </div> <!-- end card-box -->
-                    </div> <!-- end col -->
-                </div>
-                <!-- end row -->
-               
-                <!-- end form cap nhat -->
-                <!-- form -->
-                <div class="row" id="form-them-cau-hoi" style="display:none;">
+ <!-- form cap nhat -->
+ <div class="row" id="form-them-cau-hoi formCapNhat" style="display:none;">
                     <div class="col-md-12">
-                        <form class="form-horizontal" action="{{route("cau-hoi.them")}}" id="formThemCauHoi" method="POST"> <!-- Form start2-->
+                        <form class="form-horizontal" action="{{route("cau-hoi.them")}}" id="formCapNhat" method="POST"> <!-- Form start2-->
                         @csrf
+                        @method("PUT")
                             <div class="col-md-7 float-left">
                                 <div class="card">
                                     <div class="card-body">
@@ -159,41 +87,3 @@
                     </div>
                     </div>
                 </div>
-                <!-- end form -->
-            </div> <!-- end container -->
-        <!-- end wrapper -->
-   
-<script>
-
-$(document).ready(function(){
-    $("#btnThem").click(function(){
-        $('#form-them-cau-hoi').show();
-      
-    });
-    $("#btnHuy").click(function(){
-        $('#form-them-cau-hoi').hide();
-    });
-    $("#btn")
-});
-
-</script>
-<style>
-    #form-them-cau-hoi{
-        min-width: auto;
-        position: fixed;
-        top: 0%;
-        left: 0%;
-        right:0%;
-        bottom:0%;
-        z-index: 9999;
-        min-height:auto;
-        margin: auto;
-        background-color: rgba(0,0,0, 0.5); 
-        padding-top:150px;
-    }
-  
-</style>
-@endsection
-@section('footer')
-    @parent
-@endsection
