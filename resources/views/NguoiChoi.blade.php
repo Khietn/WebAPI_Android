@@ -1,5 +1,9 @@
 
 @extends('layouts.Master')
+@section('title')
+Quản Lý Người Chơi
+@endsection
+
 @section('main-content')
        
         <!-- ============================================================== -->
