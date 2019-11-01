@@ -229,7 +229,7 @@
                                 <a href="{{route('danhsach')}}"><i class="la la-cubes"></i>Lĩnh Vực</a>
                             </li>
                             <li class="has-submenu">
-                                <a href="#">
+                                <a href="{{route('cau-hoi.danh-sach')}}">
                                     <i class="la la-question"></i>Câu Hỏi</a>                               
                             </li>
 

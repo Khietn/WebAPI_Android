@@ -60,6 +60,24 @@ Quản Lý Người Chơi
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                             </tbody>
+                            <!-- tim kiem -->
+                            <ul class="list-unstyled topnav-menu float-right mb-0">
+                                    <li class="d-none d-sm-block">
+                                     <form class="app-search">
+                                    <div class="app-search-box">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search..." style="margin-left:5px">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-dark" type="submit" style="margin-left:5px">
+                                                <i class="fe-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </form>
+                                  </li>
+                                  </ul>
+                            <!-- ket thuc tim kiem -->
                              <button class="btn btn-dark waves-effect waves-light"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
                                   </table>
                            </div> <!-- end .table-responsive -->

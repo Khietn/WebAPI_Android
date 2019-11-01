@@ -23,7 +23,7 @@ Quản Lý Cấu Hình Trợ Giúp
                                         <th data-priority="1">ID</th>
                                         <th data-priority="1">Loại Trợ Giúp</th>
                                         <th data-priority="1">Thứ Tự</th>
-                                        <th data-priority="1">Credit</th>
+                                        <th data-priority="1">Creditphhp</th>
                                     </tr>`
                                     </thead>
                                     <tbody>                                                                                                         

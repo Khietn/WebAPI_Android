@@ -9,6 +9,7 @@ Thêm Mới Lĩnh Vực
 @endsection
 
 @section('main-content')
+<div class="container-fluid">
 <div class="row" >
    <div class="col-lg-6">
    	<div class="card">
@@ -23,5 +24,6 @@ Thêm Mới Lĩnh Vực
             <button type="submit" class="btn btn-primary waves-effect waves-light" style="margin-bottom:20px">Lưu</button>
                </form>
       </div>
+</div>
 </div>
 @endsection 

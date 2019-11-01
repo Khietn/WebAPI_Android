@@ -1,19 +1,17 @@
 @extends('layouts.Master')
 
-@section('title','Cau hoi')
+@section('title','Quản Lý Câu Hỏi')
 
 @section('head')
     @parent
 @endsection
 
-@section('title-content','Câu hỏi')
+@section('title-content','Quản Lý Câu Hỏi')
 
 
 @if (session('success'))
     <script>alert('{{session('success')}}')</script>
 @endif
-
-
 @section('main-content')
             <div class="container-fluid">
                 <div class="row">
@@ -22,7 +20,7 @@
                             <div class="responsive-table-plugin">
                                 <div class="table-rep-plugin">
                                     <div class="table-responsive" data-pattern="priority-columns">
-                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem">Thêm</button>                  
+                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem" border="2">Thêm</button>                  
                                         <table id="tech-companies-1" class="table table-striped">
                                             <thead>
                                             <tr class="col-md-12">
@@ -38,7 +36,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
+                                            <!-- <tr>
                                                 <th>1 <span class="co-name"></span></th>
                                                 <td><textarea cols="40" colums='4' readonly>1 con chim + 4 con chim + 8 con chim bị bắt thì con mấy con chim trên cành cây? Biết tổng số con chim trên cành cây bằng 15</textarea></td>
                                                 <td>Đố vui</td>
@@ -48,7 +46,7 @@
                                                 <td>4</td>
                                                 <td>B</td>
                                                 <td><button>a</button><button>b</button></td>
-                                            </tr>
+                                            </tr> -->
                                             @foreach($dsCauHoi as $ds)
                                             <tr>
                                                 <th>{{$ds->id}} <span class="co-name"></span></th>
@@ -63,6 +61,24 @@
                                             </tr>
                                             @endforeach
                                             </tbody>
+                                            <!-- tim kiem -->
+                                            <ul class="list-unstyled topnav-menu float-right mb-0">
+                                    <li class="d-none d-sm-block">
+                                     <form class="app-search">
+                                    <div class="app-search-box">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search..." style="margin-left:5px">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-dark" type="submit" style="margin-left:5px">
+                                                <i class="fe-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </form>
+                                  </li>
+                                  </ul>
+                                  <!-- ket thuc tim kiem -->
                                         </table>
                                     </div> <!-- end .table-responsive -->
                                 </div> <!-- end .table-rep-plugin-->

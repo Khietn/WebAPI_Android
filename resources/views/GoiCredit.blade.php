@@ -9,6 +9,7 @@ Quản Lý Gói Credit
         <!-- End Page content -->
         <!-- ============================================================== -->
         <!-- table start -->
+        <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card-box">
@@ -61,6 +62,7 @@ Quản Lý Gói Credit
                             </div> <!-- end .responsive-table-plugin-->
                         </div> <!-- end card-box -->
                     </div> <!-- end col -->
+                </div>
                 </div>
         <!-- end table -->
 @endsection
