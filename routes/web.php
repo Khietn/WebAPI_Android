@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('testsua',function(){
+	return view('form-sua-linh-vuc');
+});
 //khiet
 Route::prefix('linh-vuc')->group(function(){
 	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
