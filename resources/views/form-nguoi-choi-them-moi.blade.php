@@ -1,4 +1,7 @@
 @extends('layouts.Master')
+@section('title')
+Thêm Mới Người Chơi
+@endsection
 @section('head')
 @parent
 @endsection

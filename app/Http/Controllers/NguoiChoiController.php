@@ -84,7 +84,7 @@ class NguoiChoiController extends Controller
         {
             $NguoiChoi=NguoiChoiModel::where('id',$id)->update(['xoa'=>0]);
         }
-        return redirect('nguoi-choi')->with('success','xóa thành công');
+        return redirect('nguoi-choi')->with('success','Xóa Thành Công');
 
     }
     

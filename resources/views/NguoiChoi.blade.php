@@ -1,22 +1,11 @@
 
 @extends('layouts.Master')
-@section('head')
-@parent
+@section('title')
+Quản Lý Người Chơi
 @endsection
-<<<<<<< HEAD
+
 @section('main-content')
        
-=======
-
-
-        <!-- ============================================================== -->
-        <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-@section('main-content')
-        
-        <!-- end wrapper -->
-
->>>>>>> 44f9e738b9c2d970d9fc35d1926d20e7781f877c
         <!-- ============================================================== -->
         <!-- End Page content -->
         <!-- ============================================================== -->
@@ -70,10 +59,10 @@
                                            
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
-                                    </tbody>
-                                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
-                                        </table>
-                                    </div> <!-- end .table-responsive -->
+                            </tbody>
+                             <button class="btn btn-dark waves-effect waves-light"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
+                                  </table>
+                           </div> <!-- end .table-responsive -->
 
                                 </div> <!-- end .table-rep-plugin-->
                             </div> <!-- end .responsive-table-plugin-->
