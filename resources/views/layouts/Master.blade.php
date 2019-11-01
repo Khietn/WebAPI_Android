@@ -250,7 +250,7 @@
                                     <i class="la la-diamond"></i>Gói Credit<div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li class="has-submenu">
-                                        <a href="#"><i class="fe-book mr-1"></i> Lịch Sử Mua Credit</a>                                       
+                                        <a href="{{route('danhsach-lichsumuacredit')}}"><i class="fe-book mr-1"></i> Lịch Sử Mua Credit</a>                                       
                                     </li>
                           
                                 </ul>
@@ -271,7 +271,7 @@
                                 </ul>
                             </li>
                             <li class="has-submenu">
-                                <a href="#"> <i class="la la-user-secret"></i>Quản Trị Viên</a>                                
+                                <a href="{{route('danhsach-quantrivien')}}"> <i class="la la-user-secret"></i>Quản Trị Viên</a>                                
                                     </li>
                                 </ul>
                             </li>

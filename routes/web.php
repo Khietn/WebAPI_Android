@@ -68,7 +68,6 @@ Route::prefix('goi-credit')->group(function(){
 	Route::get('{/id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
 	Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
 	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
-	
 });
 Route::prefix('luot-choi')->group(function(){
 	Route::get('ds/luotchoi','LuotChoiController@data')->name('danhsach-luotchoi');
@@ -76,8 +75,14 @@ Route::prefix('luot-choi')->group(function(){
 Route::prefix('chi-tiet-luot-choi')->group(function(){
 	Route::get('ds/chitiet-luotchoi','ChiTietLuotChoiController@data')->name('danhsach-chitiet-luotchoi');
 });
-
+Route::prefix('lich-su-mua-credit')->group(function(){
+	Route::get('ds/lichsumuacredit','LichSuMuaCreditController@data')->name('danhsach-lichsumuacredit');
 });
+Route::prefix('quan-tri-vien')->group(function(){
+	Route::get('ds/quantrivien','QuanTriVienController@data')->name('danhsach-quantrivien');
+});
+});
+//Kết Thúc Chứng Thực
  //dang nhap
  Route::get('laythongtin','QuanTriVienController@layThongTin');
  Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
