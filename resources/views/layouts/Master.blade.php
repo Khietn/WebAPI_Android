@@ -238,7 +238,7 @@
                                     <li>
                                         <ul>
                                             <li>
-                                                <a href="ui-buttons.html"><i class="fe-heart mr-1"></i>Chi Tiết Lượt Chơi</a>
+                                                <a href="{{route('danhsach-chitiet-luotchoi')}}"><i class="fe-heart mr-1"></i>Chi Tiết Lượt Chơi</a>
                                             </li>                                            
                                         </ul>
                                     </li>                                 

@@ -73,6 +73,9 @@ Route::prefix('goi-credit')->group(function(){
 Route::prefix('luot-choi')->group(function(){
 	Route::get('ds/luotchoi','LuotChoiController@data')->name('danhsach-luotchoi');
 });
+Route::prefix('chi-tiet-luot-choi')->group(function(){
+	Route::get('ds/chitiet-luotchoi','ChiTietLuotChoiController@data')->name('danhsach-chitiet-luotchoi');
+});
 
 });
  //dang nhap
