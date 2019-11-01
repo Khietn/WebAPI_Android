@@ -1,4 +1,4 @@
-
+@section('header')
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,6 +8,10 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+           <!-- Jquery -->
+        <script src="{{asset('assets/js/jquery.min.js')}}" language="JavaScript" type="text/javascript"></script>
+
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
 
@@ -312,14 +316,11 @@
                     </div>
                 </div>     
                 <!-- end page title --> 
-                @yield('main-content')
             </div> <!-- end container -->
-            
         </div>
-
 @show
         <!-- end wrapper -->
-
+        @yield('main-content')
         <!-- ============================================================== -->
         <!-- End Page content -->
         <!-- ============================================================== -->
@@ -449,12 +450,10 @@
         <!-- Init js -->
         <script src="{{asset('assets/js/pages/responsive-table.init.js')}}"></script>
         
-        <!-- Jquery -->
-        <script src="{{asset('assets/js/jquery.js')}}"></script>
-
+     
         <!-- App js-->
         <script src="{{asset('assets/js/app.min.js')}}"></script>
-     
+
     </body>
  
 </html>
