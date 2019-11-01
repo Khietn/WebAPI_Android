@@ -26,7 +26,7 @@ Quản Lý Gói Credit
                                         <th data-priority="1">Tên Gói</th>
                                         <th data-priority="1">Credit</th>
                                         <th data-priority="1">Số Tiền</th>
-                                        <th data-priority="3"></th>
+                                        <th data-priority="3">Chức Năng</th>
                                     </tr>
                                     </thead>
                                     <tbody>                                      

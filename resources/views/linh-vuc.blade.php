@@ -23,8 +23,7 @@ Quản Lý Lĩnh Vực
                                     <tr>
                                         <th data-priority="1">ID</th>
                                         <th data-priority="1">Tên Lĩnh Vực</th>
-                                        <th data-priority="1">Sửa</th>
-                                        <th data-priority="3">Xóa</th>
+                                        <th data-priority="1">Chức Năng</th>
                                     </tr>
                                     </thead>
                                     <tbody>     
@@ -33,8 +32,8 @@ Quản Lý Lĩnh Vực
                     <tr>
                     <td>{{$value['id']}}</td>
                     <td>{{$value['ten']}}</td>
-                    <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a></button></td>
-                    <td><button class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
+                    <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a></button>
+                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
                    </tr>    
             <?php }?>
 

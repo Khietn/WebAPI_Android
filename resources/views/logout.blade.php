@@ -55,7 +55,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-muted">Back to <a href="pages-login.html" class="text-muted ml-1"><b class="font-weight-semibold">Sign In</b></a></p>
+                                <p class="text-muted">Back to <a href="{{route('dang-nhap')}}" class="text-muted ml-1"><b class="font-weight-semibold">Sign In</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->

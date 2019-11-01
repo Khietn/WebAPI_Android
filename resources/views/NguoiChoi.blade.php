@@ -30,7 +30,7 @@ Quản Lý Người Chơi
                                         <th data-priority="1">Hình Đại Diện</th>
                                         <th data-priority="1">Điểm Cao Nhất</th>
                                         <th data-priority="1"> Credit</th>
-                                        <th data-priority="3"></th>
+                                        <th data-priority="3">Chức Năng</th>
                                     </tr>
                                     </thead>
                                     <tbody>     

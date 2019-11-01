@@ -20,8 +20,8 @@
                             <div class="responsive-table-plugin">
                                 <div class="table-rep-plugin">
                                     <div class="table-responsive" data-pattern="priority-columns">
-                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem" border="2" style="margin-bottom:20px">Thêm</button>                  
-                                        <table id="tech-companies-1" class="table table-striped">
+                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem" style="margin-bottom:20px">Thêm</button>                  
+                                        <table id="tech-companies-1" class="table table-striped"  border="2">
                                             <thead>
                                             <tr class="col-md-12">
                                                 <th>ID</th>
@@ -32,7 +32,8 @@
                                                 <th data-priority="3">Phương án C</th>
                                                 <th data-priority="6">Phương án D</th>
                                                 <th data-priority="6">Đáp án</th>
-                                                <th></th>
+                                                <th data-priority="6">Chức năng</th>
+                                                
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -57,7 +58,7 @@
                                                 <td>{{$ds->phuong_an_c}}</td>
                                                 <td>{{$ds->phuong_an_d}}</td>
                                                 <td>{{$ds->dap_an}}</td>
-                                                <td><button class="btn btn-outline-secondary waves-effect waves-light">Cập nhật</button><button class="btn btn-outline-danger waves-effect waves-light">Xóa</button></td>
+                                                <td><button class="btn btn-outline-secondary waves-effect waves-light">Sửa</button><button class="btn btn-outline-danger waves-effect waves-light">Xóa</button></td>
                                             </tr>
                                             @endforeach
                                             </tbody>
