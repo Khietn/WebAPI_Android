@@ -8,6 +8,7 @@ Quản Lý Lĩnh Vực
 
 @section('main-content')
    <!-- table start -->
+   <div class="container-fluid">
    <div class="row">
             <div class="col-12">
                 <div class="card-box">
@@ -98,6 +99,7 @@ Quản Lý Lĩnh Vực
                         </div> <!-- end card-box -->
                     </div> <!-- end col -->
                 </div>
+            </div>
         <!-- end table -->
 @endsection
 @section('footer')

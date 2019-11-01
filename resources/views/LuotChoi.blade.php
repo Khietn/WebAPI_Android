@@ -8,6 +8,7 @@ Quản Lý Lượt Chơi
 
 @section('main-content')
    <!-- table start -->
+   <div class="container-fluid">
    <div class="row">
             <div class="col-12">
                 <div class="card-box">
@@ -58,6 +59,7 @@ Quản Lý Lượt Chơi
                         </div> <!-- end card-box -->
                     </div> <!-- end col -->
                 </div>
+        </div>
         <!-- end table -->
 @endsection
 @section('footer')

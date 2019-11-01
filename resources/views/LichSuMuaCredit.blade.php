@@ -8,6 +8,7 @@ Quản Lý Lịch Sử Mua Credit
 
 @section('main-content')
    <!-- table start -->
+   <div class="container-fluid">
    <div class="row">
             <div class="col-12">
                 <div class="card-box">
@@ -57,6 +58,7 @@ Quản Lý Lịch Sử Mua Credit
                         </div> <!-- end card-box -->
                     </div> <!-- end col -->
                 </div>
+            </div>
         <!-- end table -->
 @endsection
 @section('footer')

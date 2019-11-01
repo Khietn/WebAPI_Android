@@ -8,6 +8,7 @@ Quản Lý Cấu Hình App
 
 @section('main-content')
    <!-- table start -->
+   <div class="container-fluid">
    <div class="row">
             <div class="col-12">
                 <div class="card-box">
@@ -55,6 +56,7 @@ Quản Lý Cấu Hình App
                             </div> <!-- end .responsive-table-plugin-->
                         </div> <!-- end card-box -->
                     </div> <!-- end col -->
+                </div>
                 </div>
         <!-- end table -->
 @endsection

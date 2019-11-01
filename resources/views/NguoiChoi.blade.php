@@ -10,6 +10,7 @@ Quản Lý Người Chơi
         <!-- End Page content -->
         <!-- ============================================================== -->
         <!-- table start -->
+        <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card-box">
@@ -87,6 +88,7 @@ Quản Lý Người Chơi
                         </div> <!-- end card-box -->
                     </div> <!-- end col -->
                 </div>
+            </div>
         <!-- end table -->
 @endsection
 @section('footer')
