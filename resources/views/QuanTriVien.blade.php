@@ -26,7 +26,17 @@ Quản Lý Quản Trị Viên
                                         <th data-priority="3">Họ Tên</th>               
                                     </tr>
                                     </thead>
-                                    <tbody>                   
+                                    <tbody>  
+                                    <?php foreach($quanTriVien as $value): ?>
+                                    <tr>
+                                        <td>{{$value->id}}</td>
+                                        <td>{{$value->ten_dang_nhap}}</td>
+                                        <td>{{$value->mat_khau}}</td>
+                                        <td>{{$value->ho_ten}}</td>
+                                    </tr>
+
+                                    <?php endforeach?>
+                    
                                                                                                                                        
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
