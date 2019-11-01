@@ -81,6 +81,15 @@ Route::prefix('lich-su-mua-credit')->group(function(){
 Route::prefix('quan-tri-vien')->group(function(){
 	Route::get('ds/quantrivien','QuanTriVienController@data')->name('danhsach-quantrivien');
 });
+Route::prefix('cau-hinh-app')->group(function(){
+	Route::get('ds/cauhinhapp','CauHinhAppController@data')->name('danhsach-cauhinhapp');
+});
+Route::prefix('cau-hinh-diem-cau-hoi')->group(function(){
+	Route::get('ds/cauhinhdiemcauhoi','CauHinhDiemCauHoiController@data')->name('danhsach-cauhinhdiemcauhoi');
+});
+Route::prefix('cau-hinh-tro-giup')->group(function(){
+	Route::get('ds/cauhinhtrogiup','CauHinhTroGiupController@data')->name('danhsach-cauhinhtrogiup');
+});
 });
 //Kết Thúc Chứng Thực
  //dang nhap

@@ -260,13 +260,13 @@
                                 <a href="#"> <i class="la la-cog"></i>Cấu Hình<div class="arrow-down"></div></a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="admin-widgets.html"><i class="fa fa-cog mr-1"></i>Cấu Hình App</a>
+                                        <a href="{{route('danhsach-cauhinhapp')}}"><i class="fa fa-cog mr-1"></i>Cấu Hình App</a>
                                     </li>
                                     <li>
-                                        <a href="admin-sweet-alert.html"><i class="fa fa-cog mr-1"></i>Cấu Hình Điểm Câu Hỏi</a>
+                                        <a href="{{route('danhsach-cauhinhdiemcauhoi')}}"><i class="fa fa-cog mr-1"></i>Cấu Hình Điểm Câu Hỏi</a>
                                     </li>
                                     <li>
-                                        <a href="admin-nestable.html"><i class="fa fa-cog mr-1"></i>Cấu Hình Trợ Giúp</a>
+                                        <a href="{{route('danhsach-cauhinhtrogiup')}}"><i class="fa fa-cog mr-1"></i>Cấu Hình Trợ Giúp</a>
                                     </li>                             
                                 </ul>
                             </li>
