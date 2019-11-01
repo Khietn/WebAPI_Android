@@ -30,6 +30,9 @@ Route::prefix('cau-hoi')->group(function(){
 
 
 // code khiem
+Route::get('testlogout', function () {
+    return view('logout');
+});
 Route::get('khiem', function () {
     return view('layouts/Master');
 });
