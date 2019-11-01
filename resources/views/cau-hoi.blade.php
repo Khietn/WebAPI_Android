@@ -20,7 +20,7 @@
                             <div class="responsive-table-plugin">
                                 <div class="table-rep-plugin">
                                     <div class="table-responsive" data-pattern="priority-columns">
-                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem" border="2">Thêm</button>                  
+                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem" border="2" style="margin-bottom:20px">Thêm</button>                  
                                         <table id="tech-companies-1" class="table table-striped">
                                             <thead>
                                             <tr class="col-md-12">

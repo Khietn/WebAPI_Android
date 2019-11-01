@@ -79,7 +79,7 @@ Quản Lý Người Chơi
                                   </li>
                                   </ul>
                             <!-- ket thuc tim kiem -->
-                             <button class="btn btn-dark waves-effect waves-light"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
+                             <button class="btn btn-dark waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
                                   </table>
                            </div> <!-- end .table-responsive -->
 
