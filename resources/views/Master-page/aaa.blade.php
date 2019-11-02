@@ -48,10 +48,9 @@
 			<a href="{{ route('linh-vuc.danh-sach.chinh-sua', ['id'=>$ds->id]) }}" class="btn btn-info">Edit</a>
 		</td>
 		<td>
-			<form method="GET" action="{{route("linh-vuc.danh-sach.xoa",['id'=>$ds->id])}}">
-			
+			<form method="GET" action=" {{route('linh-vuc.danh-sach.xoa',['id'=>$ds->id])}} ">
 				<input value="{{$ds->xoa}}" name="txtXoa" hidden>
-				<button type="Submit" formaction="{{route("linh-vuc.danh-sach.xoa",['id'=>$ds->id])}}">Delete</button>
+				<button type="Submit" formaction="{{route('linh-vuc.danh-sach.xoa',['id'=>$ds->id])}}">Delete</button>
 			</form>
 		</td>
 	</tr>

@@ -23,6 +23,7 @@ Route::prefix('linh-vuc')->group(function(){
 Route::prefix('cau-hoi')->group(function(){
 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
 	Route::post('them-moi','CauHoiController@store')->name('cau-hoi.them');
+	Route::get('danh-sach/chinh-sua/{id}','CauHoiController@edit')->name('cau-hoi.danh-sach.chinh-sua');
 });
 
 

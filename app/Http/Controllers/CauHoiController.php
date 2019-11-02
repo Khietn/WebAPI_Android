@@ -25,4 +25,9 @@ class CauHoiController extends Controller
         // return redirect('linh-vuc/danh-sach');
         return redirect('cau-hoi/danh-sach')->with('success','Thêm mới thành công');
     }
+
+    public function edit($id){
+        $cauhoi = CauHoiModel::findOrFail($id);
+        return view('cap-nhat-cau-hoi',compact('cauhoi'));
+    }
 }

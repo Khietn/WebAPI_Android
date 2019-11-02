@@ -18,11 +18,11 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card-box">  
+                        <div class="card-box">
+                        <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem" style="margin-bottom:5px;">Thêm</button>                    
                             <div class="responsive-table-plugin">
                                 <div class="table-rep-plugin">
                                     <div class="table-responsive" data-pattern="priority-columns">
-                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem">Thêm</button>                  
                                         <table id="tech-companies-1" class="table table-striped">
                                             <thead>
                                             <tr class="col-md-12">
@@ -38,17 +38,6 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <th>1 <span class="co-name"></span></th>
-                                                <td><textarea cols="40" colums='4' readonly>1 con chim + 4 con chim + 8 con chim bị bắt thì con mấy con chim trên cành cây? Biết tổng số con chim trên cành cây bằng 15</textarea></td>
-                                                <td>Đố vui</td>
-                                                <td>15</td>
-                                                <td>1</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>B</td>
-                                                <td><button>a</button><button>b</button></td>
-                                            </tr>
                                             @foreach($dsCauHoi as $ds)
                                             <tr>
                                                 <th>{{$ds->id}} <span class="co-name"></span></th>
@@ -59,7 +48,9 @@
                                                 <td>{{$ds->phuong_an_c}}</td>
                                                 <td>{{$ds->phuong_an_d}}</td>
                                                 <td>{{$ds->dap_an}}</td>
-                                                <td><button class="btn btn-outline-secondary waves-effect waves-light">Cập nhật</button><button class="btn btn-outline-danger waves-effect waves-light">Xóa</button></td>
+                                                <td><a href="{{ route('cau-hoi.danh-sach.chinh-sua', ['id'=>$ds->id]) }}" class="btn btn-outline-secondary waves-effect waves-light">Cập nhật</a>
+                                                <button class="btn btn-outline-danger waves-effect waves-light">Xóa</button>
+                                                </td>
                                             </tr>
                                             @endforeach
                                             </tbody>
@@ -168,7 +159,7 @@
 $(document).ready(function(){
     $("#btnThem").click(function(){
         $('#form-them-cau-hoi').show();
-      
+        $('#form-them-cau-hoi').attr("data-animation","fall");
     });
     $("#btnHuy").click(function(){
         $('#form-them-cau-hoi').hide();
@@ -191,7 +182,6 @@ $(document).ready(function(){
         background-color: rgba(0,0,0, 0.5); 
         padding-top:150px;
     }
-  
 </style>
 @endsection
 @section('footer')
