@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('testsua',function(){
+	return view('form-sua-linh-vuc');
+});
 //khiet
 Route::prefix('linh-vuc')->group(function(){
 	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
@@ -28,6 +31,9 @@ Route::prefix('cau-hoi')->group(function(){
 
 
 // code khiem
+Route::get('testlogout', function () {
+    return view('logout');
+});
 Route::get('khiem', function () {
     return view('layouts/Master');
 });
@@ -52,13 +58,13 @@ Route::prefix('linh-vuc')->group(function(){
  Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
 Route::prefix('nguoi-choi')->group(function(){
 	Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');	
-	Route::get('{/id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
+	Route::get('nguoi-choi/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
 	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
 	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
 });
+Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
 Route::prefix('goi-credit')->group(function(){
-	Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
-	Route::get('{/id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
+	Route::get('goi-credit/{id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
 	Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
 	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
 });
@@ -73,6 +79,19 @@ Route::prefix('lich-su-mua-credit')->group(function(){
 });
 Route::prefix('quan-tri-vien')->group(function(){
 	Route::get('ds/quantrivien','QuanTriVienController@data')->name('danhsach-quantrivien');
+});
+Route::prefix('cau-hinh-app')->group(function(){
+	Route::get('ds/cauhinhapp','CauHinhAppController@data')->name('danhsach-cauhinhapp');
+});
+Route::prefix('cau-hinh-diem-cau-hoi')->group(function(){
+	Route::get('ds/cauhinhdiemcauhoi','CauHinhDiemCauHoiController@data')->name('danhsach-cauhinhdiemcauhoi');
+});
+Route::prefix('cau-hinh-tro-giup')->group(function(){
+	Route::get('ds/cauhinhtrogiup','CauHinhTroGiupController@data')->name('danhsach-cauhinhtrogiup');
+});
+Route::prefix('cau-hoi')->group(function(){
+	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
+	Route::post('them-moi','CauHoiController@store')->name('cau-hoi.them');
 });
 });
 //Kết Thúc Chứng Thực

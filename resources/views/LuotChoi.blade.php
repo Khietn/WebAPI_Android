@@ -8,6 +8,7 @@ Quản Lý Lượt Chơi
 
 @section('main-content')
    <!-- table start -->
+   <div class="container-fluid">
    <div class="row">
             <div class="col-12">
                 <div class="card-box">
@@ -32,11 +33,11 @@ Quản Lý Lượt Chơi
                                     </tbody>
                                     <!-- <button class="btn btn-dark waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button> -->
                                     <!-- btn tim kiem -->
-                                     <ul class="list-unstyled topnav-menu float-right mb-0">
+                                     <ul class="list-unstyled topnav-menu float-right mb-0" >
                                     <li class="d-none d-sm-block">
                                      <form class="app-search">
                                     <div class="app-search-box">
-                                    <div class="input-group" style="margin-bottom:10px">
+                                    <div class="input-group" style="margin-bottom:20px" >
                                         <input type="text" class="form-control" placeholder="Search..." style="margin-left:5px">
                                         <div class="input-group-append">
                                             <button class="btn btn-dark" type="submit" style="margin-left:5px">
@@ -58,6 +59,7 @@ Quản Lý Lượt Chơi
                         </div> <!-- end card-box -->
                     </div> <!-- end col -->
                 </div>
+        </div>
         <!-- end table -->
 @endsection
 @section('footer')

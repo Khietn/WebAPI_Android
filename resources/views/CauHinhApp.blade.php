@@ -1,6 +1,6 @@
 @extends('layouts/master')
 @section('title')
-Quản Lý Quản Trị Viên
+Quản Lý Cấu Hình App
 @endsection
 @section('head')
 @parent
@@ -22,23 +22,11 @@ Quản Lý Quản Trị Viên
                                     <thead>
                                     <tr>
                                         <th data-priority="1">ID</th>
-                                        <th data-priority="1">Tên Đăng Nhập</th>
-                                        <th data-priority="1">Mật Khẩu</th>
-                                        <th data-priority="3">Họ Tên</th>               
-                                    </tr>
+                                        <th data-priority="1">Cơ Hội Sai</th>
+                                        <th data-priority="1">Thời Gian Trả Lời</th>
+                                    </tr>`
                                     </thead>
-                                    <tbody>  
-                                    <?php foreach($quanTriVien as $value): ?>
-                                    <tr>
-                                        <td>{{$value->id}}</td>
-                                        <td>{{$value->ten_dang_nhap}}</td>
-                                        <td>{{$value->mat_khau}}</td>
-                                        <td>{{$value->ho_ten}}</td>
-                                    </tr>
-
-                                    <?php endforeach?>
-                    
-                                                                                                                                       
+                                    <tbody>                                                                                                         
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
                                     <!-- <button class="btn btn-dark waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button> -->

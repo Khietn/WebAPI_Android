@@ -1,19 +1,17 @@
 @extends('layouts.Master')
 
-@section('title','Cau hoi')
+@section('title','Quản Lý Câu Hỏi')
 
 @section('head')
     @parent
 @endsection
 
-@section('title-content','Câu hỏi')
+@section('title-content','Quản Lý Câu Hỏi')
 
 
 @if (session('success'))
     <script>alert('{{session('success')}}')</script>
 @endif
-
-
 @section('main-content')
             <div class="container-fluid">
                 <div class="row">
@@ -23,7 +21,8 @@
                             <div class="responsive-table-plugin">
                                 <div class="table-rep-plugin">
                                     <div class="table-responsive" data-pattern="priority-columns">
-                                        <table id="tech-companies-1" class="table table-striped">
+                                    <button class="btn btn-success waves-effect waves-light" type="button" id="btnThem" style="margin-bottom:20px">Thêm</button>                  
+                                        <table id="tech-companies-1" class="table table-striped"  border="2">
                                             <thead>
                                             <tr class="col-md-12">
                                                 <th>ID</th>
@@ -34,10 +33,22 @@
                                                 <th data-priority="3">Phương án C</th>
                                                 <th data-priority="6">Phương án D</th>
                                                 <th data-priority="6">Đáp án</th>
-                                                <th></th>
+                                                <th data-priority="6">Chức năng</th>
+                                                
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            <!-- <tr>
+                                                <th>1 <span class="co-name"></span></th>
+                                                <td><textarea cols="40" colums='4' readonly>1 con chim + 4 con chim + 8 con chim bị bắt thì con mấy con chim trên cành cây? Biết tổng số con chim trên cành cây bằng 15</textarea></td>
+                                                <td>Đố vui</td>
+                                                <td>15</td>
+                                                <td>1</td>
+                                                <td>3</td>
+                                                <td>4</td>
+                                                <td>B</td>
+                                                <td><button>a</button><button>b</button></td>
+                                            </tr> -->
                                             @foreach($dsCauHoi as $ds)
                                             <tr>
                                                 <th>{{$ds->id}} <span class="co-name"></span></th>
@@ -54,6 +65,24 @@
                                             </tr>
                                             @endforeach
                                             </tbody>
+                                            <!-- tim kiem -->
+                                            <ul class="list-unstyled topnav-menu float-right mb-0">
+                                    <li class="d-none d-sm-block">
+                                     <form class="app-search">
+                                    <div class="app-search-box">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search..." style="margin-left:5px">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-dark" type="submit" style="margin-left:5px">
+                                                <i class="fe-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                    </form>
+                                  </li>
+                                  </ul>
+                                  <!-- ket thuc tim kiem -->
                                         </table>
                                     </div> <!-- end .table-responsive -->
                                 </div> <!-- end .table-rep-plugin-->

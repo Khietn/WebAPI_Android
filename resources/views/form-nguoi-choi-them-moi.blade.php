@@ -7,7 +7,7 @@ Thêm Mới Người Chơi
 @endsection
 
 @section('main-content')
-
+<div class="container-fluid">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
@@ -37,6 +37,7 @@ Thêm Mới Người Chơi
     </div>
     </div>
 </div>
+</div>  
 @endsection
 @section('footer')
 @parent

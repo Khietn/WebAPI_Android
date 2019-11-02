@@ -9,6 +9,7 @@ Thêm Mới Lĩnh Vực
 @endsection
 
 @section('main-content')
+<!-- <div class="container-fluid">
 <div class="row" >
    <div class="col-lg-6">
    	<div class="card">
@@ -21,7 +22,10 @@ Thêm Mới Lĩnh Vực
           <input type="text" id="ten_linh_vuc" name="ten_linh_vuc"class="form-control" placeholder="Tên Lĩnh Vực">          
            </div>
             <button type="submit" class="btn btn-primary waves-effect waves-light" style="margin-bottom:20px">Lưu</button>
+            <button type="submit" class="btn btn-danger waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('danhsach')}}">Hủy</a></button>
                </form>
       </div>
 </div>
+</div> -->
+    </form>
 @endsection 
