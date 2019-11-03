@@ -14,20 +14,20 @@ Route::get('testsua',function(){
 	return view('form-sua-linh-vuc');
 });
 //khiet
-Route::prefix('linh-vuc')->group(function(){
-	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
-	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
-	Route::get('danh-sach','LinhVucController@index')->name('linh-vuc.danh-sach');
-	Route::match(['PUT','PATCH'],'danh-sach/{id}/edit','LinhVucController@update')->name('linh-vuc.danh-sach.cap-nhat');
-	Route::get('danh-sach/{id}/edit', 'LinhVucController@edit')->name('linh-vuc.danh-sach.chinh-sua');
-	Route::get('danh-sach/{id}/d','LinhVucController@UpdateStatus')->name('linh-vuc.danh-sach.xoa');
-});
+// Route::prefix('linh-vuc')->group(function(){
+// 	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
+// 	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
+// 	Route::get('danh-sach','LinhVucController@index')->name('linh-vuc.danh-sach');
+// 	Route::match(['PUT','PATCH'],'danh-sach/{id}/edit','LinhVucController@update')->name('linh-vuc.danh-sach.cap-nhat');
+// 	Route::get('danh-sach/{id}/edit', 'LinhVucController@edit')->name('linh-vuc.danh-sach.chinh-sua');
+// 	Route::get('danh-sach/{id}/d','LinhVucController@UpdateStatus')->name('linh-vuc.danh-sach.xoa');
+// });
 
-Route::prefix('cau-hoi')->group(function(){
-	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
-	Route::post('them-moi','CauHoiController@store')->name('cau-hoi.them');
-	Route::get('danh-sach/chinh-sua/{id}','CauHoiController@edit')->name('cau-hoi.danh-sach.chinh-sua');
-});
+// Route::prefix('cau-hoi')->group(function(){
+// 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
+// 	Route::post('them-moi','CauHoiController@store')->name('cau-hoi.them');
+// 	Route::get('danh-sach/chinh-sua/{id}','CauHoiController@edit')->name('cau-hoi.danh-sach.chinh-sua');
+// });
 
 
 // code khiem
@@ -92,6 +92,7 @@ Route::prefix('cau-hinh-tro-giup')->group(function(){
 Route::prefix('cau-hoi')->group(function(){
 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
 	Route::post('them-moi','CauHoiController@store')->name('cau-hoi.them');
+	Route::get('danh-sach/chinh-sua/{id}','CauHoiController@edit')->name('cau-hoi.danh-sach.chinh-sua');
 });
 });
 //Kết Thúc Chứng Thực
