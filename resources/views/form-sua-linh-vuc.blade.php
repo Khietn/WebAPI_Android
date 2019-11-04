@@ -29,7 +29,7 @@ Sửa Lĩnh Vực
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Thêm Mới Lĩnh Vực</h4>
+                                            <h4 class="modal-title">Sửa Lĩnh Vực</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                         </div>
                                         <div class="modal-body p-4">                                   
@@ -38,6 +38,10 @@ Sửa Lĩnh Vực
                                                     <div class="form-group">
                                                         <label for="field-3" class="control-label">Tên Lĩnh Vực</label>
                                                         <input type="text" class="form-control" id="field-3" placeholder="Tên Lĩnh Vực">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="field-3" class="control-label">Tên Lĩnh Vực Mới</label>
+                                                        <input type="text" class="form-control" id="field-3" placeholder="Tên Lĩnh Vực Mới">
                                                     </div>
                                                 </div>
                                             </div>                                                                                     
