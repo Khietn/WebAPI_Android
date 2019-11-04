@@ -87,6 +87,9 @@ class GoiCreditController extends Controller
     public function edit($id)
     {
         //
+        $GoiCredit=GoiCreditModel::find($id);
+        $GoiCredit->save();
+        return view('sua-goi-credit', compact('GoiCredit'));
     }
 
     /**
@@ -99,6 +102,12 @@ class GoiCreditController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $GoiCredit = GoiCreditModel::findOrFail($id);
+        $GoiCredit->ten_goi=$request->ten_goi;
+        $GoiCredit->credit=$request->credit;
+        $GoiCredit->so_tien=$request->so_tien;
+        $GoiCredit->save();
+        return redirect('goi-credit')->with('success','Cập nhật thành công');
 
     }
 

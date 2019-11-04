@@ -40,7 +40,7 @@ Quản Lý Gói Credit
                     <td>{{$value->credit}}</td>
                     <td>{{$value->so_tien}}</td>
                    <td>
-                    <button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a>
+                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('goi-credit.cap-nhat',['id'=>$value->id])}}">Sửa</a>
                      </button> 
                      
                     <button class="btn btn-dark waves-effect waves-light"><a href="{{route("goi-credit.xoa",['id'=>$value->id])}}">Xóa</a></button>
