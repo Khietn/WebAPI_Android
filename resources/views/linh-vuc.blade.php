@@ -32,8 +32,8 @@ Quản Lý Lĩnh Vực
                     <tr>
                     <td>{{$value['id']}}</td>
                     <td>{{$value['ten']}}</td>
-                    <td><button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a></button>
-                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
+                    <td><button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua"><a href="#">Sửa</a></button>
+                    <button type="button" class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
                    </tr>    
             <?php }?>
 
@@ -43,6 +43,37 @@ Quản Lý Lĩnh Vực
                                    <!-- <button class="btn btn-dark waves-effect waves-light"  style="margin-bottom:20px"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button> -->
                                     <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal"  style="margin-bottom:20px" data-target="#con-close-modal">Thêm</button>
                                     <!-- modalthemlinhvuc -->
+                                    <!-- modal sửa -->
+                                    <div id="con-close-modal-sua" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Sửa Lĩnh Vực</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body p-4">                                   
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="field-3" class="control-label">Tên Lĩnh Vực</label>
+                                                        <input type="text" class="form-control" id="field-3" placeholder="Tên Lĩnh Vực">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="field-3" class="control-label">Tên Lĩnh Vực Mới</label>
+                                                        <input type="text" class="form-control" id="field-3" placeholder="Tên Lĩnh Vực Mới">
+                                                    </div>
+                                                </div>
+                                            </div>                                                                                     
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-info waves-effect waves-light">Lưu</button>
+                                            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Hủy</button>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.modal -->
+
+                                    <!-- kết thúc modal sửa -->
                                     <form action="{{route('linh-vuc.xl-them-moi')}}" method="POST">
                                  	@csrf
                              <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -68,7 +99,8 @@ Quản Lý Lĩnh Vực
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- /.modal -->
+                            </div><!-- /.ketthucmodalthem -->
+
                             </form>
                                     <!-- kethucmodalthemlinhvuc -->
                                     <!-- btn tim kiem -->
