@@ -40,9 +40,9 @@ Route::get('khiem', function () {
 Route::get('/index/Register', function () {
     return view('Register');
 });
-Route::get('/index/login', function(){
-	return view('Login');
-});
+// Route::get('/index/login', function(){
+// 	return view('Login');
+// });
 //Chứng thực
 Route::middleware('auth')->group(function(){
 	Route::get('trangchu', function () {
