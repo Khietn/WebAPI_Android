@@ -40,7 +40,7 @@ Quản Lý Gói Credit
                     <td>{{$value->credit}}</td>
                     <td>{{$value->so_tien}}</td>
                    <td>
-                    <button class="btn btn-dark waves-effect waves-light"><a href="#">Sửa</a>
+                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('goi-credit.cap-nhat',['id'=>$value->id])}}">Sửa</a>
                      </button> 
                      
                     <button class="btn btn-dark waves-effect waves-light"><a href="{{route("goi-credit.xoa",['id'=>$value->id])}}">Xóa</a></button>
@@ -54,7 +54,6 @@ Quản Lý Gói Credit
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
-                                    <button class="btn btn-dark waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('goi-credit.them-moi')}}">Thêm</a></button>
                                       <!-- btn tim kiem -->
                                       <ul class="list-unstyled topnav-menu float-right mb-0">
                                     <li class="d-none d-sm-block">
@@ -73,6 +72,8 @@ Quản Lý Gói Credit
                                   </li>
                                   </ul>
                                   <!-- ket thuc tim kiem -->
+                                  <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal"  style="margin-bottom:20px" data-target="#con-close-modal">Thêm</button>
+                                   
                                         </table>
                                     </div> <!-- end .table-responsive -->
 
@@ -83,5 +84,37 @@ Quản Lý Gói Credit
                 </div>
                 </div>
         <!-- end table -->
+        <!-- modalthem goi credit -->
+         <form action="{{route('goi-credit.tm-them-moi')}}" method="POST">
+                                 	@csrf
+                             <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Thêm mới gói Credit</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body p-4">                                   
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                    <label form="ten_goi">Tên Gói Credit</label>
+                                                    <input type="text" id="ten_goi" name="ten_goi"class="form-control" placeholder="Tên Gói Credit">
+                                                    <label form="credit">Credit</label>
+                                                    <input type="text" id="credit" name="credit"class="form-control" placeholder="Credit"> 
+                                                    <label form="so-tien">Số Tiền</label>
+                                                    <input type="text" id="so_tien" name="so_tien"class="form-control" placeholder="Số Tiền"> 
+                                                    </div>
+                                                </div>
+                                            </div>                                                                                     
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">Lưu</button>
+                                            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Hủy</button>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /END-modal -->
 @endsection
 

@@ -79,8 +79,8 @@ Quản Lý Người Chơi
                                   </li>
                                   </ul>
                             <!-- ket thuc tim kiem -->
-                             <button class="btn btn-dark waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('nguoi-choi.them-moi')}}">Thêm</a></button>
-                                  </table>
+                            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal"  style="margin-bottom:20px" data-target="#con-close-modal">Thêm</button>
+                                       </table>
                            </div> <!-- end .table-responsive -->
 
                                 </div> <!-- end .table-rep-plugin-->
@@ -90,6 +90,44 @@ Quản Lý Người Chơi
                 </div>
             </div>
         <!-- end table -->
+         <!-- modalthem goi credit -->
+         <form action="{{route('nguoi-choi.tm-them-moi')}}" method="POST">
+                                 	@csrf
+                             <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Thêm mới gói Credit</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body p-4">                                   
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                    <label form="ten_dang_nhap">Tên Đăng Nhập</label>
+                                                    <input type="text" id="ten_dang_nhap" name="ten_dang_nhap"class="form-control" placeholder="Tên Đăng Nhập">
+                                                    <label form="mat_khau">Mật Khẩu</label>
+                                                    <input type="text" id="mat_khau" name="mat_khau"class="form-control" placeholder="Mật Khẩu"> 
+                                                    <label form="email">email</label>
+                                                    <input type="text" id="email" name="email"class="form-control" placeholder="email"> 
+                                                    <label form="hinh_dai_dien">Hình đại diện</label>
+                                                    <input type="text" id="hinh_dai_dien" name="hinh_dai_dien"class="form-control" placeholder="Hình đại diện"> 
+                                                    <label form="diem_cao_nhat">Điểm cao nhất</label>
+                                                    <input type="number" id="diem_cao_nhat" name="diem_cao_nhat"class="form-control" placeholder="Điểm cao nhất"> 
+                                                    <label form="credit">Credit</label>
+                                                    <input type="number" id="credit" name="credit"class="form-control" placeholder="Credit">  
+                                                    </div>
+                                                </div>
+                                            </div>                                                                                     
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">Lưu</button>
+                                            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Hủy</button>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /END-modal -->
 @endsection
 @section('footer')
 @parent
