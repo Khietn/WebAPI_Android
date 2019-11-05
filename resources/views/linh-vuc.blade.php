@@ -32,11 +32,10 @@ Quản Lý Lĩnh Vực
                     <tr>
                     <td>{{$value['id']}}</td>
                     <td>{{$value['ten']}}</td>
-                    <td><button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua"><a href="#">Sửa</a></button>
-                    <button type="button" class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
+                    <td><button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="con-close-modal-sua"><a href="{{route('linh-vuc.cap-nhat',['id'=>$value->id])}}">Sửa</a></button>
+                    <button type="button" onclick="return confirm('Bạn có muốn xóa ?')" class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
                    </tr>    
             <?php }?>
-
             <?php endforeach ?>                                                                                                       
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
@@ -73,7 +72,9 @@ Quản Lý Lĩnh Vực
                             <!-- kethucmodalthemlinhvuc -->
                             
                             <!-- modal sửa -->
-                                 <form action="#" method="POST" class="modal edit">
+                            
+                                 <form action="#" method="POST" >
+                                 @method('PATCH')
                                  @csrf
                                  <div id="con-close-modal-sua" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
@@ -87,11 +88,11 @@ Quản Lý Lĩnh Vực
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực</label>
-                                                        <input type="text" class="form-control" id="ten_linh_vuc" placeholder="Tên Lĩnh Vực">
+                                                        <input type="text" class="form-control" id="ten_linh_vuc" name="ten_linh_vuc" placeholder="Tên Lĩnh Vực" value="{{$value->ten}}" disabled>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="field-3" class="control-label">Tên Lĩnh Vực Mới</label>
-                                                        <input type="text" class="form-control" id="field-3" placeholder="Tên Lĩnh Vực Mới">
+                                                        <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực Mới</label>
+                                                        <input type="text" class="form-control" id="ten_linh_vuc_moi" name="ten_linh_vuc_moi" placeholder="Tên Lĩnh Vực Mới">
                                                     </div>
                                                 </div>
                                             </div>                                                                                     
@@ -102,7 +103,7 @@ Quản Lý Lĩnh Vực
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- /.modal -->
+                            </div>
                             </form>
                             <!-- kết thúc modal sửa -->
                                     <!-- btn tim kiem -->

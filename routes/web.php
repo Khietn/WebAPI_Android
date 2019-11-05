@@ -10,9 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('testsua',function(){
-	return view('form-sua-linh-vuc');
-});
+// Route::get('testsua',function(){
+// 	return view('form-sua-linh-vuc');
+// });
 //khiet
 // Route::prefix('linh-vuc')->group(function(){
 // 	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
@@ -31,15 +31,15 @@ Route::get('testsua',function(){
 
 
 // code khiem
-Route::get('testlogout', function () {
-    return view('logout');
-});
-Route::get('khiem', function () {
-    return view('layouts/Master');
-});
-Route::get('/index/Register', function () {
-    return view('Register');
-});
+// Route::get('testsua', function () {
+//     return view('form-sua-linh-vuc');
+// });
+// Route::get('khiem', function () {
+//     return view('layouts/Master');
+// });
+// Route::get('/index/Register', function () {
+//     return view('Register');
+// });
 // Route::get('/index/login', function(){
 // 	return view('Login');
 // });
@@ -48,12 +48,16 @@ Route::middleware('auth')->group(function(){
 	Route::get('trangchu', function () {
 		return view('layouts/Master');
 	})->name('trang-chu');
+
 	Route::get('/index/Database','LinhVucController@data');
 Route::prefix('linh-vuc')->group(function(){
 	Route::get('/index/Database','LinhVucController@data')->name('danhsach');
 	Route::get('{id}','LinhVucController@UpdateStatus')->name('linh-vuc.xoa');
  	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
- 	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
+	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
+	Route::get('/danh-sach/cap-nhat/{id}','LinhVucController@edit')->name('linh-vuc.cap-nhat');
+	Route::PATCH('/danh-sach/cap-nhat/{id}','LinhVucController@update');
+
  }); 
  Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
 Route::prefix('nguoi-choi')->group(function(){
