@@ -71,10 +71,8 @@ Route::prefix('goi-credit')->group(function(){
 	Route::get('goi-credit/{id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
 	// Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
 	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
-
 	Route::get('cap-nhat/{id}','GoiCreditController@edit')->name('goi-credit.cap-nhat');
 	Route::post('cap-nhat/{id}','GoiCreditController@update')->name('goi-credit.cap-nhat-update');
-	
 });
 Route::prefix('luot-choi')->group(function(){
 	Route::get('ds/luotchoi','LuotChoiController@data')->name('danhsach-luotchoi');
@@ -140,20 +138,6 @@ Route::prefix('cau-hoi')->group(function(){
 	
 // });
 // Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('xinchao',function(){
 	return view('xinchao2');
 });

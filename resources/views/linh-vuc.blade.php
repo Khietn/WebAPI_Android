@@ -33,7 +33,7 @@ Quản Lý Lĩnh Vực
                     <td>{{$value['id']}}</td>
                     <td>{{$value['ten']}}</td>
                     <td><button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua{{$value->id}}">Sửa</button>
-                    <button type="button" onclick="return confirm('Bạn có muốn xóa ?')" class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
+                    <button type="button" onclick="return confirm('Bạn có muốn xóa ?')" class="btn btn-danger waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}"></a>Xóa</button></td>                                                       
                    </tr>    
             <?php }?>
                  <!-- modal sửa -->        
@@ -57,7 +57,7 @@ Quản Lý Lĩnh Vực
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực Mới</label>
-                                                        <input type="text" class="form-control" id="ten_linh_vuc_moi" name="ten_linh_vuc_moi" placeholder="Tên Lĩnh Vực Mới">
+                                                        <input type="text" class="form-control" id="ten_linh_vuc_moi" required="" name="ten_linh_vuc_moi" placeholder="Tên Lĩnh Vực Mới">
                                                     </div>
                                                 </div>
                                             </div>                                                                                     
@@ -92,7 +92,7 @@ Quản Lý Lĩnh Vực
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực</label>
-                                                        <input type="text" class="form-control"id="ten_linh_vuc" name="ten_linh_vuc" placeholder="Tên Lĩnh Vực">
+                                                        <input type="text" class="form-control"id="ten_linh_vuc" name="ten_linh_vuc" required="" placeholder="Tên Lĩnh Vực">
                                                     </div>
                                                 </div>
                                             </div>                                                                                     
@@ -105,9 +105,7 @@ Quản Lý Lĩnh Vực
                                 </div>
                             </div><!-- /.ketthucmodalthem -->
                             </form>
-                            <!-- kethucmodalthemlinhvuc -->
-                            
-                       
+                            <!-- kethucmodalthemlinhvuc -->                     
                                     <!-- btn tim kiem -->
                                      <ul class="list-unstyled topnav-menu float-right mb-0">
                                     <li class="d-none d-sm-block">
@@ -119,7 +117,7 @@ Quản Lý Lĩnh Vực
                                             <button class="btn btn-dark" type="submit" style="margin-left:5px">
                                                 <i class="fe-search"></i>
                                             </button>
-                                        </div>
+                                        </div>                                      
                                     </div>
                                 </div>
                                     </form>
