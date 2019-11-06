@@ -55,8 +55,8 @@ Route::prefix('linh-vuc')->group(function(){
 	Route::get('{id}','LinhVucController@UpdateStatus')->name('linh-vuc.xoa');
  	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
 	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
-	Route::get('/danh-sach/cap-nhat/{id}','LinhVucController@edit')->name('linh-vuc.cap-nhat');
-	Route::PATCH('/danh-sach/cap-nhat/{id}','LinhVucController@update');
+	//Route::get('/danh-sach/cap-nhat/{id}','LinhVucController@edit')->name('linh-vuc.cap-nhat');
+	Route::PATCH('/danh-sach/cap-nhat/{id}','LinhVucController@update')->name('linh-vuc.cap-nhat');
 
  }); 
  Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
