@@ -10,6 +10,7 @@ Quản Lý Người Chơi
         <!-- End Page content -->
         <!-- ============================================================== -->
         <!-- table start -->
+       
         <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -91,8 +92,19 @@ Quản Lý Người Chơi
             </div>
         <!-- end table -->
          <!-- modalthem goi credit -->
+    
          <form action="{{route('nguoi-choi.tm-them-moi')}}" method="POST">
-                                 	@csrf
+                                     @csrf
+                                     @if($errors->any())
+        <div class="alert alert-primary alert-dismissible bg-primary text-white border-0 fade show" role="alert">
+                                <button class="close" aria-label="Close" type="button" data-dismiss="alert">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                @foreach($errors->all() as $error)
+                                <li> {{$error}}</li>
+                                @endforeach
+                            </div>
+        @endif     
                              <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
