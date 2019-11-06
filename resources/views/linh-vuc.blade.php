@@ -32,10 +32,45 @@ Quản Lý Lĩnh Vực
                     <tr>
                     <td>{{$value['id']}}</td>
                     <td>{{$value['ten']}}</td>
-                    <td><button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua"><a href="#">Sửa</a></button>
-                    <button type="button" class="btn btn-dark waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}">Xóa</a></button></td>                                                       
+                    <td><button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua{{$value->id}}">Sửa</button>
+                    <button type="button" onclick="return confirm('Bạn có muốn xóa ?')" class="btn btn-danger waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}"></a>Xóa</button></td>                                                       
                    </tr>    
             <?php }?>
+                 <!-- modal sửa -->        
+                            
+                 <form action="{{route('linh-vuc.cap-nhat',['id'=>$value->id])}}" method="POST">
+                                 @method('PATCH')
+                                 @csrf
+                                 <div id="con-close-modal-sua{{$value->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Sửa Lĩnh Vực</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body p-4">                                   
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực</label>
+                                                        <input type="text" class="form-control" id="ten_linh_vuc" name="ten_linh_vuc" placeholder="Tên Lĩnh Vực" value="{{$value->ten}}" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực Mới</label>
+                                                        <input type="text" class="form-control" id="ten_linh_vuc_moi" required="" name="ten_linh_vuc_moi" placeholder="Tên Lĩnh Vực Mới">
+                                                    </div>
+                                                </div>
+                                            </div>                                                                                     
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">Lưu</button>
+                                            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Hủy</button>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                            <!-- kết thúc modal sửa -->
 
             <?php endforeach ?>                                                                                                       
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
@@ -57,7 +92,7 @@ Quản Lý Lĩnh Vực
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực</label>
-                                                        <input type="text" class="form-control"id="ten_linh_vuc" name="ten_linh_vuc" placeholder="Tên Lĩnh Vực">
+                                                        <input type="text" class="form-control"id="ten_linh_vuc" name="ten_linh_vuc" required="" placeholder="Tên Lĩnh Vực">
                                                     </div>
                                                 </div>
                                             </div>                                                                                     
@@ -70,41 +105,7 @@ Quản Lý Lĩnh Vực
                                 </div>
                             </div><!-- /.ketthucmodalthem -->
                             </form>
-                            <!-- kethucmodalthemlinhvuc -->
-                            
-                            <!-- modal sửa -->
-                                 <form action="#" method="POST" class="modal edit">
-                                 @csrf
-                                 <div id="con-close-modal-sua" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Sửa Lĩnh Vực</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                        </div>
-                                        <div class="modal-body p-4">                                   
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực</label>
-                                                        <input type="text" class="form-control" id="ten_linh_vuc" placeholder="Tên Lĩnh Vực">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="field-3" class="control-label">Tên Lĩnh Vực Mới</label>
-                                                        <input type="text" class="form-control" id="field-3" placeholder="Tên Lĩnh Vực Mới">
-                                                    </div>
-                                                </div>
-                                            </div>                                                                                     
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-info waves-effect waves-light">Lưu</button>
-                                            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Hủy</button>                                         
-                                        </div>
-                                    </div>
-                                </div>
-                            </div><!-- /.modal -->
-                            </form>
-                            <!-- kết thúc modal sửa -->
+                            <!-- kethucmodalthemlinhvuc -->                     
                                     <!-- btn tim kiem -->
                                      <ul class="list-unstyled topnav-menu float-right mb-0">
                                     <li class="d-none d-sm-block">
@@ -116,7 +117,7 @@ Quản Lý Lĩnh Vực
                                             <button class="btn btn-dark" type="submit" style="margin-left:5px">
                                                 <i class="fe-search"></i>
                                             </button>
-                                        </div>
+                                        </div>                                      
                                     </div>
                                 </div>
                                     </form>

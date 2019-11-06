@@ -1,10 +1,4 @@
 @extends('layouts.Master')
-@section('title')
-Sửa Lĩnh Vực
-@endsection
-@section('head')
-    @parent
-@endsection
 
 @section('main-content')
 <div class="container-fluid">
@@ -13,17 +7,18 @@ Sửa Lĩnh Vực
    	<div class="card">
    		<div class="card-body">
 	  <h4 class="mb-3 header-title">Sửa Lĩnh Vực</h4>
-   <form action="{{route('linh-vuc.xl-them-moi')}}" method="POST">
+   <form action="{{ $linhVuc->id }}" method="POST">
+   @method('PATCH')
    	@csrf
        <div class="form-group mb-3">
           <label for="ten_linh_vuc">Tên Lĩnh Vực</label>
-          <input type="text" id="ten_linh_vuc" name="ten_linh_vuc"class="form-control" placeholder="Tên Lĩnh Vực">
+          <input type="text" id="ten_linh_vuc" name="ten_linh_vuc" class="form-control" placeholder="Tên Lĩnh Vực" value="{{$linhVuc->ten}}" disabled>
           <label for="ten_linh_vuc">Tên Lĩnh Vực Mới</label>
-          <input type="text" id="ten_linh_vuc" name="ten_linh_vuc"class="form-control" placeholder="Tên Lĩnh Vực Mới">          
+          <input type="text" id="ten_linh_vuc_moi" name="ten_linh_vuc_moi" class="form-control" placeholder="Tên Lĩnh Vực Mới">          
            </div>
             <button type="submit" class="btn btn-primary waves-effect waves-light" style="margin-bottom:20px">Lưu</button>
             <button type="submit" class="btn btn-danger waves-effect waves-light" style="margin-bottom:20px">Hủy</button>
-            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal">Responsive Modal</button>
+            <!-- <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal">Responsive Modal</button>
             
             <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
@@ -52,7 +47,7 @@ Sửa Lĩnh Vực
                                         </div>
                                     </div>
                                 </div>
-                            </div><!-- /.modal -->
+                            </div>/.modal -->
                </form>
       </div>
 </div>

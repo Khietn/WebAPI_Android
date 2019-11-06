@@ -54,11 +54,11 @@ class LinhVucController extends Controller
     public function store(Request $request)
     {
         //
-        $linhVuc = new LinhVucModel;
-        $linhVuc->ten= $request->ten_linh_vuc;
-        $linhVuc->save();
-        // return redirect('linh-vuc/danh-sach');
-        return redirect('/index/Database')->with('success','Thêm mới thành công');
+            $linhVuc = new LinhVucModel;
+            $linhVuc->ten= $request->ten_linh_vuc;
+            $linhVuc->save();           
+            return redirect('/index/Database')->with('success','Thêm mới thành công');
+        
     }
 
     /**
@@ -83,7 +83,7 @@ class LinhVucController extends Controller
     {
         //
         $linhVuc = LinhVucModel::findOrFail($id);
-        return view('Master-page.edit', compact('linhVuc'));
+        return view('form-sua-linh-vuc', compact('linhVuc'));
     }
 
     /**
@@ -97,9 +97,10 @@ class LinhVucController extends Controller
     {
         //
         $linhVuc = LinhVucModel::findOrFail($id);
-        $linhVuc->ten = $request->txtTenEdit;
+        $linhVuc->ten = $request->input('ten_linh_vuc_moi');
         $linhVuc->save();
-        return redirect('linh-vuc/danh-sach')->with('success',"Success");
+        return redirect('/index/Database')->with('success',"Sửa Thành Công");
+        //return redirect()->action('LinhVucController@data')->with('success',"Sửa Thành Công");
     }
 
     /**
