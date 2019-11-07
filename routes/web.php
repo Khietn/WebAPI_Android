@@ -99,8 +99,10 @@ Route::prefix('cau-hinh-tro-giup')->group(function(){
 });
 Route::prefix('cau-hoi')->group(function(){
 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
-	Route::post('them-moi','CauHoiController@store')->name('cau-hoi.them');
+	Route::post('them-moi','CauHoiController@editAjax')->name('cau-hoi.them');
 	Route::get('danh-sach/chinh-sua/{id}','CauHoiController@edit')->name('cau-hoi.danh-sach.chinh-sua');
+	Route::put('chinh-sua','CauHoiController@update')->name('cau-hoi.danh-sach.cap-nhat');
+	Route::put('cap-nhat-trang-thai','CauHoiController@updateStatus')->name('cau-hoi.danh-sach.trang-thai');
 });
 });
 //Kết Thúc Chứng Thực
