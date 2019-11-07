@@ -11,7 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class QuanTriVienController extends Controller
 {
     protected $redirectTo = 'linh-vuc';
-    public function dangNhap(){
+    public function dangNhap()
+    {
+        if(Auth::check())
+        {
+            return redirect()->route('trang-chu');
+        }
         return view ('Login');
     }
     public function data()
@@ -19,11 +24,16 @@ class QuanTriVienController extends Controller
         $quanTriVien=QuanTriVienModel::all();
         return view ('QuanTriVien',compact('quanTriVien'));
     }
-    public function xuLyDangNhap(Request  $request){
-         //return "hello";
+    public function xuLyDangNhap(Request  $request)
+    {
+         $request->validate([
+             'ten_dang_nhap'=>'required',
+             'mat_khau'=>'required'
+         ]);
+
          $ten_dang_nhap = $request->ten_dang_nhap;
          $mat_khau = $request->mat_khau;
-         $qtv=QuanTriVienModel::where('ten_dang_nhap',$ten_dang_nhap)->first();
+         //$qtv=QuanTriVienModel::where('ten_dang_nhap',$ten_dang_nhap)->first();
          if(Auth::attempt(['ten_dang_nhap' => $ten_dang_nhap,'password' => $mat_khau]))
          {
             return redirect()->route('trang-chu'); 

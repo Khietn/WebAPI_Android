@@ -54,11 +54,11 @@ class LinhVucController extends Controller
     public function store(Request $request)
     {
         //
-        $linhVuc = new LinhVucModel;
-        $linhVuc->ten= $request->ten_linh_vuc;
-        $linhVuc->save();
-        // return redirect('linh-vuc/danh-sach');
-        return redirect('/index/Database')->with('success','Thêm mới thành công');
+            $linhVuc = new LinhVucModel;
+            $linhVuc->ten= $request->ten_linh_vuc;
+            $linhVuc->save();           
+            return redirect('/index/Database')->with('success','Thêm Mới Thành Công !');
+        
     }
 
     /**

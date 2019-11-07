@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Collection;
 use App\NguoiChoiModel;
-
+use App\Http\Controllers\Auth;
+use App\Http\Requests\NguoiChoiRequest;
 class NguoiChoiController extends Controller
 {
     public function data()
@@ -43,17 +45,10 @@ class NguoiChoiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-      /*  $ten_dang_nhap=$request->ten_dang_nhap;
-        $qtv=NguoiChoiModel::where('ten_dang_nhap',$ten_dang_nhap)->first();
-        if(Auth::attempt(['ten_dang_nhap'=>$ten_dang_nhap]))
-        {
-            return redirect('form-them-moi-nguoi-choi')->with('success','Tài Khoản Đã Tồn tại');
-        }
-        else
-        {
-        */
+    public function store(NguoiChoiRequest  $request)
+    {   
+            
+            
             $NguoiChoi=new NguoiChoiModel;
             $NguoiChoi->ten_dang_nhap=$request->ten_dang_nhap;
             $NguoiChoi->mat_khau=$request->mat_khau;
@@ -62,17 +57,10 @@ class NguoiChoiController extends Controller
             $NguoiChoi->diem_cao_nhat=$request->diem_cao_nhat;
             $NguoiChoi->credit=$request->credit;
             $NguoiChoi->save();
-    
-            return redirect('nguoi-choi')->with('success','thêm mới thành công');
-    //    }
-        
-      // if(NguoiChoiModel::where('ten_dang_nhap',$request->ten_dang_nhap)==0)
-     //  {
-       
-      // }
-      // else{
-      //     return redirect('form-them-moi-nguoi-choi')->with('success','Tài Khoản Đã Tồn tại');
-      // }
+            return redirect('nguoi-choi')->with('success','Thêm Mới Thành Công !');
+            
+            
+
     }
     public function updatestatus(Request $request,$id)
     {
@@ -84,7 +72,7 @@ class NguoiChoiController extends Controller
         {
             $NguoiChoi=NguoiChoiModel::where('id',$id)->update(['xoa'=>0]);
         }
-        return redirect('nguoi-choi')->with('success','Xóa Thành Công');
+        return redirect('nguoi-choi')->with('success','Xóa Thành Công !');
 
     }
     
@@ -123,9 +111,14 @@ class NguoiChoiController extends Controller
     {
         //
         $NguoiChoi = NguoiChoiModel::findOrFail($id);
-        $NguoiChoi->ten = $request->txtTenEdit;
+        $NguoiChoi->ten_dang_nhap=$request->input('ten_dang_nhap_moi');
+        $NguoiChoi->mat_khau=$request->input('mat_khau_moi');
+        $NguoiChoi->email=$request->input('email_moi');
+        $NguoiChoi->hinh_dai_dien=$request->input('hinh_dai_dien_moi');
+        $NguoiChoi->diem_cao_nhat=$request->input('diem_cao_nhat_moi');
+        $NguoiChoi->credit=$request->input('credit_moi');
         $NguoiChoi->save();
-        return redirect('linh-vuc/danh-sach')->with('success',"Success");
+        return redirect('nguoi-choi')->with('success',"Cập Nhật Thành Công !");
     }
 
     /**

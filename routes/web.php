@@ -55,8 +55,8 @@ Route::prefix('linh-vuc')->group(function(){
 	Route::get('{id}','LinhVucController@UpdateStatus')->name('linh-vuc.xoa');
  	Route::get('them-moi','LinhVucController@create')->name('linh-vuc.them-moi');
 	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
-	Route::get('/danh-sach/cap-nhat/{id}','LinhVucController@edit')->name('linh-vuc.cap-nhat');
-	Route::PATCH('/danh-sach/cap-nhat/{id}','LinhVucController@update');
+	//Route::get('/danh-sach/cap-nhat/{id}','LinhVucController@edit')->name('linh-vuc.cap-nhat');
+	Route::PATCH('/danh-sach/cap-nhat/{id}','LinhVucController@update')->name('linh-vuc.cap-nhat');
 
  }); 
  Route::get('nguoi-choi','NguoiChoiController@data')->name('nguoi-choi.table');
@@ -65,16 +65,15 @@ Route::prefix('nguoi-choi')->group(function(){
 	Route::get('nguoi-choi/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
 	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
 	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
+	Route::PATCH('cap-nhat/{id}','NguoiChoiController@update')->name('nguoi-choi.cap-nhat');
 });
 Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
 Route::prefix('goi-credit')->group(function(){
 	Route::get('goi-credit/{id}','GoiCreditController@updatestatus')->name('goi-credit.xoa');
 	// Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
 	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
-
 	Route::get('cap-nhat/{id}','GoiCreditController@edit')->name('goi-credit.cap-nhat');
-	Route::post('cap-nhat/{id}','GoiCreditController@update')->name('goi-credit.cap-nhat-update');
-	
+	Route::PATCH('cap-nhat/{id}','GoiCreditController@update')->name('goi-credit.cap-nhat-update');
 });
 Route::prefix('luot-choi')->group(function(){
 	Route::get('ds/luotchoi','LuotChoiController@data')->name('danhsach-luotchoi');
@@ -142,20 +141,6 @@ Route::prefix('cau-hoi')->group(function(){
 	
 // });
 // Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('xinchao',function(){
 	return view('xinchao2');
 });
