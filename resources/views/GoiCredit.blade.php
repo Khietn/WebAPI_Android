@@ -153,9 +153,9 @@ Quản Lý Gói Credit
                                                     <label form="ten_goi">Tên Gói Credit</label>
                                                     <input type="text" id="ten_goi" name="ten_goi" required="" class="form-control"  placeholder="Tên Gói Credit">
                                                     <label form="credit">Credit</label>
-                                                    <input type="text" id="credit" name="credit" required="" class="form-control"  placeholder="Credit"> 
+                                                    <input type="number" id="credit" name="credit" required="" class="form-control"  placeholder="Credit"> 
                                                     <label form="so-tien">Số Tiền</label>
-                                                    <input type="text" id="so_tien" required="" name="so_tien" class="form-control"  placeholder="Số Tiền"> 
+                                                    <input type="number" id="so_tien" required="" name="so_tien" class="form-control"  placeholder="Số Tiền"> 
                                                     </div>
                                                 </div>
                                             </div>                                                                                     

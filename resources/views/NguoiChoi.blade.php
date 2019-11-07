@@ -47,13 +47,79 @@ Quản Lý Người Chơi
                     <td>{{$value->diem_cao_nhat}}</td>
                     <td>{{$value->credit}}</td>
                     <td>
-                    <button class="btn btn-success waves-effect waves-light">Sửa</button>                                        
+                    <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua{{$value->id}}">Sửa</button>                                        
                     <a href="{{route('nguoi-choi.xoa',['id'=>$value->id])}}" onclick="return confirm('Bạn có muốn xóa ?')"  class="btn btn-danger waves-effect waves-light">Xóa</a></td>              
                      </form>
                     </td>                                                       
                    </tr> 
 
-             <?php } ?>                            
+             <?php } ?>  
+             <!-- modal sửa -->                  
+             <form action="{{route('nguoi-choi.cap-nhat',['id'=>$value->id])}}" method="POST">
+                                 @method('PATCH')
+                                 @csrf
+                                 <div id="con-close-modal-sua{{$value->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog" style="max-width:1024px">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Sửa Gói Credit</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body p-6">                              
+                                            <div class="row">
+                                            <div class="col-md-12">
+                                            <!-- thông tin người chơi cũ -->
+                                                <div class="col-md-6 float-left">
+                                                <div class="form-group">
+                                                    <label form="ten_dang_nhap">Tên Đăng Nhập</label>
+                                                    <input type="text" id="ten_dang_nhap" name="ten_dang_nhap"class="form-control" required="" value="{{$value->ten_dang_nhap}}" placeholder="Tên Đăng Nhập" disabled>
+                                                    <label form="mat_khau">Mật Khẩu</label>
+                                                    <input type="password" id="mat_khau" name="mat_khau"class="form-control" required="" value="{{$value->mat_khau}}" placeholder="Mật Khẩu" disabled> 
+                                                    <label form="email">Email</label>
+                                                    <input type="email" id="email" name="email"class="form-control" required="" value="{{$value->email}}" placeholder="Email"  disabled> 
+                                                   <!--chọn file ảnh-->
+                                                   <label form="hinh_dai_dien">Ảnh Đại Diện</label>
+                                                    <div class="custom-file" >                                  
+                                                          <input type="file"  id="hinh_dai_dien" name="hinh_dai_dien"  required="" disabled>
+                                                    </div>
+                                                    <label form="diem_cao_nhat">Điểm cao nhất</label>
+                                                    <input type="number" id="diem_cao_nhat" name="diem_cao_nhat"class="form-control" required="" value="{{$value->diem_cao_nhat}}" placeholder="Điểm cao nhất"  disabled> 
+                                                    <label form="credit">Credit</label>
+                                                    <input type="number" id="credit" name="credit"class="form-control" required="" value="{{$value->credit}}" placeholder="Credit"  disabled>                  
+                                                    </div>
+                                                </div>
+                                                <!-- thông tin người chơi mới -->
+                                                <div class="col-md-6 float-right">
+                                                    <div class="form-group">
+                                                    <label form="ten_dang_nhap_moi">Tên Đăng Nhập</label>
+                                                    <input type="text" id="ten_dang_nhap_moi" name="ten_dang_nhap_moi" class="form-control" required=""  placeholder="Tên Đăng Nhập Mới">
+                                                    <label form="mat_khau_moi">Mật Khẩu</label>
+                                                    <input type="password" id="mat_khau_moi" name="mat_khau_moi"class="form-control" required="" placeholder="Mật Khẩu Mới"> 
+                                                    <label form="email_moi">Email</label>
+                                                    <input type="email" id="email_moi" name="email_moi"class="form-control" required="" placeholder="Email Mới"> 
+                                                   <!--chọn file ảnh-->
+                                                   <label form="hinh_dai_dien_moi">Ảnh Đại Diện</label>
+                                                    <div class="custom-file" >                                  
+                                                          <input type="file"  id="hinh_dai_dien_moi" name="hinh_dai_dien_moi"  required="" >
+                                                    </div>
+                                                    <label form="diem_cao_nhat_moi">Điểm cao nhất</label>
+                                                    <input type="number" id="diem_cao_nhat_moi" name="diem_cao_nhat_moi" class="form-control" required="" placeholder="Điểm Cao Mới Nhất"> 
+                                                    <label form="credit_moi">Credit</label>
+                                                    <input type="number" id="credit_moi" name="credit_moi" class="form-control" required=""  placeholder="Credit Mới">                                                 
+                                                    </div>
+                                                </div>                                                
+                                                </div>
+                                            </div>                                                                                     
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">Lưu</button>
+                                            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Hủy</button>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                            <!-- kết thúc modal sửa -->                                              
             <?php endforeach ?>                                   
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                             </tbody>
@@ -120,7 +186,7 @@ Quản Lý Người Chơi
                                                    <!--chọn file ảnh-->
                                                    <label form="hinh_dai_dien">Ảnh Đại Diện</label>
                                                     <div class="custom-file">                                  
-                                                          <input type="file"  id="hinh_dai_dien" name="hinh_dai_dien" required="" placeholder="Điểm cao nhất">
+                                                          <input type="file"  id="hinh_dai_dien" name="hinh_dai_dien" required="" >
                                                     </div>
                                                     <label form="diem_cao_nhat">Điểm cao nhất</label>
                                                     <input type="number" id="diem_cao_nhat" name="diem_cao_nhat"class="form-control" required="" placeholder="Điểm cao nhất"> 

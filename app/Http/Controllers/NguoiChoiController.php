@@ -111,9 +111,14 @@ class NguoiChoiController extends Controller
     {
         //
         $NguoiChoi = NguoiChoiModel::findOrFail($id);
-        $NguoiChoi->ten = $request->txtTenEdit;
+        $NguoiChoi->ten_dang_nhap=$request->input('ten_dang_nhap_moi');
+        $NguoiChoi->mat_khau=$request->input('mat_khau_moi');
+        $NguoiChoi->email=$request->input('email_moi');
+        $NguoiChoi->hinh_dai_dien=$request->input('hinh_dai_dien_moi');
+        $NguoiChoi->diem_cao_nhat=$request->input('diem_cao_nhat_moi');
+        $NguoiChoi->credit=$request->input('credit_moi');
         $NguoiChoi->save();
-        return redirect('linh-vuc/danh-sach')->with('success',"Cập Nhật Thành Công !");
+        return redirect('nguoi-choi')->with('success',"Cập Nhật Thành Công !");
     }
 
     /**

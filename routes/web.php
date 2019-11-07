@@ -65,6 +65,7 @@ Route::prefix('nguoi-choi')->group(function(){
 	Route::get('nguoi-choi/{id}','NguoiChoiController@updatestatus')->name('nguoi-choi.xoa');
 	Route::get('them-moi','NguoiChoiController@create')->name('nguoi-choi.them-moi');
 	Route::post('them-moi','NguoiChoiController@store')->name('nguoi-choi.tm-them-moi');
+	Route::PATCH('cap-nhat/{id}','NguoiChoiController@update')->name('nguoi-choi.cap-nhat');
 });
 Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
 Route::prefix('goi-credit')->group(function(){
