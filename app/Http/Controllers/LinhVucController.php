@@ -57,7 +57,7 @@ class LinhVucController extends Controller
             $linhVuc = new LinhVucModel;
             $linhVuc->ten= $request->ten_linh_vuc;
             $linhVuc->save();           
-            return redirect('/index/Database')->with('success','Thêm mới thành công');
+            return redirect('/index/Database')->with('success','Thêm Mới Thành Công !');
         
     }
 

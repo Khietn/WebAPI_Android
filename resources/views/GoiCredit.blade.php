@@ -40,16 +40,68 @@ Quản Lý Gói Credit
                     <td>{{$value->credit}}</td>
                     <td>{{$value->so_tien}}</td>
                    <td>
-                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route('goi-credit.cap-nhat',['id'=>$value->id])}}">Sửa</a>
-                     </button> 
-                     
-                    <button class="btn btn-dark waves-effect waves-light"><a href="{{route("goi-credit.xoa",['id'=>$value->id])}}">Xóa</a></button>
-					               
+                    <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua{{$value->id}}">Sửa</button> 
+                     <a href="{{route('goi-credit.xoa',['id'=>$value->id])}}" onclick="return confirm('Bạn có muốn xóa ?')"  class="btn btn-danger waves-effect waves-light">Xóa</a>            
                      </form>
                     </td>                                                       
                    </tr> 
-
-             <?php } ?>                            
+             <?php } ?> 
+              <!-- modal sửa -->                  
+              <form action="{{route('goi-credit.cap-nhat-update',['id'=>$value->id])}}" method="POST">
+                                 @method('PATCH')
+                                 @csrf
+                                 <div id="con-close-modal-sua{{$value->id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog" style="max-width:1024px">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Sửa Gói Credit</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        </div>
+                                        <div class="modal-body p-6">                              
+                                            <div class="row">
+                                            <div class="col-md-12">
+                                            <!-- gói credit cũ -->
+                                                <div class="col-md-6 float-left">
+                                                    <div class="form-group">
+                                                        <label for="ten_goi" class="control-label">Tên Gói Credit</label>
+                                                        <input type="text" class="form-control" id="ten_goi" name="ten_goi" placeholder="Tên Gói Credit" value="{{$value->ten_goi}}" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ten_linh_vuc" class="control-label">Credit</label>
+                                                        <input type="text" class="form-control" id="credit" required="" name="credit" placeholder="Credit" value="{{$value->credit}}" disabled>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ten_linh_vuc" class="control-label">Số Tiền</label>
+                                                        <input type="text" class="form-control" id="so_tien" required="" name="so_tien" placeholder="Số Tiền" value="{{$value->so_tien}}" disabled>
+                                                    </div>
+                                                </div>
+                                                <!-- gói credit mới -->
+                                                <div class="col-md-6 float-right">
+                                                    <div class="form-group">
+                                                        <label for="ten_goi" class="control-label">Tên Gói Credit Mới</label>
+                                                        <input type="text" class="form-control" id="ten_goi_moi" name="ten_goi_moi" required="" placeholder="Nhập Tên Gói Credit Mới"  >
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ten_linh_vuc" class="control-label">Credit Mới</label>
+                                                        <input type="number" class="form-control" id="credit_moi" required="" name="credit_moi" placeholder="Nhập Credit Mới">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ten_linh_vuc" class="control-label">Số Tiền Mới</label>
+                                                        <input type="number" class="form-control" id="so_tien_moi" required="" name="so_tien_moi" placeholder="Nhập Số Tiền">
+                                                    </div>
+                                                </div>                                                
+                                                </div>
+                                            </div>                                                                                     
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">Lưu</button>
+                                            <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Hủy</button>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                            <!-- kết thúc modal sửa -->                           
             <?php endforeach ?>                       
                             
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
@@ -99,11 +151,11 @@ Quản Lý Gói Credit
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                     <label form="ten_goi">Tên Gói Credit</label>
-                                                    <input type="text" id="ten_goi" name="ten_goi"class="form-control" placeholder="Tên Gói Credit">
+                                                    <input type="text" id="ten_goi" name="ten_goi" required="" class="form-control"  placeholder="Tên Gói Credit">
                                                     <label form="credit">Credit</label>
-                                                    <input type="text" id="credit" name="credit"class="form-control" placeholder="Credit"> 
+                                                    <input type="text" id="credit" name="credit" required="" class="form-control"  placeholder="Credit"> 
                                                     <label form="so-tien">Số Tiền</label>
-                                                    <input type="text" id="so_tien" name="so_tien"class="form-control" placeholder="Số Tiền"> 
+                                                    <input type="text" id="so_tien" required="" name="so_tien" class="form-control"  placeholder="Số Tiền"> 
                                                     </div>
                                                 </div>
                                             </div>                                                                                     

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Upvex - Responsive Admin Dashboard Template</title>
+        <title>Lỗi Tìm Trang Web</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -32,12 +32,10 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <h3 class="mt-4 text-uppercase font-weight-bold">Page not found </h3>
-                                    <p class="text-muted mb-0 mt-3" style="line-height: 20px;">It's looking like you may have taken a wrong turn. Don't worry...
-                                        it happens to the best of us. You might want to check your internet connection.
-                                        Here's a little tip that might help you get back on track.</p>
+                                    <h3 class="mt-4 text-uppercase font-weight-bold">Không Tìm Thấy Trang</h3>
+                                    <p class="text-muted mb-0 mt-3" style="line-height: 20px;">Lỗi đường dẫn hoặc không tìm thấy trang bạn yêu cầu.</p>
 
-                                    <a class="btn btn-info mt-3" href="{{route('trang-chu')}}"><i class="mdi mdi-reply mr-1"></i> Return Home</a>
+                                    <a class="btn btn-info mt-3" href="{{route('trang-chu')}}"><i class="mdi mdi-reply mr-1"></i>Trở Về</a>
                                 </div>
 
                             </div> <!-- end card-body -->

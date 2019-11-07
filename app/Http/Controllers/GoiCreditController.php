@@ -52,7 +52,7 @@ class GoiCreditController extends Controller
         $GoiCredit->so_tien=$request->so_tien;
         $GoiCredit->save();
 
-        return redirect('goi-credit')->with('success','thêm mới thành công');
+        return redirect('goi-credit')->with('success','Thêm Mới Thành Công !');
     }
     public function updatestatus(Request $request,$id)
     {
@@ -64,7 +64,7 @@ class GoiCreditController extends Controller
         {
             $GoiCredit=GoiCreditModel::where('id',$id)->update(['xoa'=>0]);
         }
-        return redirect('goi-credit')->with('success','xóa thành công');
+        return redirect('goi-credit')->with('success','Xóa Thành Công ! ');
 
     }
     /**
@@ -103,11 +103,11 @@ class GoiCreditController extends Controller
     {
         //
         $GoiCredit = GoiCreditModel::findOrFail($id);
-        $GoiCredit->ten_goi=$request->ten_goi;
-        $GoiCredit->credit=$request->credit;
-        $GoiCredit->so_tien=$request->so_tien;
+        $GoiCredit->ten_goi=$request->input('ten_goi_moi');
+        $GoiCredit->credit=$request->input('credit_moi');
+        $GoiCredit->so_tien=$request->input('so_tien_moi');
         $GoiCredit->save();
-        return redirect('goi-credit')->with('success','Cập nhật thành công');
+        return redirect('goi-credit')->with('success','Cập Nhật Thành Công !');
 
     }
 

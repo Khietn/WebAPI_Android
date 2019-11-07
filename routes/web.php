@@ -72,7 +72,7 @@ Route::prefix('goi-credit')->group(function(){
 	// Route::get('them-moi','GoiCreditController@create')->name('goi-credit.them-moi');
 	Route::post('them-moi','GoiCreditController@store')->name('goi-credit.tm-them-moi');
 	Route::get('cap-nhat/{id}','GoiCreditController@edit')->name('goi-credit.cap-nhat');
-	Route::post('cap-nhat/{id}','GoiCreditController@update')->name('goi-credit.cap-nhat-update');
+	Route::PATCH('cap-nhat/{id}','GoiCreditController@update')->name('goi-credit.cap-nhat-update');
 });
 Route::prefix('luot-choi')->group(function(){
 	Route::get('ds/luotchoi','LuotChoiController@data')->name('danhsach-luotchoi');

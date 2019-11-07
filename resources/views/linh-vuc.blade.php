@@ -33,11 +33,10 @@ Quản Lý Lĩnh Vực
                     <td>{{$value['id']}}</td>
                     <td>{{$value['ten']}}</td>
                     <td><button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua{{$value->id}}">Sửa</button>
-                    <button type="button" onclick="return confirm('Bạn có muốn xóa ?')" class="btn btn-danger waves-effect waves-light"><a href="{{route("linh-vuc.xoa",['id'=>$value->id])}}"></a>Xóa</button></td>                                                       
+                    <a href="{{route('linh-vuc.xoa',['id'=>$value->id])}}" onclick="return confirm('Bạn có muốn xóa ?')"  class="btn btn-danger waves-effect waves-light">Xóa</a></td>                                                       
                    </tr>    
             <?php }?>
-                 <!-- modal sửa -->        
-                            
+                 <!-- modal sửa -->                  
                  <form action="{{route('linh-vuc.cap-nhat',['id'=>$value->id])}}" method="POST">
                                  @method('PATCH')
                                  @csrf

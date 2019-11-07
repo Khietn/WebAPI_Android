@@ -57,7 +57,7 @@ class NguoiChoiController extends Controller
             $NguoiChoi->diem_cao_nhat=$request->diem_cao_nhat;
             $NguoiChoi->credit=$request->credit;
             $NguoiChoi->save();
-            return redirect('nguoi-choi')->with('success','them moi thanh cong');
+            return redirect('nguoi-choi')->with('success','Thêm Mới Thành Công !');
             
             
 
@@ -72,7 +72,7 @@ class NguoiChoiController extends Controller
         {
             $NguoiChoi=NguoiChoiModel::where('id',$id)->update(['xoa'=>0]);
         }
-        return redirect('nguoi-choi')->with('success','Xóa Thành Công');
+        return redirect('nguoi-choi')->with('success','Xóa Thành Công !');
 
     }
     
@@ -113,7 +113,7 @@ class NguoiChoiController extends Controller
         $NguoiChoi = NguoiChoiModel::findOrFail($id);
         $NguoiChoi->ten = $request->txtTenEdit;
         $NguoiChoi->save();
-        return redirect('linh-vuc/danh-sach')->with('success',"Success");
+        return redirect('linh-vuc/danh-sach')->with('success',"Cập Nhật Thành Công !");
     }
 
     /**
