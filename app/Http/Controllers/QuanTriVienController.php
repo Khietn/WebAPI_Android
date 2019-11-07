@@ -38,7 +38,7 @@ class QuanTriVienController extends Controller
          {
             return redirect()->route('trang-chu'); 
          }
-         return "Đăng Nhập Không Thành Công";
+         return view('toast');
         //  if($qtv==null)
         //  {
         //      return 'Sai tên đăng nhập';
