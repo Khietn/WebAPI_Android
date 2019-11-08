@@ -18,7 +18,9 @@ class CreateCauHinhTroGiupTable extends Migration
             $table->Integer('loai_tro_giup');
             $table->Integer('thu_tu');
             $table->Integer('credit');
+            $table->boolean('xoa')->default(false);
             $table->timestamps();
+         
         });
     }
 

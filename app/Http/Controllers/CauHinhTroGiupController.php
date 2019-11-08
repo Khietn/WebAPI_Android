@@ -15,7 +15,8 @@ class CauHinhTroGiupController extends Controller
      */
     public function data()
     {
-        return view('CauHinhTroGiup');
+        $ch = CauHinhTroGiupModel::all();
+        return view('CauHinhTroGiup',compact('ch'));
     }
     public function index()
     {
@@ -40,7 +41,12 @@ class CauHinhTroGiupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ch = new CauHinhTroGiupModel;
+        $ch->loai_tro_giup = $request->loai_tro_giup;
+        $ch->thu_tu = $request->thu_tu;
+        $ch->credit = $request->credit;
+        $ch->save();
+        return redirect('cau-hinh-tro-giup')->with('success','Thêm cấu hình trợ giúp thành công');
     }
 
     /**
@@ -74,7 +80,12 @@ class CauHinhTroGiupController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ch = CauHinhTroGiupModel::findOrFail($id);
+        $ch->loai_tro_giup = $request->loai_tro_giup;
+        $ch->thu_tu = $request->thu_tu;
+        $ch->credit = $request->credit;
+        $ch->save();
+        return redirect('cau-hinh-tro-giup')->with('success','Cập nhật cấu hình trợ giúp thành công');
     }
 
     /**
@@ -86,5 +97,15 @@ class CauHinhTroGiupController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function updateS(Request $request,$id){
+        if($request->hiddenXoa == 0){
+            $cauHinh = CauHinhTroGiupModel::where('id',$id)->update(['xoa'=>1]);
+            return redirect('cau-hinh-tro-giup')->with('success','Xóa cấu hình thành công');
+        }
+        else{
+            $cauHinh = CauHinhTroGiupModel::where('id',$id)->update(['xoa'=>0]);
+            return redirect('cau-hinh-tro-giup')->with('success','Khôi phục cấu hìnhthành công');
+        }
     }
 }

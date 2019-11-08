@@ -96,6 +96,9 @@ Route::prefix('cau-hinh-diem-cau-hoi')->group(function(){
 });
 Route::prefix('cau-hinh-tro-giup')->group(function(){
 	Route::get('/','CauHinhTroGiupController@data')->name('danhsach-cauhinhtrogiup');
+	Route::put('/{id}','CauHinhTroGiupController@update')->name('cauhinh-trogiup.cap-nhat');
+	Route::post('/','CauHinhTroGiupController@store')->name('cauhinh-trogiup.them');
+	Route::put('/xoa/{id}','CauHinhTroGiupController@updateS')->name('cauhinh-trogiup.capnhat-xoa');
 });
 Route::prefix('cau-hoi')->group(function(){
 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
