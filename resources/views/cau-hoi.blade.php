@@ -11,7 +11,7 @@
 
 @if(session('success'))
 <script>
-    alert('{{session('success')}}')
+    alert('{{session("success")}}')
 </script>
 @endif
 @section('main-content')
@@ -64,18 +64,19 @@
                                         <td>{{$ds->phuong_an_d}}</td>
                                         <td>{{$ds->dap_an}}</td>
                                         <td>
-                                            <form action="{{route('cau-hoi.danh-sach.trang-thai')}}" method="POST" id="formTrangThai" style="width:56px;display:inline-flex">
-                                            @csrf
-                                            @method('PUT')
-                                                <input type="hidden" name="hiddenID" value="{{$ds->id}}">
+                                            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua{{$ds->id}}">Sửa</button>
+                                            <form action="{{route('cau-hoi.danh-sach.trang-thai',['id'=>$ds->id])}}" method="POST" id="formTrangThai" style="width:56px;display:inline-flex">
+                                                @csrf
+                                                @method('PUT')
+                                                <input type="hidden" name="hiddenXoa" value="{{$ds->xoa}}">
                                                 <button class="btn btn-outline-danger waves-effect waves-light" type="Submit" form="formTrangThai">
                                                     @if($ds->xoa==0)
                                                     Xóa
                                                     @elseif($ds->xoa==1)
-                                                    Khôi phục
-                                                @endif</button>
+                                                    KP
+                                                    @endif
+                                                </button>
                                             </form>
-                                            <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-sua{{$ds->id}}">Sửa</button>
                                             <form action="{{route('cau-hoi.danh-sach.cap-nhat')}}" method="POST" id="formCapNhat">
                                                 @method('PUT')
                                                 @csrf
@@ -309,24 +310,6 @@
             $('#form-cap-nhat-cau-hoi').hide();
         });
     });
-
-    function loadAjax() {
-
-        var ide = $("#btnCapNhat").val();
-        console.log(ide);
-        $.ajax({
-            url: "route('cau-hoi.them')",
-            type: "post",
-            dataType: "json",
-            data: {
-                id: ide
-            },
-            success: function(data) {
-                console.log(ide);
-                console.log($.parseJSON(data));
-            }
-        });
-    }
 </script>
 <style>
     #form-them-cau-hoi {

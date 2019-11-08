@@ -44,14 +44,15 @@ class CauHoiController extends Controller
         $cauHoi->save();
         return redirect('cau-hoi/danh-sach')->with('success','Cập nhật thành công');
     }
-    public function updateStatus(Request $request){
-        $id = $request->hiddenID;
-        if($id == 0){
+    public function updateS(Request $request,$id){
+        if($request->hiddenXoa == 0){
             $cauHoi = CauHoiModel::where('id',$id)->update(['xoa'=>1]);
+            return redirect('cau-hoi/danh-sach')->with('success','Xóa câu hỏi thành công');
         }
         else{
             $cauHoi = CauHoiModel::where('id',$id)->update(['xoa'=>0]);
+            return redirect('cau-hoi/danh-sach')->with('success','Khôi phục câu hỏi thành công');
         }
-        return redirect('cau-hoi/danh-sach')->with('success',"Xóa câu hỏi Thành Công!");
+     
     }
 }

@@ -76,32 +76,33 @@ Route::prefix('goi-credit')->group(function(){
 	Route::PATCH('cap-nhat/{id}','GoiCreditController@update')->name('goi-credit.cap-nhat-update');
 });
 Route::prefix('luot-choi')->group(function(){
-	Route::get('ds/luotchoi','LuotChoiController@data')->name('danhsach-luotchoi');
+	Route::get('/','LuotChoiController@data')->name('danhsach-luotchoi');
 });
 Route::prefix('chi-tiet-luot-choi')->group(function(){
-	Route::get('ds/chitiet-luotchoi','ChiTietLuotChoiController@data')->name('danhsach-chitiet-luotchoi');
+	Route::get('/','ChiTietLuotChoiController@data')->name('danhsach-chitiet-luotchoi');
 });
 Route::prefix('lich-su-mua-credit')->group(function(){
-	Route::get('ds/lichsumuacredit','LichSuMuaCreditController@data')->name('danhsach-lichsumuacredit');
+	Route::get('/','LichSuMuaCreditController@data')->name('danhsach-lichsumuacredit');
 });
 Route::prefix('quan-tri-vien')->group(function(){
 	Route::get('ds/quantrivien','QuanTriVienController@data')->name('danhsach-quantrivien');
 });
 Route::prefix('cau-hinh-app')->group(function(){
-	Route::get('ds/cauhinhapp','CauHinhAppController@data')->name('danhsach-cauhinhapp');
+	Route::get('/','CauHinhAppController@data')->name('danhsach-cauhinhapp');
+	Route::put('/{id}','CauHinhAppController@update')->name('cauhinh-app.cap-nhat');
 });
 Route::prefix('cau-hinh-diem-cau-hoi')->group(function(){
-	Route::get('ds/cauhinhdiemcauhoi','CauHinhDiemCauHoiController@data')->name('danhsach-cauhinhdiemcauhoi');
+	Route::get('/','CauHinhDiemCauHoiController@data')->name('danhsach-cauhinhdiemcauhoi');
 });
 Route::prefix('cau-hinh-tro-giup')->group(function(){
-	Route::get('ds/cauhinhtrogiup','CauHinhTroGiupController@data')->name('danhsach-cauhinhtrogiup');
+	Route::get('/','CauHinhTroGiupController@data')->name('danhsach-cauhinhtrogiup');
 });
 Route::prefix('cau-hoi')->group(function(){
 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
 	Route::post('them-moi','CauHoiController@editAjax')->name('cau-hoi.them');
 	Route::get('danh-sach/chinh-sua/{id}','CauHoiController@edit')->name('cau-hoi.danh-sach.chinh-sua');
 	Route::put('chinh-sua','CauHoiController@update')->name('cau-hoi.danh-sach.cap-nhat');
-	Route::put('cap-nhat-trang-thai','CauHoiController@updateStatus')->name('cau-hoi.danh-sach.trang-thai');
+	Route::PUT('cap-nhat-trang-thai{id}','CauHoiController@updateS')->name('cau-hoi.danh-sach.trang-thai');
 });
 });
 //Kết Thúc Chứng Thực

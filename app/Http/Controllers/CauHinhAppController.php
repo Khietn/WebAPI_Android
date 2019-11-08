@@ -15,7 +15,8 @@ class CauHinhAppController extends Controller
      */
     public function data()
     {
-        return view('CauHinhApp');
+        $ch = CauHinhAppModel::all();
+        return view('CauHinhApp',compact('ch'));
     }
     public function index()
     {
@@ -74,7 +75,11 @@ class CauHinhAppController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cauHinh = CauHinhAppModel::findOrFail($id);
+        $cauHinh->co_hoi_sai = $request->co_hoi;
+        $cauHinh->thoi_gian_tra_loi = $request->thoi_gian_tra_loi;
+        $cauHinh->save();
+        return redirect('/cau-hinh-app')->with('success','Cập nhật cấu hình app thành công');
     }
 
     /**
