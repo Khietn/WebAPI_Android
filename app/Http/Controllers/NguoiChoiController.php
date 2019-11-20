@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
 use App\NguoiChoiModel;
-use App\Http\Controllers\Auth;
 use App\Http\Requests\NguoiChoiRequest;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 class NguoiChoiController extends Controller
 {
     public function data()
@@ -51,7 +52,7 @@ class NguoiChoiController extends Controller
             
             $NguoiChoi=new NguoiChoiModel;
             $NguoiChoi->ten_dang_nhap=$request->ten_dang_nhap;
-            $NguoiChoi->mat_khau=$request->mat_khau;
+            $NguoiChoi->mat_khau=Hash::make($request->matkhau);
             $NguoiChoi->email=$request->email;
             $NguoiChoi->hinh_dai_dien=$request->hinh_dai_dien;
             $NguoiChoi->diem_cao_nhat=$request->diem_cao_nhat;
@@ -112,7 +113,7 @@ class NguoiChoiController extends Controller
         //
         $NguoiChoi = NguoiChoiModel::findOrFail($id);
         $NguoiChoi->ten_dang_nhap=$request->input('ten_dang_nhap_moi');
-        $NguoiChoi->mat_khau=$request->input('mat_khau_moi');
+        $NguoiChoi->mat_khau=Hash::make($request->input('mat_khau_moi'));
         $NguoiChoi->email=$request->input('email_moi');
         $NguoiChoi->hinh_dai_dien=$request->input('hinh_dai_dien_moi');
         $NguoiChoi->diem_cao_nhat=$request->input('diem_cao_nhat_moi');
