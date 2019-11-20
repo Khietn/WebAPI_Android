@@ -114,4 +114,11 @@ class LinhVucController extends Controller
         //
 
     }
+    public function APIlinhvuc()
+    {
+            $linhVuc=LinhVucModel::All();
+            return $linhVuc;
+      
+
+    }
 }

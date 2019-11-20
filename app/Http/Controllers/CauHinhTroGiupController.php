@@ -45,6 +45,7 @@ class CauHinhTroGiupController extends Controller
         $ch->loai_tro_giup = $request->loai_tro_giup;
         $ch->thu_tu = $request->thu_tu;
         $ch->credit = $request->credit;
+        $ch->xoa = 0;
         $ch->save();
         return redirect('cau-hinh-tro-giup')->with('success','Thêm cấu hình trợ giúp thành công');
     }

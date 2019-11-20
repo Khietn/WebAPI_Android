@@ -44,6 +44,7 @@
 // 	return view('Login');
 // });
 //Chứng thực
+
 Route::middleware('auth')->group(function(){
 	Route::get('trangchu', function () {
 		return view('layouts/Master');
@@ -77,6 +78,7 @@ Route::prefix('goi-credit')->group(function(){
 });
 Route::prefix('luot-choi')->group(function(){
 	Route::get('/','LuotChoiController@data')->name('danhsach-luotchoi');
+
 });
 Route::prefix('chi-tiet-luot-choi')->group(function(){
 	Route::get('/','ChiTietLuotChoiController@data')->name('danhsach-chitiet-luotchoi');
@@ -86,6 +88,7 @@ Route::prefix('lich-su-mua-credit')->group(function(){
 });
 Route::prefix('quan-tri-vien')->group(function(){
 	Route::get('ds/quantrivien','QuanTriVienController@data')->name('danhsach-quantrivien');
+	Route::get('thong-tin','QuanTriVienController@thongtin')->name('thongtin-quantrivien');
 });
 Route::prefix('cau-hinh-app')->group(function(){
 	Route::get('/','CauHinhAppController@data')->name('danhsach-cauhinhapp');
@@ -102,7 +105,7 @@ Route::prefix('cau-hinh-tro-giup')->group(function(){
 });
 Route::prefix('cau-hoi')->group(function(){
 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
-	Route::post('them-moi','CauHoiController@editAjax')->name('cau-hoi.them');
+	Route::get('them-moi','CauHoiController@store')->name('cau-hoi.them');
 	Route::get('danh-sach/chinh-sua/{id}','CauHoiController@edit')->name('cau-hoi.danh-sach.chinh-sua');
 	Route::put('chinh-sua','CauHoiController@update')->name('cau-hoi.danh-sach.cap-nhat');
 	Route::PUT('cap-nhat-trang-thai{id}','CauHoiController@updateS')->name('cau-hoi.danh-sach.trang-thai');
@@ -122,6 +125,7 @@ Route::prefix('cau-hoi')->group(function(){
 //  	Route::post('them-moi','LinhVucController@store')->name('linh-vuc.xl-them-moi');
 //  }); 
 //sau
+Route::get('test-api','LinhVucController@APIlinhvuc')->name('test-api');
 // Route::get('Nguoi-Choi','NguoiChoiController@index');
 
 // Route::get('test',function(){
@@ -146,7 +150,7 @@ Route::prefix('cau-hoi')->group(function(){
 // });
 // Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
 Route::get('xinchao',function(){
-	return view('xinchao2');
+	return view('test');
 });
 
 

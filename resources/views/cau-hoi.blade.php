@@ -206,7 +206,7 @@
     <!-- form -->
     <div class="row" id="form-them-cau-hoi" style="display:none;">
         <div class="col-md-12">
-            <form class="form-horizontal" id="formThemCauHoi" method="POST">
+            <form class="form-horizontal" id="formThemCauHoi" method="GET">
                 <!-- Form start2-->
                 @csrf
                 <div class="col-md-7 float-left">

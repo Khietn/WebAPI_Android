@@ -133,4 +133,9 @@ class QuanTriVienController extends Controller
     {
         //
     }
+    public function thongtin()
+    {
+        return view('profile');
+
+    }
 }

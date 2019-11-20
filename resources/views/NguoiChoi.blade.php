@@ -62,7 +62,7 @@ Quản Lý Người Chơi
                                 <div class="modal-dialog" style="max-width:1024px">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Sửa Gói Credit</h4>
+                                            <h4 class="modal-title">Sửa Thông Tin Người Chơi</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                         </div>
                                         <div class="modal-body p-6">                              
@@ -92,7 +92,7 @@ Quản Lý Người Chơi
                                                 <div class="col-md-6 float-right">
                                                     <div class="form-group">
                                                     <label form="ten_dang_nhap_moi">Tên Đăng Nhập</label>
-                                                    <input type="text" id="ten_dang_nhap_moi" name="ten_dang_nhap_moi" class="form-control" required=""  placeholder="Tên Đăng Nhập Mới">
+                                                    <input type="text" id="ten_dang_nhap_moi" name="ten_dang_nhap_moi" class="form-control" required=""  placeholder="Tên Đăng Nhập Mới" >
                                                     <label form="mat_khau_moi">Mật Khẩu</label>
                                                     <input type="password" id="mat_khau_moi" name="mat_khau_moi"class="form-control" required="" placeholder="Mật Khẩu Mới"> 
                                                     <label form="email_moi">Email</label>
@@ -170,7 +170,7 @@ Quản Lý Người Chơi
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h4 class="modal-title">Thêm mới gói Credit</h4>
+                                            <h4 class="modal-title">Thêm mới người chơi</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                         </div>
                                         <div class="modal-body p-4">                                   
