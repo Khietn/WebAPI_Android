@@ -180,7 +180,7 @@ Quản Lý Người Chơi
                                                     <label form="ten_dang_nhap">Tên Đăng Nhập</label>
                                                     <input type="text" id="ten_dang_nhap" name="ten_dang_nhap"class="form-control" required="" placeholder="Tên Đăng Nhập">
                                                     <label form="mat_khau">Mật Khẩu</label>
-                                                    <input type="password" id="mat_khau" name="mat_khau"class="form-control" required="" placeholder="Mật Khẩu"> 
+                                                    <input type="password" id="mat_khau" name="mat_khau"class="form-control" required placeholder="Mật Khẩu"> 
                                                     <label form="email">Email</label>
                                                     <input type="email" id="email" name="email"class="form-control" required="" placeholder="Email"> 
                                                    <!--chọn file ảnh-->
