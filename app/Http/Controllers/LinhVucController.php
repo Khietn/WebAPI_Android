@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\LinhVucResource;
 use Illuminate\Http\Request;
 use App\LinhVucModel;
 class LinhVucController extends Controller
@@ -114,11 +115,13 @@ class LinhVucController extends Controller
         //
 
     }
-    public function APIlinhvuc()
-    {
-            $linhVuc=LinhVucModel::All();
-            return $linhVuc;
-      
 
+    public function indexAPI(){
+        $linhvuc= LinhVucModel::all();
+        return LinhVucResource::collection($linhvuc);
+    }
+    public function getAPI($id){
+        $linhvuc = LinhVucModel::find($id);
+        return new LinhVucResource($linhvuc);
     }
 }

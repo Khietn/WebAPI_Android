@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\GoiCreditModel;
+use App\Http\Resources\GoiCreditResource;
+
 class GoiCreditController extends Controller
 {
    public function data()
@@ -120,5 +122,15 @@ class GoiCreditController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function indexAPI(){
+        $goicredit=GoiCreditModel::all();
+        return GoiCreditResource::collection($goicredit);
+    }
+
+    public function getAPI($id){
+        $goicredit = GoiCreditModel::find($id);
+        return new GoiCreditResource($goicredit);
     }
 }

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use CauHinhDiemCauHoiModel;
+use App\Http\Resources\CauHinhDiemCauHoiResource;
+use App\CauHinhDiemCauHoiModel;
 
 class CauHinhDiemCauHoiController extends Controller
 {
@@ -86,5 +87,13 @@ class CauHinhDiemCauHoiController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function getAPI($id){
+        $ch=CauHinhDiemCauHoiModel::FindOrFail($id);
+        return new CauHinhDiemCauHoiResource($ch);
+    }
+    public function indexAPI(){
+        $ch=CauHinhDiemCauHoiModel::all();
+        return CauHinhDiemCauHoiResource::collection($ch);
     }
 }

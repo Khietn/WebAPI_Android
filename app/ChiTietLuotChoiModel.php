@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class ChiTietLuotChoiModel extends Model
 {
     //
-    protected $table ='chi-tiet-luot-choi'; 
+    protected $table ='chi_tiet_luot_choi'; 
     public $timestams=false;
 }

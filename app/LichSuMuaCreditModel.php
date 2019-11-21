@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class LichSuMuaCreditModel extends Model
 {
     //
-    protected $table ='lich-su-mua-credit'; 
+    protected $table ='lich_su_mua_credit'; 
     public $timestams=false;
 }

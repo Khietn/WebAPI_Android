@@ -12,6 +12,8 @@ class LinhVuc extends Seeder
     public function run()
     {
         //DB::table('_linh_vuc')->insert(['name'=>'value', ...=>...]);
-        DB::table('_linh_vuc')->insert(['ten'=>'Địa lý']);
+        DB::table('linh_vuc')->insert(['ten'=>'Toán Học']);
+        DB::table('linh_vuc')->insert(['ten'=>'Lịch Sử']);
+        DB::table('linh_vuc')->insert(['ten'=>'Địa lý']);
     }
 }

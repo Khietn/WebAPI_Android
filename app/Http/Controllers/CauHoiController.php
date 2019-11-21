@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\LinhVucModel;
 use Illuminate\Http\Request;
 use App\CauHoiModel;    
+
+use App\Http\Resources\CauHoiResource;
+
 class CauHoiController extends Controller
 {
     //
@@ -53,6 +56,14 @@ class CauHoiController extends Controller
             $cauHoi = CauHoiModel::where('id',$id)->update(['xoa'=>0]);
             return redirect('cau-hoi/danh-sach')->with('success','Khôi phục câu hỏi thành công');
         }
-     
+    }
+
+    public function getAPI($id){
+        $cauhoi=CauHoiModel::FindOrFail($id);
+        return new CauHoiResource($cauhoi);
+    }
+    public function indexAPI(){
+        $cauhoi=CauHoiModel::all();
+        return CauHoiResource::collection($cauhoi);
     }
 }
