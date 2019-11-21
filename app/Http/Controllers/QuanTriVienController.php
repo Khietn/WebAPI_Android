@@ -134,10 +134,6 @@ class QuanTriVienController extends Controller
     {
         //
     }
-    public function thongtin()
-    {
-        return view('profile');
-    }
     public function indexAPI(){
         $qtv = QuanTriVienModel::all();
         return QuanTriVienResource::collection($qtv);
