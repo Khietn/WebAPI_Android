@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\CauHinhTroGiupModel;
+use App\Http\Resources\CauHinhTroGiupResource;
 
 class CauHinhTroGiupController extends Controller
 {
@@ -107,5 +108,13 @@ class CauHinhTroGiupController extends Controller
             $cauHinh = CauHinhTroGiupModel::where('id',$id)->update(['xoa'=>0]);
             return redirect('cau-hinh-tro-giup')->with('success','Khôi phục cấu hìnhthành công');
         }
+    }
+    public function indexAPI(){
+        $ch= CauHinhTroGiupModel::all();
+        return CauHinhTroGiupResource::collection($ch);
+    }
+    public function getAPI($id){
+        $ch = CauHinhTroGiupModel::find($id);
+        return new CauHinhTroGiupResource($ch);
     }
 }

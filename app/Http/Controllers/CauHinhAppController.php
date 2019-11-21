@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\CauHinhAppModel;
+use App\Http\Resources\CauHinhAppResource;
 
 class CauHinhAppController extends Controller
 {
@@ -92,4 +93,14 @@ class CauHinhAppController extends Controller
     {
         //
     }
+
+    public function getAPI($id){
+        $ch=CauHinhAppModel::FindOrFail($id);
+        return new CauHinhAppResource($ch);
+    }
+    public function indexAPI(){
+        $ch=CauHinhAppModel::all();
+        return CauHinhAppResource::collection($ch);
+    }
+
 }

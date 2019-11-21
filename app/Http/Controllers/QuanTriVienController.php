@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\QuanTriVienResource;
 use App\QuanTriVienModel;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -132,5 +133,14 @@ class QuanTriVienController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function indexAPI(){
+        $qtv = QuanTriVienModel::all();
+        return QuanTriVienResource::collection($qtv);
+    }
+
+    public function getAPI($id){
+        $qtv = QuanTriVienModel::find($id);
+        return new QuanTriVienResource($qtv);
     }
 }

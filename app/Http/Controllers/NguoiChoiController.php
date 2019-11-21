@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
 use App\NguoiChoiModel;
 use App\Http\Requests\NguoiChoiRequest;
+use App\Http\Resources\NguoiChoiResource;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 class NguoiChoiController extends Controller
@@ -131,5 +132,15 @@ class NguoiChoiController extends Controller
     public function destroy($id)
     {
         
+    }
+    
+    public function indexAPI(){
+        $nguoichoi = NguoiChoiModel::all();
+        return NguoiChoiResource::collection($nguoichoi);
+    }
+
+    public function getAPI($id){
+        $nguoichoi = NguoiChoiModel::find($id);
+        return new NguoiChoiResource($nguoichoi);
     }
 }

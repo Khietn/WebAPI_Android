@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\LuotChoiResource;
 use App\LuotChoiModel;
 
 
@@ -89,5 +90,14 @@ class LuotChoiController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function indexAPI(){
+        $luotchoi= LuotChoiModel::all();
+        return LuotChoiResource::collection($luotchoi);
+    }
+    public function getAPI($id){
+        $luotchoi = LuotChoiModel::find($id);
+        return new LuotChoiResource($luotchoi);
     }
 }
