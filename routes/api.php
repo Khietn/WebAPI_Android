@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,6 +25,8 @@ Route::get('/nguoi-choi','NguoiChoiController@getAPIa'); // "api/nguoi-choi?user
 Route::get('/nguoi-choi/{id}','NguoiChoiController@getAPI');
 Route::post('/them-nguoi-choi','NguoiChoiController@storeAPI');
 Route::put('/chinh-sua-nguoi-choi','NguoiChoiController@editAPI');
+Route::get('/test','NguoiChoiController@getallAPI');
+Route::get('/apinguoichoi','NguoiChoiController@LayAPI');
 
 Route::get('/linh-vuc','LinhVucController@indexAPI'); //Lay het tat ca linh vuc
 Route::get('/linh-vuc/{id}','LinhVucController@getAPI'); //Lay linh vuc theo ID

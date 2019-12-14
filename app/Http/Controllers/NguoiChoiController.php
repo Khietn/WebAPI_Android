@@ -132,6 +132,18 @@ class NguoiChoiController extends Controller
         $nguoichoi = NguoiChoiModel::find($id);
         return new NguoiChoiResource($nguoichoi);
     }
+    public function getallAPI(){
+        $nguoichoi= NguoiChoiModel::all();
+        return NguoiChoiResource::collection($nguoichoi);
+    }
+    public function LayAPI(){
+        $danhsachnguoichoi=NguoiChoiModel::all();
+        $result=[
+            'success'=>true,
+            'data'=>$danhsachnguoichoi
+        ];
+        return response()->json($result);
+    }
 
     public function getAPIa(Request $request){
         $username = $request->query('username');
