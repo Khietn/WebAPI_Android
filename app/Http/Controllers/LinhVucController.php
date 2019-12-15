@@ -125,4 +125,9 @@ class LinhVucController extends Controller
         $linhvuc = LinhVucModel::find($id);
         return new LinhVucResource($linhvuc);
     }
+    public function getAPIa(Request $request){
+        $id = $request->query('id');
+        $linhvuc = LinhVucModel::where('id',$id)->get();
+        return LinhVucResource::collection($linhvuc);
+    }
 }

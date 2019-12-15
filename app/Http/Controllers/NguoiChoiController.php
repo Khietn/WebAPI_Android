@@ -10,7 +10,6 @@ use App\NguoiChoiModel;
 use App\Http\Requests\NguoiChoiRequest;
 use App\Http\Resources\NguoiChoiResource;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 class NguoiChoiController extends Controller
 {
     public function data()
@@ -48,9 +47,7 @@ class NguoiChoiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(NguoiChoiRequest  $request)
-    {   
-            
-            
+    {             
             $NguoiChoi=new NguoiChoiModel;
             $NguoiChoi->ten_dang_nhap=$request->ten_dang_nhap;
             $NguoiChoi->mat_khau=Hash::make($request->matkhau);
@@ -60,9 +57,6 @@ class NguoiChoiController extends Controller
             $NguoiChoi->credit=0;
             $NguoiChoi->save();
             return redirect('nguoi-choi')->with('success','Thêm Mới Thành Công !');
-            
-            
-
     }
     public function updatestatus(Request $request,$id)
     {
@@ -133,14 +127,61 @@ class NguoiChoiController extends Controller
     {
         
     }
-    
-    public function indexAPI(){
-        $nguoichoi = NguoiChoiModel::all();
-        return NguoiChoiResource::collection($nguoichoi);
-    }
 
     public function getAPI($id){
         $nguoichoi = NguoiChoiModel::find($id);
         return new NguoiChoiResource($nguoichoi);
+    }
+    public function getallAPI(){
+        $nguoichoi= NguoiChoiModel::all();
+        return NguoiChoiResource::collection($nguoichoi);
+    }
+    public function LayAPI(){
+        $danhsachnguoichoi=NguoiChoiModel::all();
+        $result=[
+            'success'=>true,
+            'data'=>$danhsachnguoichoi
+        ];
+        return response()->json($result);
+    }
+
+    public function getAPIa(Request $request){
+        $username = $request->query('username');
+        $password = $request->query('password');
+        $nguoichoi = NguoiChoiModel::where('ten_dang_nhap',$username)->where('mat_khau',$password)->get();
+        return NguoiChoiResource::collection($nguoichoi);
+    }
+    /**Them nguoi choi */
+    public function storeAPI(Request $request)
+    {
+        $NguoiChoi=new NguoiChoiModel;
+        $NguoiChoi->ten_dang_nhap=$request->ten_dang_nhap;
+        $NguoiChoi->mat_khau=$request->mat_khau;
+        $NguoiChoi->email=$request->email;
+        $NguoiChoi->hinh_dai_dien=0;
+        $NguoiChoi->diem_cao_nhat=0;
+        $NguoiChoi->credit=0;
+        $NguoiChoi->save();
+        return response()->json($NguoiChoi);
+    }
+    /**Cap nhat nguoi choi */
+    public function editAPI(Request $request){
+        // $username = $request->query('ten_dang_nhap');
+        // $password = $request->query('mat_khau');
+        // $email = $request->query('email');
+        // $picture = $request->query('hinh_anh');
+        // $nguoichoi = NguoiChoiModel::where('ten_dang_nhap',$username)->update([
+        //                                                                 'ten_dang_nhap'=>$username,
+        //                                                                 'mat_khau'=>$password,
+        //                                                                 'email'=>$email,
+        //                                                                 'hinh_dai_dien'=>$picture]);
+        $nguoichoi = NguoiChoiModel::where('ten_dang_nhap',$request->query('ten_dang_nhap'))
+                                                                            ->update([
+                                                                                'mat_khau'=>$request->query('mat_khau'),
+                                                                                'email'=>$request->query('email'),
+                                                                                'hinh_dai_dien'=>$request->query('hinh_dai_dien')
+                                                                            ]);
+        return response()->json($nguoichoi);
+                                   
     }
 }

@@ -129,8 +129,9 @@ class GoiCreditController extends Controller
         return GoiCreditResource::collection($goicredit);
     }
 
-    public function getAPI($id){
-        $goicredit = GoiCreditModel::find($id);
-        return new GoiCreditResource($goicredit);
+    public function getAPI(Request $request){
+        $id = $request->query('id');
+        $goicredit = GoiCreditModel::where('id',$id)->get();
+        return GoiCreditResource::collection($goicredit);
     }
 }

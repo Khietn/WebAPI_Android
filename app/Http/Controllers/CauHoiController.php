@@ -61,9 +61,12 @@ class CauHoiController extends Controller
     public function getAPI($id){
         $cauhoi=CauHoiModel::FindOrFail($id);
         return new CauHoiResource($cauhoi);
+       // return response()->json($cauhoi);
     }
-    public function indexAPI(){
-        $cauhoi=CauHoiModel::all();
+
+    public function getAPIe(Request $request){
+        $ide = $request->query("linh_vuc_id");
+        $cauhoi = CauHoiModel::where('linh_vuc_id',$ide)->get();
         return CauHoiResource::collection($cauhoi);
     }
 }
