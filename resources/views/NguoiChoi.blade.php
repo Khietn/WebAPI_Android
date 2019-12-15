@@ -167,7 +167,7 @@ Quản Lý Người Chơi
                             </div>
         @endif     
                              <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                <div class="modal-dialog">
+                                <div class="modal-dialog">  
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h4 class="modal-title">Thêm mới người chơi</h4>
@@ -178,20 +178,20 @@ Quản Lý Người Chơi
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                     <label form="ten_dang_nhap">Tên Đăng Nhập</label>
-                                                    <input type="text" id="ten_dang_nhap" name="ten_dang_nhap"class="form-control" required="" placeholder="Tên Đăng Nhập">
+                                                    <input type="text" id="ten_dang_nhap" name="ten_dang_nhap"class="form-control" placeholder="Tên Đăng Nhập">
                                                     <label form="mat_khau">Mật Khẩu</label>
-                                                    <input type="password" id="mat_khau" name="mat_khau"class="form-control" required placeholder="Mật Khẩu"> 
+                                                    <input type="password" id="mat_khau" name="mat_khau"class="form-control"  placeholder="Mật Khẩu"> 
                                                     <label form="email">Email</label>
-                                                    <input type="email" id="email" name="email"class="form-control" required="" placeholder="Email"> 
+                                                    <input type="email" id="email" name="email"class="form-control" placeholder="Email"> 
                                                    <!--chọn file ảnh-->
                                                    <label form="hinh_dai_dien">Ảnh Đại Diện</label>
                                                     <div class="custom-file">                                  
-                                                          <input type="file"  id="hinh_dai_dien" name="hinh_dai_dien" required="" >
+                                                          <input type="file"  id="hinh_dai_dien" name="hinh_dai_dien"  >
                                                     </div>
                                                     <label form="diem_cao_nhat">Điểm cao nhất</label>
-                                                    <input type="number" id="diem_cao_nhat" name="diem_cao_nhat"class="form-control" required="" placeholder="Điểm cao nhất"> 
+                                                    <input type="number" id="diem_cao_nhat" name="diem_cao_nhat"class="form-control"  placeholder="Điểm cao nhất"> 
                                                     <label form="credit">Credit</label>
-                                                    <input type="number" id="credit" name="credit"class="form-control" required="" placeholder="Credit">
+                                                    <input type="number" id="credit" name="credit"class="form-control"  placeholder="Credit">
                                                   
                                                     </div>
                                                 </div>

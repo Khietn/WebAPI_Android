@@ -13,7 +13,7 @@ class CauHoiReQuest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -34,7 +34,7 @@ class CauHoiReQuest extends FormRequest
     public function messages(){
         return[
             'noi_dung.required'=>'Nội dung không được để trống',
-            'phuong_an_a.required'=>'Phương án A không được để trống',
+            'phuong_an_a.required'  =>'Phương án A không được để trống',
             'phuong_an_b.required'=>'Phương án B không được để trống',
             'phuong_an_c.required'=>'Phương án C không được để trống',
             'phuong_an_d.required'=>'Phương án D không được để trống',
