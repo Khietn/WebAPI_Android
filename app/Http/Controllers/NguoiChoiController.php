@@ -184,4 +184,9 @@ class NguoiChoiController extends Controller
         return response()->json($nguoichoi);
                                    
     }
+    /* BXH */
+    public function rankAPI(){
+        $nguoichoi = NguoiChoiModel::select('id','ten_dang_nhap','hinh_dai_dien','diem_cao_nhat')->orderBy('diem_cao_nhat','desc')->take(10)->get();
+        return response()->json($nguoichoi);
+    }
 }
