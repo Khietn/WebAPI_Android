@@ -22,7 +22,7 @@ Route::get('/cau-hoi','CauHoiController@getAPIe'); //api/cau-hoi?linh_vuc_id=...
 
 
 Route::get('/nguoi-choi','NguoiChoiController@getAPIa'); // "api/nguoi-choi?username=...&password=..." lay theo Username + password
-Route::get('/nguoi-choi/{id}','NguoiChoiController@getAPI');
+Route::post('/nguoi-choi1','NguoiChoiController@getAPI');
 Route::post('/them-nguoi-choi','NguoiChoiController@storeAPI');
 Route::put('/chinh-sua-nguoi-choi','NguoiChoiController@editAPI');
 Route::get('/test','NguoiChoiController@getallAPI');
