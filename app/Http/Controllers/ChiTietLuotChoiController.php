@@ -28,4 +28,12 @@ class ChiTietLuotChoiController extends Controller
         $ct = ChiTietLuotChoiModel::find($id);
         return new ChiTietLuotChoiResource($ct);
     }
+    public function storeAPI(Request $request){
+        $ctt = new ChiTietLuotChoiModel;
+        $ctt->luot_choi_id = $request->luot_choi_id;
+        $ctt->cau_hoi_id = $request->cau_hoi_id;
+        $ctt->phuong_an = $request->phuong_an;
+        $ctt->diem = $request->diem;
+        return response()->json($ctt);
+    }
 }

@@ -78,7 +78,18 @@ Quản Lý Lĩnh Vực
                                     <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal"  style="margin-bottom:20px" data-target="#con-close-modal">Thêm</button>
                             <!-- modalthemlinhvuc -->                                                                
                                     <form action="{{route('linh-vuc.xl-them-moi')}}" method="POST">
-                                 	@csrf
+                                     @csrf
+
+                                     @if($errors->any())
+                                 <div class="alert alert-primary alert-dismissible bg-primary text-white border-0 fade show" role="alert">
+                                <button class="close" aria-label="Close" type="button" data-dismiss="alert">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                @foreach($errors->all() as $error)
+                                <li> {{$error}}</li>
+                                @endforeach
+                            </div>  
+                             @endif     
                              <div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -91,7 +102,7 @@ Quản Lý Lĩnh Vực
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực</label>
-                                                        <input type="text" class="form-control"id="ten_linh_vuc" name="ten_linh_vuc" required="" placeholder="Tên Lĩnh Vực">
+                                                        <input type="text" class="form-control "id="ten_linh_vuc" name="ten_linh_vuc"  placeholder="Tên Lĩnh Vực">
                                                     </div>
                                                 </div>
                                             </div>                                                                                     

@@ -27,6 +27,7 @@ Route::post('/them-nguoi-choi','NguoiChoiController@storeAPI');
 Route::put('/chinh-sua-nguoi-choi','NguoiChoiController@editAPI');
 Route::get('/test','NguoiChoiController@getallAPI');
 Route::get('/apinguoichoi','NguoiChoiController@LayAPI');
+Route::get('/bang-xep-hang','NguoiChoiController@rankAPI');
 
 Route::get('/linh-vuc','LinhVucController@indexAPI'); //Lay het tat ca linh vuc
 Route::get('/linh-vuc/{id}','LinhVucController@getAPI'); //Lay linh vuc theo ID
@@ -48,12 +49,15 @@ Route::get('/cau-hinh-tro-giup/{id}','CauHinhTroGiupController@getAPI');
 
 Route::get('/chi-tiet-luot-choi','ChiTietLuotChoiController@indexAPI'); //
 Route::get('/chi-tiet-luot-choi/{id}','ChiTietLuotChoiController@getAPI');
+Route::post('/them-chi-tiet','ChiTietLuotChoiController@storeAPI');
 
 Route::get('/lich-su-mua-credit','LichSuMuaCreditController@indexAPI');
 Route::get('/lich-su-mua-credit/{id}','LichSuMuaCreditController@getAPI');
 
 Route::get('/luot-choi','LuotChoiController@indexAPI'); 
 Route::get('/luot-choi/{id}','LuotChoiController@getAPI'); 
+Route::post('/them-luot-choi','LuotChoiController@storeAPI');
+
 
 Route::get('/quan-tri-vien','QuanTriVienController@indexAPI'); 
 Route::get('/quan-tri-vien/{id}','QuanTriVienController@getAPI'); 

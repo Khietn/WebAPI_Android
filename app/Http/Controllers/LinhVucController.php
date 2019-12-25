@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\LinhVucResource;
 use Illuminate\Http\Request;
 use App\LinhVucModel;
+use App\Http\Requests\LinhVucRequest;
 class LinhVucController extends Controller
 {
     public function data()
@@ -52,7 +53,7 @@ class LinhVucController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LinhVucRequest $request)
     {
         //
             $linhVuc = new LinhVucModel;
