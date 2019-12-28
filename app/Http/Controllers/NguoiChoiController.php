@@ -158,7 +158,10 @@ class NguoiChoiController extends Controller
         $NguoiChoi->ten_dang_nhap=$request->ten_dang_nhap;
         $NguoiChoi->mat_khau=$request->mat_khau;
         $NguoiChoi->email=$request->email;
-        $NguoiChoi->hinh_dai_dien=0;
+		$img=$request->hinh_dai_dien;
+		$foo =base64_decode("$img");
+        file_put_contents("img/".$request->ten_dang_nhap.time().".JPG", $foo);
+        $NguoiChoi->hinh_dai_dien=$request->ten_dang_nhap.time().".JPG" ;
         $NguoiChoi->diem_cao_nhat=0;
         $NguoiChoi->credit=0;
         $NguoiChoi->save();

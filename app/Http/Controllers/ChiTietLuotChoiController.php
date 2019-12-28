@@ -34,6 +34,7 @@ class ChiTietLuotChoiController extends Controller
         $ctt->cau_hoi_id = $request->cau_hoi_id;
         $ctt->phuong_an = $request->phuong_an;
         $ctt->diem = $request->diem;
+        $ctt->save();
         return response()->json($ctt);
     }
 }
