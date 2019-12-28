@@ -53,8 +53,8 @@ class NguoiChoiController extends Controller
             $NguoiChoi->mat_khau=Hash::make($request->matkhau);
             $NguoiChoi->email=$request->email;
             $NguoiChoi->hinh_dai_dien=$request->hinh_dai_dien;
-            $NguoiChoi->diem_cao_nhat=0;
-            $NguoiChoi->credit=0;
+            $NguoiChoi->diem_cao_nhat=$request->diem_cao_nhat;
+            $NguoiChoi->credit=$request->credit;
             $NguoiChoi->save();
             return redirect('nguoi-choi')->with('success','Thêm Mới Thành Công !');
     }
@@ -186,6 +186,16 @@ class NguoiChoiController extends Controller
                                                                             ]);
         return response()->json($nguoichoi);
                                    
+    }
+    public function CapNhatNguoiChoi(Request $request){
+        $id=$request->id;
+        $nguoichoi=NguoiChoiModel::find($id);
+        $nguoichoi->email=$request->email;
+        $nguoichoi->mat_khau=$request->mat_khau;
+        $nguoichoi->hinh_dai_dien=$request->hinh_dai_dien;
+        $nguoichoi->save();
+        return response()->json($nguoichoi);
+
     }
     /* BXH */
     public function rankAPI(){

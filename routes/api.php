@@ -22,12 +22,13 @@ Route::get('/cau-hoi','CauHoiController@getAPIe'); //api/cau-hoi?linh_vuc_id=...
 
 
 Route::get('/nguoi-choi','NguoiChoiController@getAPIa'); // "api/nguoi-choi?username=...&password=..." lay theo Username + password
-Route::get('/nguoi-choi/{id}','NguoiChoiController@getAPI');
+Route::post('/nguoi-choi1','NguoiChoiController@getAPI');
 Route::post('/them-nguoi-choi','NguoiChoiController@storeAPI');
 Route::put('/chinh-sua-nguoi-choi','NguoiChoiController@editAPI');
 Route::get('/test','NguoiChoiController@getallAPI');
 Route::get('/apinguoichoi','NguoiChoiController@LayAPI');
 Route::get('/bang-xep-hang','NguoiChoiController@rankAPI');
+Route::post('/cap-nhat-nguoi-choi','NguoiChoiController@CapNhatNguoiChoi');
 
 Route::get('/linh-vuc','LinhVucController@indexAPI'); //Lay het tat ca linh vuc
 Route::get('/linh-vuc/{id}','LinhVucController@getAPI'); //Lay linh vuc theo ID
