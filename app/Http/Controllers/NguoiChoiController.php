@@ -53,8 +53,8 @@ class NguoiChoiController extends Controller
             $NguoiChoi->mat_khau=Hash::make($request->matkhau);
             $NguoiChoi->email=$request->email;
             $NguoiChoi->hinh_dai_dien=$request->hinh_dai_dien;
-            $NguoiChoi->diem_cao_nhat=0;
-            $NguoiChoi->credit=0;
+            $NguoiChoi->diem_cao_nhat=$request->diem_cao_nhat;
+            $NguoiChoi->credit=$request->credit;
             $NguoiChoi->save();
             return redirect('nguoi-choi')->with('success','Thêm Mới Thành Công !');
     }
