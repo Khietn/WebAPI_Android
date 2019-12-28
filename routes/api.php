@@ -28,6 +28,7 @@ Route::put('/chinh-sua-nguoi-choi','NguoiChoiController@editAPI');
 Route::get('/test','NguoiChoiController@getallAPI');
 Route::get('/apinguoichoi','NguoiChoiController@LayAPI');
 Route::get('/bang-xep-hang','NguoiChoiController@rankAPI');
+Route::post('/cap-nhat-nguoi-choi','NguoiChoiController@CapNhatNguoiChoi');
 
 Route::get('/linh-vuc','LinhVucController@indexAPI'); //Lay het tat ca linh vuc
 Route::get('/linh-vuc/{id}','LinhVucController@getAPI'); //Lay linh vuc theo ID

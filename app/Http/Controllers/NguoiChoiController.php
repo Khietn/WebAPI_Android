@@ -184,6 +184,16 @@ class NguoiChoiController extends Controller
         return response()->json($nguoichoi);
                                    
     }
+    public function CapNhatNguoiChoi(Request $request){
+        $id=$request->id;
+        $nguoichoi=NguoiChoiModel::find($id);
+        $nguoichoi->email=$request->email;
+        $nguoichoi->mat_khau=$request->mat_khau;
+        $nguoichoi->hinh_dai_dien=$request->hinh_dai_dien;
+        $nguoichoi->save();
+        return response()->json($nguoichoi);
+
+    }
     /* BXH */
     public function rankAPI(){
         $nguoichoi = NguoiChoiModel::select('id','ten_dang_nhap','hinh_dai_dien','diem_cao_nhat')->orderBy('diem_cao_nhat','desc')->take(10)->get();
