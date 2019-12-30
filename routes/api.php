@@ -54,8 +54,9 @@ Route::get('/chi-tiet-luot-choi','ChiTietLuotChoiController@indexAPI'); //
 Route::get('/chi-tiet-luot-choi/{id}','ChiTietLuotChoiController@getAPI');
 Route::post('/them-chi-tiet','ChiTietLuotChoiController@storeAPI');
 
-Route::get('/lich-su-mua-credit','LichSuMuaCreditController@indexAPI');
+Route::post('/lich-su-mua-credit','LichSuMuaCreditController@themlichsumua');
 Route::get('/lich-su-mua-credit/{id}','LichSuMuaCreditController@getAPI');
+
 
 Route::get('/luot-choi','LuotChoiController@indexAPI'); 
 Route::get('/luot-choi/{id}','LuotChoiController@getAPI'); 
