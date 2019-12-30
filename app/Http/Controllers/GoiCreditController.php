@@ -134,4 +134,10 @@ class GoiCreditController extends Controller
         $goicredit = GoiCreditModel::where('id',$id)->get();
         return GoiCreditResource::collection($goicredit);
     }
+    // public function updateAPI(request $request){
+    //     $id=$request->id;
+    //     $goicredit=GoiCreditModel::where('id',$id)->update(["credit"=>$request->credit]);
+    //     return response()->json($goicredit);
+        
+    // }   
 }
