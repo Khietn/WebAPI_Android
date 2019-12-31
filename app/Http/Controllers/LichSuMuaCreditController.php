@@ -27,8 +27,23 @@ class LichSuMuaCreditController extends Controller
     }
 
     public function getAPI($id){
-        $ls = LichSuMuaCreditModel::where('nguoi_choi_id',$id)->get();
+        $ls = LichSuMuaCreditModel::
+        join('goi_credit','lich_su_mua_credit.goi_credit_id','=','goi_credit.id')
+        ->where('nguoi_choi_id',$id)
+        ->select('lich_su_mua_credit.*','goi_credit.ten_goi')
+        ->get();
         return response()->json($ls);
+
+
+    }
+    public function laytencredit(Request $request){
+        $id=$request->query("goi_credit_id");
+        $ls= GoiCreditModel::select("ten_goi")->where(["id"=>$id])->get();
+        return response()->json($ls);
+        // $ide = $request->query("linh_vuc_id");
+        // $cauhoi = CauHoiModel::where('linh_vuc_id',$ide)->get();
+        // return CauHoiResource::collection($cauhoi);
+      
     }
     public function themlichsumua(Request $request){
         $ls=new LichSuMuaCreditModel;

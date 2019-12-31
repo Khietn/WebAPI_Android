@@ -56,6 +56,7 @@ Route::post('/them-chi-tiet','ChiTietLuotChoiController@storeAPI');
 
 Route::post('/lich-su-mua-credit','LichSuMuaCreditController@themlichsumua');
 Route::get('/lich-su-mua-credit/{id}','LichSuMuaCreditController@getAPI');
+Route::get('/lay-ten-credit','LichSuMuaCreditController@laytencredit');
 
 
 Route::get('/luot-choi','LuotChoiController@indexAPI'); 
