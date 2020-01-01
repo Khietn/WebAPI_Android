@@ -29,12 +29,14 @@ Route::get('/test','NguoiChoiController@getallAPI');
 Route::get('/apinguoichoi','NguoiChoiController@LayAPI');
 Route::get('/bang-xep-hang','NguoiChoiController@rankAPI');
 Route::post('/cap-nhat-nguoi-choi','NguoiChoiController@CapNhatNguoiChoi');
+Route::post('/cap-nhat-goi-credit','NguoiChoiController@updatecredit');
 
 Route::get('/linh-vuc','LinhVucController@indexAPI'); //Lay het tat ca linh vuc
 Route::get('/linh-vuc/{id}','LinhVucController@getAPI'); //Lay linh vuc theo ID
 
 Route::get('/goi-credit','GoiCreditController@indexAPI');// Lay het tat ca goi-credit "api/goi-credit"
 Route::get('/id-goi-credit','GoiCreditController@getAPI'); //Lay goi credit theo ID
+// Route::post('/cap-nhat-goi-credit','GoiCreditController@updateAPI');//update goicredit
 
 Route::get('/chi-tiet','ChiTietLuotChoiController@indexAPI');// Lay het tat ca chi tiet luot choi
 Route::get('/chi-tiet/{id}','ChiTietLuotChoiController@getAPI'); 
@@ -52,8 +54,10 @@ Route::get('/chi-tiet-luot-choi','ChiTietLuotChoiController@indexAPI'); //
 Route::get('/chi-tiet-luot-choi/{id}','ChiTietLuotChoiController@getAPI');
 Route::post('/them-chi-tiet','ChiTietLuotChoiController@storeAPI');
 
-Route::get('/lich-su-mua-credit','LichSuMuaCreditController@indexAPI');
+Route::post('/lich-su-mua-credit','LichSuMuaCreditController@themlichsumua');
 Route::get('/lich-su-mua-credit/{id}','LichSuMuaCreditController@getAPI');
+Route::get('/lay-ten-credit','LichSuMuaCreditController@laytencredit');
+
 
 Route::get('/luot-choi','LuotChoiController@indexAPI'); 
 Route::get('/luot-choi/{id}','LuotChoiController@getAPI'); 
