@@ -105,7 +105,7 @@ Route::prefix('cau-hinh-tro-giup')->group(function(){
 });
 Route::prefix('cau-hoi')->group(function(){
 	Route::get('danh-sach','CauHoiController@index')->name('cau-hoi.danh-sach');
-	Route::get('them-moi','CauHoiController@store')->name('cau-hoi.them');
+	Route::post('them-moi','CauHoiController@store')->name('cau-hoi.them');
 	Route::get('danh-sach/chinh-sua/{id}','CauHoiController@edit')->name('cau-hoi.danh-sach.chinh-sua');
 	Route::put('chinh-sua','CauHoiController@update')->name('cau-hoi.danh-sach.cap-nhat');
 	Route::PUT('cap-nhat-trang-thai{id}','CauHoiController@updateS')->name('cau-hoi.danh-sach.trang-thai');
@@ -149,3 +149,5 @@ Route::get('test-api','LinhVucController@APIlinhvuc')->name('test-api');
 	
 // });
 // Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
+
+Route::get('sendmail','SendMailController@sendForgotPassword');
