@@ -159,12 +159,16 @@ class NguoiChoiController extends Controller
                                    
     }
     public function CapNhatNguoiChoi(Request $request){
-        $id=$request->id;
-        $nguoichoi=NguoiChoiModel::find($id);
-        $nguoichoi->email=$request->email;
-        $nguoichoi->mat_khau=$request->mat_khau;
-        $nguoichoi->hinh_dai_dien=$request->hinh_dai_dien;
-        $nguoichoi->save();
+        $img=$request->hinh_dai_dien;
+        $foo =base64_decode("$img");
+        file_put_contents("img/".$request->id.time().".JPG", $foo);
+        $nguoichoi= NguoiChoiModel::where("id",$request->id)
+                            ->update(['email'=>$request->email,
+                                    'mat_khau'=>$request->mat_khau,
+                                    'hinh_dai_dien'=>$request->id.time().".JPG"]);
+     
+     
+      
         return response()->json($nguoichoi);
 
     }
