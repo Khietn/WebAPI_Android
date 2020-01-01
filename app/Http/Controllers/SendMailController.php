@@ -11,14 +11,20 @@ use Illuminate\Support\Str;
 class SendMailController extends Controller
 {
     public function sendForgotPassword(Request $request){
-        $player = NguoiChoiModel::select('ten_dang_nhap','mat_khau')
-        ->where('email',$request->query('email'))->get();
-
+    
+       $player=NguoiChoiModel::where('email',$request->email)
+                            ->where('ten_dang_nhap',$request->ten_dang_nhap)
+                            ->update(['mat_khau'=>Str::random(6)]);
        
-        $player[0]->mat_khau=Str::random(6);
-        $player[0]->save();
-        Mail::to($request->query('email'))->send(new ForgotPasswordMail($player[0]));
-        return response()->json($player[0]);
+        if($player==1){
+            $c=NguoiChoiModel::where('email',$request->email)->get();
+            Mail::to($request->email)->send(new ForgotPasswordMail($c[0]));
+            return response()->json($c);
+        }
+     
+
+        
+        return response()->json($player);
         //php artisan config:cache
     }
 }

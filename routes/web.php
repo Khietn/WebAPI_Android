@@ -150,4 +150,4 @@ Route::get('test-api','LinhVucController@APIlinhvuc')->name('test-api');
 // });
 // Route::get('goi-credit','GoiCreditController@data')->name('goi-credit.table');
 
-Route::get('sendmail','SendMailController@sendForgotPassword');
+Route::get('/sendmail','SendMailController@sendForgotPassword');
