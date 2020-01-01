@@ -206,7 +206,7 @@
     <!-- form -->
     <div class="row" id="form-them-cau-hoi" style="display:none;">
         <div class="col-md-12">
-            <form class="form-horizontal" id="formThemCauHoi" method="GET">
+            <form class="form-horizontal" id="formThemCauHoi" method="POST" action="{{route('cau-hoi.them')}}">
                 <!-- Form start2-->
                 @csrf
                 <div class="col-md-7 float-left">
@@ -275,7 +275,7 @@
                             </div>
                             <div class="form-group mb-0 float-right">
 
-                                <button type="submit" class="btn btn-info waves-effect waves-light" form="formThemCauHoi" onclick="loadAjax();event.preventDefault()">Thêm</button>
+                                <button type="submit" class="btn btn-info waves-effect waves-light" form="formThemCauHoi">Thêm</button>
                                 <button type="button" class="btn btn-danger waves-effect waves-light" id="btnHuy">Hủy</button>
 
                             </div>

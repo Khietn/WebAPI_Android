@@ -73,36 +73,7 @@ class NguoiChoiController extends Controller
     }
     
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-        
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
@@ -204,6 +175,16 @@ class NguoiChoiController extends Controller
     /* BXH */
     public function rankAPI(){
         $nguoichoi = NguoiChoiModel::select('id','ten_dang_nhap','hinh_dai_dien','diem_cao_nhat')->orderBy('diem_cao_nhat','desc')->take(10)->get();
+        return response()->json($nguoichoi);
+    }
+    public function laycredit(Request $request){
+        $nguoichoi=NguoiChoiModel::find($request->id);
+        return response()->json($nguoichoi);
+    }
+
+    public function updatecredit(Request $request){
+        $id=$request->id;
+        $nguoichoi=NguoiChoiModel::where('id',$id)->update(["credit"=>$request->credit]);
         return response()->json($nguoichoi);
     }
 }
