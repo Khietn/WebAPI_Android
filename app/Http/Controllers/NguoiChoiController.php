@@ -56,7 +56,8 @@ class NguoiChoiController extends Controller
             $NguoiChoi->diem_cao_nhat=$request->diem_cao_nhat;
             $NguoiChoi->credit=$request->credit;
             $NguoiChoi->save();
-            return redirect('nguoi-choi')->with('success','Thêm Mới Thành Công !');
+            
+            return redirect('nguoi-choi')->withSuccess('Thêm Mới Thành Công !');
     }
     public function updatestatus(Request $request,$id)
     {
@@ -185,6 +186,15 @@ class NguoiChoiController extends Controller
     public function updatecredit(Request $request){
         $id=$request->id;
         $nguoichoi=NguoiChoiModel::where('id',$id)->update(["credit"=>$request->credit]);
+        return response()->json($nguoichoi);
+    }
+
+    public function capnhatdiem(Request $request){
+        $id=$request->nguoi_choi_id;
+        $diem = $request->diem;
+        $nguoichoi = NguoiChoiModel::where('diem_cao_nhat','<',$diem)->where('id',$id)
+        ->update(['diem_cao_nhat'=>$diem]);
+                   
         return response()->json($nguoichoi);
     }
 }

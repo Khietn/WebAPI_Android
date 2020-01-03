@@ -30,7 +30,7 @@ class NguoiChoiRequest extends FormRequest
         ];
     }
     public function messages(){
-        return [
+        return  [
             'ten_dang_nhap.required'=>'Chưa nhập Tài Khoản',
             'ten_dang_nhap.unique'=>'Tài Khoản đã tồn tại',
             'mat_khau.required'=>'chưa nhập Mật khẩu',

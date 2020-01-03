@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 use App\LinhVucModel;
 use Illuminate\Http\Request;
-use App\CauHoiModel;    
-
+use App\CauHoiModel;   
+ use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\CauHoiResource;
 
 class CauHoiController extends Controller
@@ -16,6 +16,22 @@ class CauHoiController extends Controller
         return view('cau-hoi',compact('dsCauHoi','linhVuc'));
     }
     public function store(Request $request){
+        $validator = Validator::make($request->all(),[
+            'noi_dung'=>'required',
+            'phuong_an_a'=>'required',
+            'phuong_an_b'=>'required',
+            'phuong_an_c'=>'required',
+            'phuong_an_d'=>'required',
+            'dap_an'=>'required',
+        ],[
+            'required'=>':attribute không được để trống',
+        ]);
+            //$validator = Validator::make($input, $rules, $messages);
+            //$mess=[''=>'ádaa']
+        if ($validator->fails()) {
+            return redirect('cau-hoi/danh-sach')->withErrors($validator)->withInput();
+        }
+        else{
         $cauHoi = new CauHoiModel;
         $cauHoi->noi_dung= $request->noi_dung;
         $cauHoi->linh_vuc_id=$request->linh_vuc;
@@ -27,7 +43,9 @@ class CauHoiController extends Controller
         $cauHoi->xoa=0;
         $cauHoi->save();
         // return redirect('linh-vuc/danh-sach');
+        
         return redirect('cau-hoi/danh-sach')->with('success','Thêm mới thành công');
+        }
     }
 
     public function edit($id){
@@ -35,6 +53,21 @@ class CauHoiController extends Controller
         return view('cap-nhat-cau-hoi',compact('cauhoi'));
     }
     public function update(Request $request){
+        $validator = Validator::make($request->all(),[
+            'noi_dung'=>'required',
+            'phuong_an_a'=>'required',
+            'phuong_an_b'=>'required',
+            'phuong_an_c'=>'required',
+            'phuong_an_d'=>'required',
+            'dap_an'=>'required',
+        ],[
+            'required'=>':attribute không được để trống',
+        ]);
+            //$validator = Validator::make($input, $rules, $messages);
+            //$mess=[''=>'ádaa']
+        if ($validator->fails()) {
+            return redirect('cau-hoi/danh-sach')->withErrors($validator)->withInput();
+        }
         $id = $request->hiddenID;
         $cauHoi= CauHoiModel::findOrFail($id);
         $cauHoi->noi_dung= $request->noi_dung;
@@ -47,6 +80,13 @@ class CauHoiController extends Controller
         $cauHoi->save();
         return redirect('cau-hoi/danh-sach')->with('success','Cập nhật thành công');
     }
+
+    public function search(Request $request){
+        $dsCauHoi = CauHoiModel::where('noi_dung','like',"%".$request->query('noi_dung').'%')->paginate(10);
+        $linhVuc = LinhVucModel::all();
+        return view('cau-hoi',compact('dsCauHoi','linhVuc'));
+    }
+
     public function updateS(Request $request,$id){
         if($request->hiddenXoa == 0){
             $cauHoi = CauHoiModel::where('id',$id)->update(['xoa'=>1]);

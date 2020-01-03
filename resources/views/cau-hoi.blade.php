@@ -9,11 +9,7 @@
 @section('title-content','Quản Lý Câu Hỏi')
 
 
-@if(session('success'))
-<script>
-    alert('{{session("success")}}')
-</script>
-@endif
+
 @section('main-content')
 <div class="container-fluid">
     <div class="row">
@@ -179,10 +175,11 @@
                                 <!-- tim kiem -->
                                 <ul class="list-unstyled topnav-menu float-right mb-0">
                                     <li class="d-none d-sm-block">
-                                        <form class="app-search">
+                                        <form class="app-search" action="{{route('cau-hoi.tim-kiem')}}" method="GET">
+                                      
                                             <div class="app-search-box">
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Search..." style="margin-left:5px">
+                                                    <input type="text" name="noi_dung" class="form-control" placeholder="Search..." style="margin-left:5px">
                                                     <div class="input-group-append">
                                                         <button class="btn btn-dark" type="submit" style="margin-left:5px">
                                                             <i class="fe-search"></i>

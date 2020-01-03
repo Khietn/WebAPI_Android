@@ -9,6 +9,8 @@
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+        <!-- Sweet alert-->
+        <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
            <!-- Jquery -->
         <script src="{{asset('assets/js/jquery.min.js')}}" language="JavaScript" type="text/javascript"></script>
 
@@ -453,8 +455,9 @@
      
         <!-- App js-->
         <script src="{{asset('assets/js/app.min.js')}}"></script>
-
+        @include('sweetalert::alert')
     </body>
  
 </html>
+
 @show

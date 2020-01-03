@@ -18,9 +18,13 @@ Quản Lý Người Chơi
                     <div class="responsive-table-plugin">
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
+<<<<<<< HEAD
                                 <!-- @if(session('success'))
                                    <script>alert('{{session('success')}}')</script>
                                 @endif -->
+=======
+                           
+>>>>>>> 329b2ca50cd897b4719280c3e66ed400d52ac3e7
                                 <table id="tech-companies-1" class="table table-striped" border="2">
                                     <thead>
                                     <tr>

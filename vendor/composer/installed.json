@@ -2879,6 +2879,74 @@
         ]
     },
     {
+        "name": "realrashid/sweet-alert",
+        "version": "v3.1.0",
+        "version_normalized": "3.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/realrashid/sweet-alert.git",
+            "reference": "1c0d31adcb64a1a4cc76fc97a731025c2a750b6f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/realrashid/sweet-alert/zipball/1c0d31adcb64a1a4cc76fc97a731025c2a750b6f",
+            "reference": "1c0d31adcb64a1a4cc76fc97a731025c2a750b6f",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": "~5.4.0|~5.8.0|~5.9.0|^6.0",
+            "php": "^7.2"
+        },
+        "require-dev": {
+            "symfony/thanks": "^1.0"
+        },
+        "time": "2019-12-29T17:38:06+00:00",
+        "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "RealRashid\\SweetAlert\\SweetAlertServiceProvider"
+                ],
+                "aliases": {
+                    "Alert": "RealRashid\\SweetAlert\\Facades\\Alert"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "RealRashid\\SweetAlert\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rashid Ali",
+                "email": "realrashid05@gmail.com",
+                "homepage": "https://realrashid.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "A BEAUTIFUL, RESPONSIVE, CUSTOMIZABLE, ACCESSIBLE (WAI-ARIA) REPLACEMENT FOR JAVASCRIPT'S POPUP BOXES FOR LARAVEL BY RASHID ALI",
+        "homepage": "https://github.com/realrashid/sweet-alert",
+        "keywords": [
+            "alert",
+            "laravel",
+            "laravel-package",
+            "notifier",
+            "noty",
+            "sweet-alert",
+            "sweet-alert2",
+            "toast"
+        ]
+    },
+    {
         "name": "sebastian/code-unit-reverse-lookup",
         "version": "1.0.1",
         "version_normalized": "1.0.1.0",
