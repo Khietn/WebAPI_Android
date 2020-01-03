@@ -88,7 +88,7 @@ Route::prefix('lich-su-mua-credit')->group(function(){
 });
 Route::prefix('quan-tri-vien')->group(function(){
 	Route::get('ds/quantrivien','QuanTriVienController@data')->name('danhsach-quantrivien');
-	Route::get('thong-tin','QuanTriVienController@thongtin')->name('thongtin-quantrivien');
+	Route::get('thong-tin','QuanTriVienController@index')->name('thongtin-quantrivien');
 });
 Route::prefix('cau-hinh-app')->group(function(){
 	Route::get('/','CauHinhAppController@data')->name('danhsach-cauhinhapp');
