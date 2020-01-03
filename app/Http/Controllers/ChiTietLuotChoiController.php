@@ -16,9 +16,19 @@ class ChiTietLuotChoiController extends Controller
      */
     public function data()
     {
-        return view('ChiTietLuotChoi');
+        $chitiet = ChiTietLuotChoiModel::all();
+
+        return view('ChiTietLuotChoi',compact('chitiet'));
     }
 
+    public function search(Request $request){
+        $chitiet = ChiTietLuotChoiModel::where('luot_choi_id',$request
+                                        ->query('luot_choi_id'))
+                                        ->get();
+        return view('ChiTietLuotChoi',compact('chitiet'));
+    }
+
+   
     
     public function indexAPI(){
         $ct= ChiTietLuotChoiModel::all();

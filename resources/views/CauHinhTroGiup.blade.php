@@ -15,11 +15,6 @@ Quản Lý Cấu Hình Trợ Giúp
                 <div class="responsive-table-plugin">
                     <div class="table-rep-plugin">
                         <div class="table-responsive" data-pattern="priority-columns">
-                            @if(session('success'))
-                            <script>
-                                alert('{{session("success")}}')
-                            </script>
-                            @endif
                             <button type="button" class="btn btn-outline-primary waves-effect waves-light" data-toggle="modal" data-target="#con-close-modal-them">Thêm mới</button>
                             <table id="tech-companies-1" class="table table-striped" border="2">
                                 <thead>

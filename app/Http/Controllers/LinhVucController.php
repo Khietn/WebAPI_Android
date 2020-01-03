@@ -6,6 +6,7 @@ use App\Http\Resources\LinhVucResource;
 use Illuminate\Http\Request;
 use App\LinhVucModel;
 use App\Http\Requests\LinhVucRequest;
+use Alert;
 class LinhVucController extends Controller
 {
     public function data()
@@ -21,7 +22,7 @@ class LinhVucController extends Controller
         else{
             $linhVuc = LinhVucModel::where('id',$id)->update(['xoa'=>0]);
         }
-        return redirect('/index/Database')->with('success',"Xóa Lĩnh Vực Thành Công!");
+        return redirect('/linh-vuc');
     }
     /*
      * Display a listing of the resource.
@@ -36,31 +37,18 @@ class LinhVucController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return View('form-linh-vuc');
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LinhVucRequest $request)
+    public function store(Request $request)
     {
-        //
             $linhVuc = new LinhVucModel;
             $linhVuc->ten= $request->ten_linh_vuc;
             $linhVuc->save();           
-            return redirect('/index/Database')->with('success','Thêm Mới Thành Công !');
-        
+            alert('Thông báo','Thêm mới thành công','success');
+            return redirect('/linh-vuc');
     }
 
     /**
@@ -100,8 +88,9 @@ class LinhVucController extends Controller
         //
         $linhVuc = LinhVucModel::findOrFail($id);
         $linhVuc->ten = $request->input('ten_linh_vuc_moi');
-        $linhVuc->save();
-        return redirect('/index/Database')->with('success',"Sửa Thành Công");
+        $linhVuc->save(); 
+        Alert::success('Cập nhật thành công', '');
+        return redirect('/linh-vuc')->with('success',"Sửa Thành Công");
         //return redirect()->action('LinhVucController@data')->with('success',"Sửa Thành Công");
     }
 

@@ -17,9 +17,8 @@ class LuotChoiController extends Controller
      */
     public function data()
     {
-        // $luotChoi=LuotChoiModel::all();
-        // return view ('luot-choi',compact('luotChoi'));
-        return view ('LuotChoi');
+         $luotchoi=LuotChoiModel::all();
+         return view ('LuotChoi',compact('luotchoi'));
     }
 
     public function indexAPI(){

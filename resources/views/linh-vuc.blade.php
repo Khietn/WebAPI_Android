@@ -15,9 +15,7 @@ Quản Lý Lĩnh Vực
                     <div class="responsive-table-plugin">
                         <div class="table-rep-plugin">
                             <div class="table-responsive" data-pattern="priority-columns">
-                                @if(session('success'))
-                                   <script>alert('{{session('success')}}')</script>
-                                @endif
+                 
                                 <table id="tech-companies-1" class="table table-striped" border="2">
                                     <thead>
                                     <tr>
@@ -74,12 +72,10 @@ Quản Lý Lĩnh Vực
             <?php endforeach ?>                                                                                                       
                                           <!-- them bang o day -->                                                                                                                                                                                                                     
                                     </tbody>
-                                   <!-- <button class="btn btn-dark waves-effect waves-light"  style="margin-bottom:20px"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button> -->
+                                   <!-- <button class="btn btn-dark waves-effect waves-light"  style="margin-bottom:20px"><a href="">Thêm</a></button> -->
                                     <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal"  style="margin-bottom:20px" data-target="#con-close-modal">Thêm</button>
                             <!-- modalthemlinhvuc -->                                                                
-                                    <form action="{{route('linh-vuc.xl-them-moi')}}" method="POST">
-                                     @csrf
-
+                               
                                      @if($errors->any())
                                  <div class="alert alert-primary alert-dismissible bg-primary text-white border-0 fade show" role="alert">
                                 <button class="close" aria-label="Close" type="button" data-dismiss="alert">
@@ -97,12 +93,14 @@ Quản Lý Lĩnh Vực
                                             <h4 class="modal-title">Thêm Mới Lĩnh Vực</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                         </div>
+                                        <form action="{{route('linh-vuc.xl-them-moi')}}" method="POST" id="themmoi">
+                                     @csrf
                                         <div class="modal-body p-4">                                   
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực</label>
-                                                        <input type="text" class="form-control "id="ten_linh_vuc" name="ten_linh_vuc"  placeholder="Tên Lĩnh Vực">
+                                                        <input type="text" class="form-control" name="ten_linh_vuc"  placeholder="Tên Lĩnh Vực">
                                                     </div>
                                                 </div>
                                             </div>                                                                                     
@@ -111,10 +109,11 @@ Quản Lý Lĩnh Vực
                                             <button type="submit" class="btn btn-info waves-effect waves-light">Lưu</button>
                                             <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Hủy</button>                                         
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div><!-- /.ketthucmodalthem -->
-                            </form>
+                            
                             <!-- kethucmodalthemlinhvuc -->                     
                                     <!-- btn tim kiem -->
                                      <ul class="list-unstyled topnav-menu float-right mb-0">

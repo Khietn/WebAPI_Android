@@ -30,6 +30,7 @@ Route::get('/apinguoichoi','NguoiChoiController@LayAPI');
 Route::get('/bang-xep-hang','NguoiChoiController@rankAPI');
 Route::post('/cap-nhat-nguoi-choi','NguoiChoiController@CapNhatNguoiChoi');
 Route::post('/cap-nhat-goi-credit','NguoiChoiController@updatecredit');
+Route::post('/cap-nhat-diem','NguoiChoiController@capnhatdiem'); //?nguoi_choi_id= & diem= 
 
 Route::get('/linh-vuc','LinhVucController@indexAPI'); //Lay het tat ca linh vuc
 Route::get('/linh-vuc/{id}','LinhVucController@getAPI'); //Lay linh vuc theo ID

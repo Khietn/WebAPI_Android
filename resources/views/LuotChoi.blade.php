@@ -29,7 +29,15 @@ Quản Lý Lượt Chơi
                                     </tr>
                                     </thead>
                                     <tbody>                                                                                                         
-                                          <!-- them bang o day -->                                                                                                                                                                                                                     
+                                          @foreach($luotchoi as $lt)
+                                            <tr>
+                                                <td>{{$lt->id}}</td>
+                                                <td>{{$lt->nguoi_choi_id}}</td>
+                                                <td>{{$lt->so_cau}}</td>
+                                                <td>{{$lt->diem}}</td>
+                                                <td>{{$lt->ngay_gio}}</td>
+                                            </tr>
+                                          @endforeach
                                     </tbody>
                                     <!-- <button class="btn btn-dark waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button> -->
                                     <!-- btn tim kiem -->

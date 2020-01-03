@@ -28,17 +28,26 @@ Quản Lý Chi Tiết Lượt Chơi
                                         <th data-priority="1">Điểm</th>
                                     </tr>
                                     </thead>
-                                    <tbody>                                                                                                         
-                                          <!-- them bang o day -->                                                                                                                                                                                                                     
+                                    <tbody>       @foreach($chitiet as $lc)
+                                         <tr>                                                                                                    
+                                          
+                                            <td>{{$lc->id}}</td>
+                                            <td>{{$lc->luot_choi_id}}</td>
+                                            <td>{{$lc->cau_hoi_id}}</td>
+                                            <td>{{$lc->phuong_an}}</td>
+                                            <td>{{$lc->diem}}</td>
+                                            
+                                        </tr>            
+                                        @endforeach                                                                                                                 
                                     </tbody>
                                     <!-- <button class="btn btn-dark waves-effect waves-light" style="margin-bottom:20px"><a href="{{route('linh-vuc.them-moi')}}">Thêm</a></button> -->
                                     <!-- btn tim kiem -->
                                      <ul class="list-unstyled topnav-menu float-right mb-0">
                                     <li class="d-none d-sm-block">
-                                     <form class="app-search">
+                                     <form class="app-search" action="{{route('chi-tiet.tim-kiem')}}" method="get">
                                     <div class="app-search-box">
                                     <div class="input-group" style="margin-bottom:20px">
-                                        <input type="text" class="form-control" placeholder="Search..." style="margin-left:5px">
+                                        <input type="text" name="luot_choi_id" class="form-control" placeholder="Search..." style="margin-left:5px">
                                         <div class="input-group-append">
                                             <button class="btn btn-dark" type="submit" style="margin-left:5px">
                                                 <i class="fe-search"></i>

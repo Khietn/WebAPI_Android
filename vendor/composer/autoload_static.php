@@ -25,6 +25,7 @@ class ComposerStaticInitdfc6546326b140bb13eac8fe3300214f
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
+        '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -72,6 +73,7 @@ class ComposerStaticInitdfc6546326b140bb13eac8fe3300214f
         ),
         'R' => 
         array (
+            'RealRashid\\SweetAlert\\' => 22,
             'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
@@ -259,6 +261,10 @@ class ComposerStaticInitdfc6546326b140bb13eac8fe3300214f
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'RealRashid\\SweetAlert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/realrashid/sweet-alert/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -433,6 +439,7 @@ class ComposerStaticInitdfc6546326b140bb13eac8fe3300214f
         'App\\Http\\Controllers\\MyController' => __DIR__ . '/../..' . '/app/Http/Controllers/MyController.php',
         'App\\Http\\Controllers\\NguoiChoiController' => __DIR__ . '/../..' . '/app/Http/Controllers/NguoiChoiController.php',
         'App\\Http\\Controllers\\QuanTriVienController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuanTriVienController.php',
+        'App\\Http\\Controllers\\SendMailController' => __DIR__ . '/../..' . '/app/Http/Controllers/SendMailController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -458,6 +465,7 @@ class ComposerStaticInitdfc6546326b140bb13eac8fe3300214f
         'App\\LichSuMuaCreditModel' => __DIR__ . '/../..' . '/app/LichSuMuaCreditModel.php',
         'App\\LinhVucModel' => __DIR__ . '/../..' . '/app/LinhVucModel.php',
         'App\\LuotChoiModel' => __DIR__ . '/../..' . '/app/LuotChoiModel.php',
+        'App\\Mail\\ForgotPasswordMail' => __DIR__ . '/../..' . '/app/Mail/ForgotPasswordMail.php',
         'App\\NguoiChoiModel' => __DIR__ . '/../..' . '/app/NguoiChoiModel.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -3258,6 +3266,13 @@ class ComposerStaticInitdfc6546326b140bb13eac8fe3300214f
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'RealRashid\\SweetAlert\\Console\\PublishCommand' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Console/PublishCommand.php',
+        'RealRashid\\SweetAlert\\Facades\\Alert' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Facades/Alert.php',
+        'RealRashid\\SweetAlert\\Storage\\AlertSessionStore' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Storage/AlertSessionStore.php',
+        'RealRashid\\SweetAlert\\Storage\\SessionStore' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Storage/SessionStore.php',
+        'RealRashid\\SweetAlert\\SweetAlertServiceProvider' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/SweetAlertServiceProvider.php',
+        'RealRashid\\SweetAlert\\ToSweetAlert' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/ToSweetAlert.php',
+        'RealRashid\\SweetAlert\\Toaster' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/Toaster.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
