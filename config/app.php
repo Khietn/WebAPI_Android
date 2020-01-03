@@ -167,7 +167,7 @@ return [
          */
         
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
-        \RealRashid\SweetAlert\ToSweetAlert::class,
+    
         /*
          * Application Service Providers...
          */

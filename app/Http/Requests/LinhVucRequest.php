@@ -26,7 +26,8 @@ class LinhVucRequest extends FormRequest
         return [
             //
          //   'ten'=>'unique:linh_vuc',
-            'ten_linh_vuc'=>'required|unique:linh_vuc'
+           
+            'ten'=>'unique:linh_vuc'
 
         ];
     }
@@ -34,8 +35,8 @@ class LinhVucRequest extends FormRequest
     {
         return [
             
-            'ten_linh_vuc.required'=>'Tên Lĩnh Vực Không Được Để Trống !',
-            'ten_linh_vuc.unique'=>'Lĩnh Vực đã tồn tại'
+            
+            'ten.unique'=>'Lĩnh Vực đã tồn tại'
             
         ];
     }

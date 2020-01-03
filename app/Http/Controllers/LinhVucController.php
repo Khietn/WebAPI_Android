@@ -6,6 +6,7 @@ use App\Http\Resources\LinhVucResource;
 use Illuminate\Http\Request;
 use App\LinhVucModel;
 use App\Http\Requests\LinhVucRequest;
+use Illuminate\Support\Facades\Validator;
 use Alert;
 class LinhVucController extends Controller
 {
@@ -42,10 +43,22 @@ class LinhVucController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LinhVucRequest $request)
     {
+        $validator = Validator::make($request->all(),[
+           
+            'ten'=>'required'
+        ],[
+            'required'=>'Tên lĩnh vực không được để trống',
+        ]);
+            //$validator = Validator::make($input, $rules, $messages);
+            //$mess=[''=>'ádaa']
+        if ($validator->fails()) {
+            return redirect('/linh-vuc')->withErrors($validator)->withInput();
+        }
+
             $linhVuc = new LinhVucModel;
-            $linhVuc->ten= $request->ten_linh_vuc;
+            $linhVuc->ten= $request->ten;
             $linhVuc->save();           
             alert('Thông báo','Thêm mới thành công','success');
             return redirect('/linh-vuc');

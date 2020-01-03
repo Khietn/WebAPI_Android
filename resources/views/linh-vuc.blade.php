@@ -100,7 +100,7 @@ Quản Lý Lĩnh Vực
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="ten_linh_vuc" class="control-label">Tên Lĩnh Vực</label>
-                                                        <input type="text" class="form-control" name="ten_linh_vuc"  placeholder="Tên Lĩnh Vực">
+                                                        <input type="text" class="form-control" name="ten"  placeholder="Tên Lĩnh Vực">
                                                     </div>
                                                 </div>
                                             </div>                                                                                     
